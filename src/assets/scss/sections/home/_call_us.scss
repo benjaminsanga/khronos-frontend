@@ -1,0 +1,45 @@
+@use '../../custom' as *;
+@use '../../components/mixins' as *;
+
+#call-us {
+    height: 30vh;
+    width: 80%;
+    margin: 5vh auto;
+    padding: 10vh;
+    background-color: $primary;
+    border-bottom: 5px solid $secondary;
+
+    h2 {
+        font-weight: lighter;
+        color: #fff;
+    }
+
+    p {
+        color: $secondary;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    #call-us {
+        height: fit-content;
+        margin: 0 auto;
+        padding: 40px 20px;
+
+        h2 {
+            text-align: left !important;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #call-us {
+        margin: 0 auto;
+        padding: 40px 20px;
+
+        h2 {
+            text-align: left !important;
+        }
+    }
+}

@@ -1,0 +1,305 @@
+@use '../../custom' as *;
+
+#intro {
+    padding: 0;
+}
+
+.first-section {
+    margin-top: 5%;
+    margin-bottom: 10%;
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        padding-top: 20px
+    }
+
+    a+p {
+        font-size: 1.2rem;
+        padding-top: 20px;
+    }
+}
+
+.second-section {
+    border-radius: 10px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        padding-top: 20px;
+    }
+}
+
+.third-section {
+    border-radius: 10px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+    p {
+        font-size: 1.2rem;
+        padding-top: 20px;
+    }
+}
+
+.fourth-section {
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        padding-top: 20px;
+    }
+}
+
+.fifth-section {
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        padding-top: 20px;
+    }
+}
+
+.sixth-section {
+    .d-flex {
+        cursor: pointer;
+        padding: 15px 0;
+    }
+}
+
+.seventh-section {
+    border-radius: 10px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+    p {
+        font-size: 1.2rem;
+        padding-top: 20px;
+    }
+}
+
+.bullet-points ul li {
+    padding-top: 10px;
+}
+
+.landing-footer {
+    a {
+        text-decoration: none;
+        padding: 0 10px;
+    }
+
+    a, p {
+        color: #ededf0;
+    }
+
+    a:hover {
+        color: $secondary;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    .first-section {    
+        h1 {
+            font-size: 2.5rem;
+        }
+    
+        p {
+            font-size: 1.2rem;
+        }
+    
+        a+p {
+            font-size: 1rem;
+        }
+    }
+    
+    .second-section {
+        
+        h1 {
+            font-size: 1.75rem;
+        }
+    
+        p {
+            font-size: 1rem;
+        }
+    }
+    
+    .third-section {
+        border-radius: 10px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    
+        p {
+            font-size: 1rem;
+        }
+
+        li {
+            font-size: 14px;
+        }
+    }
+    
+    .fourth-section {
+    
+        h1 {
+            font-size: 1.75rem;
+        }
+    
+        p {
+            font-size: 1.2rem;
+        }
+    }
+    
+    .fifth-section {
+    
+        h1 {
+            font-size: 1.75rem;
+        }
+    
+        p {
+            font-size: 1.2rem;
+            padding-top: 20px;
+        }
+    }
+    
+    .sixth-section {
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .d-flex {
+            cursor: pointer;
+            padding: 15px 0;
+
+            h4 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    
+    .seventh-section {
+    
+        p {
+            font-size: 1rem;
+        }
+    }
+    
+    .bullet-points ul li {
+        padding-top: 10px;
+    }
+    
+    .landing-footer {    
+        a, p {
+            font-size: 12px;
+        }    
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .first-section {    
+        h1 {
+            font-size: 2rem;
+        }
+    
+        p {
+            font-size: 1.1rem;
+        }
+    
+        a+p {
+            font-size: 1rem;
+        }
+    }
+    
+    .second-section {
+        padding: 5px !important;
+        border: none !important;
+    
+        p {
+            font-size: 1.1rem;
+        }
+    }
+    
+    .third-section {
+        padding: 5px !important;
+        border: none !important;
+    
+        p {
+            font-size: 1.1rem;
+        }
+
+        li {
+            font-size: 18px;
+        }
+    }
+    
+    .fourth-section {
+        padding: 5px !important;
+        border: none !important;
+    }
+    
+    .fifth-section {
+        padding: 5px !important;
+        border: none !important;
+    }
+    
+    .sixth-section {
+
+        h1 {
+            text-align: left !important;
+            font-size: 1.5rem;
+        }
+
+        .d-flex {
+            cursor: pointer;
+            padding: 15px 0;
+
+            h4 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    
+    .seventh-section {
+        padding: 5px !important;
+        border: none !important;
+
+        p {
+            font-size: 1.1rem;
+        }
+    }
+    
+    .bullet-points ul {
+        padding-left: 0px;
+
+        li {
+            padding-top: 10px;
+        }
+    }
+    
+    .landing-footer {    
+        a, p {
+            font-size: 12px;
+        }    
+    }
+}
+
+// @media only screen and (max-width: 400px) {
+    
+// }

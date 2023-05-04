@@ -1,0 +1,38 @@
+@use '../../components/mixins' as *;
+@use '../../custom' as *;
+
+#projects {
+    margin-top: 3rem;
+    color: $primary;
+
+    h2 {
+        color: $secondary;
+    }
+
+    .project {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        padding: 20px 10px;
+        margin: 20px 10px;
+        transition: .1s;
+        background-color: $primary;
+        height: 100%;
+
+        span {
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        &:hover {
+            border: none;
+            box-shadow: 2px 2px 15px $secondary, 2px 2px 5px $secondary;
+        }
+    }
+
+
+}

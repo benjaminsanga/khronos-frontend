@@ -1,0 +1,18 @@
+@use '../../components/mixins' as *;
+@use '../../custom' as *;
+
+#deposit {
+    margin-top: 3rem;
+    color: $primary;
+
+    textarea {
+        resize: none;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+
+}

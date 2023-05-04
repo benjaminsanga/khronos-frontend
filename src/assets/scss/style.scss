@@ -1,0 +1,30 @@
+@use 'custom';
+
+// IMPORT THE COMPONENTS
+@use 'components/animations';
+@use 'components/buttons';
+@use 'components/mixins';
+@use 'components/loader';
+
+// SECTIONS
+@use 'sections/navbar';
+
+@use 'sections/home/index';
+@use 'sections/cluster/create_cluster';
+@use 'sections/cluster/clusters';
+@use 'sections/project/create_project';
+@use 'sections/project/projects';
+@use 'sections/deposit/deposit';
+@use 'sections/quotation/get_quotation';
+@use 'sections/login/login';
+@use 'sections/about/about';
+@use 'sections/about/team';
+@use 'sections/faq/faq';
+@use 'sections/contact/contact';
+@use 'sections/privacy/privacy';
+@use 'sections/terms/terms';
+@use 'sections/dashboard/dashboard';
+@use 'sections/login/join';
+@use 'sections/landing/landing';
+
+@use 'sections/footer';

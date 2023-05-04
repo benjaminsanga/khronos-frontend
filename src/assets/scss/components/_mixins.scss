@@ -1,0 +1,47 @@
+@use '../custom' as *;
+
+// GRADIENT MIXIN
+@mixin gradient {
+    background: linear-gradient(to right, rgba($primary-light, 0.95), rgba(#d0c8e2, 0.95));
+}
+
+@mixin radialGradient {
+    background-image: radial-gradient(farthest-corner at 50% 55%, $secondary, #fff);
+}
+
+// ABSOLUTE CENTER
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// TRANSITION PROPERTY
+@mixin transitionProperty {
+    transition-duration: 1000ms;
+    transition-property: all;
+}
+
+// BOTTOM BORDER
+@mixin bottomBorder {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #dfdfdf;
+    box-shadow: 0 4px 4px -2px #dfdfdf;
+}
+
+// SHADOW
+@mixin shadow {
+    border: none;
+    box-shadow: 1px 2px 1px white, 3px 2px 12px -2px rgba(0, 0, 0, 0.2);
+}
+
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content
+    }
+}
+
+@mixin animate($animation, $duration, $method, $times) {
+    animation: $animation $duration $method $times;
+}

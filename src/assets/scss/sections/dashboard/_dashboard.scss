@@ -1,0 +1,64 @@
+@use '../../custom' as *;
+
+#dashboard {
+    min-height: 100vh;
+    padding: 2.5rem 0px;
+
+    .user-info {
+        padding-bottom: 2.5rem;
+
+        div {
+            padding-top: 1.5rem;
+        }
+
+        h2 {
+            padding: 0 0 1rem;
+
+            span {
+                color: $secondary;
+            }
+        }
+    }
+    
+    .project-stats {
+        padding: 2rem 0px;
+
+        p {
+            margin-bottom: 0px;
+        }
+
+        h2 {
+            padding: 1rem;
+            font-size: 3rem;
+            font-weight: lighter;
+        }
+    }
+
+    .payments {
+        padding: 2.5rem 0px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #dashboard {
+        
+        .project-stats {
+            div {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #dashboard {
+        .user-info {
+            .col-md-6 {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+        }
+    }
+}

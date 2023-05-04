@@ -1,0 +1,139 @@
+@use '../../custom' as *;
+@use '../../components/mixins' as *;
+
+#contact {
+    min-height: 100vh;
+    margin-top: 10vh;
+    color: $primary;
+
+    section {
+        margin: 5vh 0 7vh;
+        
+        h1 {
+            padding-top: 2rem;
+            font-size: 4.5rem;
+
+            & + p {
+                color: $secondary;
+                margin: 0 !important;
+            }
+        }
+
+        h3 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 2.5rem 0 0;
+        }
+
+        ul {
+            padding: 0 12px;
+    
+            li {
+                display: inline;
+        
+                .icon {
+                    width: 48px;
+                    height: auto;
+                    margin-right: 10px;
+                    padding: 10px;
+                    border: 1px solid transparent;
+
+                    &:hover {
+                        border: 1px solid $primary;
+                    }
+                }
+        
+                a {
+                    padding: 0;
+                    text-decoration: none;
+                    color: $primary-light;
+        
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #contact {
+        min-height: 80vh;
+        margin-top: 2vh;
+    
+        section {
+            margin: 2vh 0 3vh;
+            
+            h1 {
+                padding-top: 1rem;
+                font-size: 2.5rem;
+            }
+    
+            h3 {
+                font-size: 1.5rem;
+            }
+    
+            p {
+                font-size: 1rem;
+                margin: 1.5rem 0 0;
+            }
+    
+            ul {
+                padding: 0 12px;
+        
+                li {
+            
+                    .icon {
+                        width: 32px;
+                        height: auto;
+                        margin-right: 10px;
+                    }
+                }
+            }
+    
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #contact {
+        min-height: 80vh;
+        margin-top: 5vh;
+    
+        section {
+            
+            h1 {
+                padding-top: 1rem;
+                font-size: 3.5rem;
+            }
+    
+            h3 {
+                font-size: 1.5rem;
+            }
+    
+            p {
+                font-size: 1rem;
+                margin: 1.5rem 0 0;
+            }
+    
+            ul {
+                padding: 0 12px;
+        
+                li {
+            
+                    .icon {
+                        width: 32px;
+                        height: auto;
+                        margin-right: 10px;
+                    }
+                }
+            }
+    
+        }
+    }
+}

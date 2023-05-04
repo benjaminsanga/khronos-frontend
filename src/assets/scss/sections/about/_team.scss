@@ -1,0 +1,113 @@
+@use '../../custom' as *;
+@use '../../components/mixins' as *;
+
+#team {
+    height: 60vh;
+    width: 70%;
+    margin: 10vh auto;
+    color: $primary;
+
+    .team-member {
+        div{ 
+            margin: 10px;
+            padding: 40px 20px 20px;
+            background-color: rgb(243, 243, 243);
+        }
+
+        img {
+            width: 24px;
+            height: auto;
+            position: relative;
+            transition: 0.25s;
+
+            &:hover {
+                width: 26px;
+                height: relative;
+            }
+        }
+    }
+
+    .active {
+        div {
+            background-color: $secondary;
+            border-bottom: 5px solid $primary;
+        }
+    }
+
+    h5 { font-weight: light; }
+    h6 { font-weight: lighter; }
+
+}
+
+@media only screen and (max-width: 900px) {
+    #team {
+        height: 50%;
+        margin: 5vh auto;
+    
+        .team-member {
+            div{ 
+                margin: 10px;
+                padding: 40px 20px 20px;
+                background-color: rgb(243, 243, 243);
+            }
+    
+            img {
+                width: 64px;
+                height: auto;
+                border: 3px solid #fff;
+                position: relative;
+                bottom: -40px;
+            }
+
+            h5 {
+                font-size: 1rem;
+            }
+
+            h6 {
+                font-size: 10px;
+            }
+        }
+    
+        .active {
+            div {
+                background-color: $secondary;
+                border-bottom: 5px solid $primary;
+            }
+        }
+    
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    #team {
+        height: 90vh;
+        margin: 5vh auto 10vh;
+        color: $primary;
+    
+        .team-member {
+            div{ 
+                margin: 10px;
+                padding: 40px 20px 20px;
+                background-color: rgb(243, 243, 243);
+            }
+    
+            img {
+                width: 32px;
+                height: auto;
+                border: 3px solid #fff;
+                position: relative;
+                bottom: 2px;
+            }
+        }
+    
+        .active {
+            div {
+                background-color: $secondary;
+                border-bottom: 5px solid $primary;
+            }
+        }
+    
+    }
+
+}

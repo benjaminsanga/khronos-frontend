@@ -1,0 +1,19 @@
+@use '../../components/mixins' as *;
+@use '../../custom' as *;
+
+#create-project {
+    margin-top: 3rem;
+    color: $primary;
+
+    span {
+        display: block;
+        font-size: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+
+}

@@ -1,0 +1,16 @@
+@use '../../components/mixins' as *;
+@use '../../custom' as *;
+
+#login {
+    margin-top: 3rem;
+    color: $primary;
+    
+    form {
+        margin-top: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+}

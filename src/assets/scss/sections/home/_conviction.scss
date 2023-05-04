@@ -1,0 +1,122 @@
+@use '../../custom' as *;
+@use '../../components/mixins' as *;
+
+#conviction {
+    height: 150vh;
+    margin-top: 10vh;
+    padding: 10vh 20vmin;
+
+    h3 {
+        color: $primary;
+    }
+
+    .down-arrows {
+        padding: 10vh 0;
+
+    }
+
+    #sections {
+        height: 50vh;
+        margin-bottom: 10vh;
+
+        h4 {
+            margin-top: 5vh;
+        }
+
+        .section {
+            
+            
+            div {
+                width: 60%;
+                height: 60%;
+                padding: 5vh;
+                margin: 1.5vh auto;
+
+                img {
+                    width: 50%;
+                    height: auto;
+                    margin-bottom: 20px;
+                }
+
+                h5 {
+                    text-transform: uppercase;
+                    font-weight: lighter;
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #conviction {
+        height: 90%;
+        margin: 0;
+
+        .down-arrows {
+            padding: 2vh 0;
+        }
+
+        #sections {
+            h4 {
+                margin-top: 0;
+            }
+
+            .section {
+                
+
+                div {
+                    width: 100%;
+                    height: fit-content;
+                    padding: 10;
+                    margin: 0;
+                    
+                    // centralize items
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 64px;
+                        height: auto;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #conviction {
+        min-height: 200%;
+        margin: 5vh 0 180% 0;
+
+        .down-arrows {
+            padding: 5vh 0;
+        }
+
+        #sections {
+
+            h4 {
+                margin-top: 0;
+            }
+
+            .section {
+                div {
+                    width: 100%;
+                    height: fit-content;
+                    padding: 10;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #conviction {
+        margin-bottom: 190%;
+    }
+}

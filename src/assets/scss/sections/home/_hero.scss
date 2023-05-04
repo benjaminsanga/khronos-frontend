@@ -1,0 +1,88 @@
+@use '../../custom' as *;
+@use '../../components/mixins' as *;
+
+
+#hero {
+    height: 88vh;
+    padding: 20vh 20vmin;
+    // @include gradient;
+    background-color: $primary;
+    color: #fff;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    overflow:hidden;
+
+    .welcome-text {
+        margin: auto 0;
+
+        p{
+            font-size: 1.2rem;
+            font-weight: lighter;
+        } 
+        
+        h1 {
+            padding-bottom: 10px 0;
+            font-weight: bolder;
+        }
+
+        .action-btns {
+            padding-top: 20px;
+            width: 55vh;
+
+            button {
+                margin-right: 20px;
+                padding: 1rem 20px;
+
+                &.get-started {
+                    background: $primary;
+                    border: 2px solid $secondary;
+                    color: #fff;
+
+                    &:hover {
+                        color: $secondary;
+                    }
+                }
+    
+                &.get-quote {
+                    background: $secondary;
+                    border: 2px solid $secondary;
+                    color: $primary;
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .carousel {
+        width: 80vh;
+        padding-left: 5vh;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #hero {
+        height: 50%;
+        padding: 5vh;
+        background: $primary;
+    
+        .carousel {
+            width: 100%;
+            padding: 10vh 0 5vh;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #hero {
+        padding: 10vh 5vh;
+        background: $primary;
+    
+        .carousel {
+            width: 100%;
+            padding: 10vh 0 5vh;
+        }
+    }
+}

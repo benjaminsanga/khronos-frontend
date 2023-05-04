@@ -1,0 +1,105 @@
+@use '../../custom' as *;
+@use '../../components/mixins' as *;
+
+
+#statistics {
+    height: max-content;
+    margin: 20vh auto;
+    width: 70%;
+
+    .left {
+        padding-top: 5vh;
+        padding-right: 2rem;
+        
+        h2 {
+            color: $primary;
+        }
+
+        p {
+            color: gray;
+            padding-top: 1.5rem;
+        }
+    }
+
+    .right {
+        max-width: 100%;
+            box-sizing: border-box;
+
+            .stat-item {
+                div {
+                    padding: 5vh;
+                    margin: 0px 1.5vh 3vh;
+
+                    &:hover {
+                        background-color: $secondary;
+                        p { color: $primary; }
+                    }
+
+                    h1 {
+                        color: $primary;
+                        font-size: 2.5rem;
+                        font-weight: 300;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        text-transform: uppercase;
+                        color: $secondary;
+                        font-weight: bolder;
+                    }
+                }
+            }
+
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    #statistics {
+        height: 60%;
+        margin: 10vh auto;
+
+        .left {
+            padding-top: 2vh;
+            padding-right: 1rem;
+    
+            p {
+                padding-top: 1.2rem;
+            }
+        }
+
+        .right {
+            .stat-item {
+                div {
+                    padding: 10px;
+                    margin: 0;
+
+                    h1 {
+                        font-size: 3rem;
+                        font-weight: lighter;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #statistics {
+        margin: 10vh auto;
+
+        .right {
+            .stat-item {
+                div {
+                    padding: 10px;
+                    margin: 0;
+
+                    h1 {
+                        font-size: 4rem;
+                        font-weight: lighter;
+                    }
+                }
+            }
+        }
+    }
+}

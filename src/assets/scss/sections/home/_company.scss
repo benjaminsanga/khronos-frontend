@@ -1,0 +1,95 @@
+@use '../../custom' as *;
+@use '../../components/mixins' as *;
+
+#company {
+    height: 100vh;
+    background-color: $secondary;
+    padding: 7vh 20vmin;
+    margin-bottom: 0vh;
+
+    .row:first-child {
+        padding-right: 5vh;
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: lighter;
+    } 
+
+    h5 {
+        color: $primary;
+        font-weight: bold;
+    }
+
+    .procedure {
+        padding-top: 20px;
+        margin: 0 auto;
+
+        &-item {
+            margin: 20px;
+            
+            img {
+                @include radialGradient;
+                border: 3px solid $primary;
+                max-width: 100%;
+            }
+
+            p {
+                padding: 1rem 2rem;
+                background-color: $primary;
+                color: #fff;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #company {
+        height: 50%;
+        margin-bottom: 0;
+        padding: 5vh;
+    
+        .row:first-child {
+            padding: 0;
+        }
+    
+        h5 {
+            font-weight: normal;
+        }    
+
+        .procedure {
+            &-item {
+                img {
+                    // @include gradient;
+                    border: 2px solid $primary;
+                }
+    
+                p {
+                    padding: 16px 5px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #company {
+        height: 190%;
+        margin-bottom: 0;
+        padding: 7vh 5vh;
+    
+        .row:first-child {
+            padding: 0;
+        }
+    
+        h5 {
+            font-weight: normal;
+        }    
+    
+    }
+}

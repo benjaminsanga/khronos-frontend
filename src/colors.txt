@@ -1,0 +1,5 @@
+purple-dark = #312440
+purple-light = #453179
+green = #7befb2
+black-dark = #434053
+black-light = #c7c6cb

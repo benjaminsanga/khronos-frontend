@@ -1,0 +1,93 @@
+@use '../../custom' as *;
+@use '../../components/mixins' as *;
+
+#feedback {
+    // height: 70vh;
+    height: fit-content;
+    width: 70%;
+    margin: 10vh auto;
+    color: $primary;
+
+    button {
+        font-size: 1.5rem;
+        background: $primary;
+        border: 1px solid $primary;
+        border-radius: 5px;
+        color: #fff;
+        padding: 20px 2rem;
+        transition: 0.5s;
+
+        &:hover {
+            background: $secondary;
+            border: 1px solid $secondary;
+        }
+    }
+
+    .customer {
+        div { 
+            margin: 10px;
+            padding: 40px 20px 20px;
+            background-color: rgb(243, 243, 243);
+
+        }
+
+        img {
+            width: 64px;
+            height: auto;
+            border: 3px solid #fff;
+            position: relative;
+            bottom: -40px;
+        }
+    }
+
+    .active {
+        div {
+            background-color: $secondary;
+            border-bottom: 5px solid $primary;
+        }
+    }
+
+    h3 + p {
+        color: $black-dark;
+    }
+
+    h5 + span {
+        color: $black-dark;
+        font-size: small;
+        line-height: 5px;
+    }
+
+    .carets {
+        img {
+            width: 30px;
+            height: 50px;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    #feedback {
+        height: 80%;
+        width: 80%;
+        margin: 5vh auto;
+
+        h3 {
+            text-align: center;
+            & + p {
+                text-align: center;
+                color: $black-dark;
+            }
+        }
+
+        h5 + span {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #feedback {
+        height: 140%;
+    }
+}

@@ -1,0 +1,75 @@
+@use '../../custom' as *;
+@use '../../components/mixins' as *;
+
+#terms {
+    min-height: 100vh;
+    margin-top: 10vh;
+    color: $primary;
+
+    section {
+        margin: 5vh 0 7vh;
+        
+        h1 {
+            padding-top: 2rem;
+            font-size: 4.5rem;
+        }
+
+        h1 + p {
+            color: $secondary;
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #terms {
+        margin-top: 2vh;
+    
+        section {
+            margin: 2vh 0 3vh;
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+    
+            h1 + p {
+                color: $secondary;
+            }
+    
+            p {
+                font-size: 1rem;
+            }
+    
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #terms {
+        margin-top: 5vh;
+    
+        section {
+            
+            h1 {
+                font-size: 3.5rem;
+            }
+    
+            h1 + p {
+                color: $secondary;
+            }
+    
+            p {
+                font-size: 1rem;
+            }
+    
+        }
+    }
+}

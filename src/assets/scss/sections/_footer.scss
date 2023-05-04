@@ -1,0 +1,149 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+#footer {
+    max-height: 20vh;
+    margin-top: 30vh;
+
+    ul {
+        display: inline;
+
+        li {
+            display: inline;            
+        }
+    }
+    
+    &-top {
+        padding: 3vh 15vmin;
+        background-color: $secondary;
+
+        img {
+            width: 64px;
+            height: auto;
+        }
+
+        .icon {
+            width: 24px;
+            height: auto;
+            margin-left: 10px;
+            border: 1px solid transparent;
+
+            &:hover {
+                border: 1px solid $primary;
+                border-radius: 3px;
+            }
+        }
+
+        & > div:first-child {
+            margin: 15px 0 0 0;
+        }
+
+        a {
+            padding: 0 10px;
+            text-decoration: none;
+            color: $primary-light;
+            font-size: 0.9rem;
+
+            &:hover {
+                color: #fff;
+            }
+
+            &.brand-text {
+                padding: 20px 0;
+                font-size: 1.2rem;
+                
+            }
+        }
+
+    }
+
+    &-bottom {
+        padding: 10px 10vmin;
+        background-color: $primary;
+
+        p {
+            color: #fff;
+            font-size: 12px;
+        }
+
+        a {
+            padding-right: 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;
+
+            &:hover {
+                color: $secondary;
+            }
+            
+        }
+
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #footer {
+        margin-top: 10vh;
+        
+        &-top {
+
+            ul {
+                padding-left: 0px;
+            }
+
+            .icons {
+                img {
+                    width: 18px;
+                    height: auto;
+                }
+            }
+        }
+    
+        &-bottom {
+
+            ul {
+                padding: 0px;
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #footer {
+        margin-top: 10vh;
+        
+        &-top {
+            div {
+                text-align: center !important;
+            }
+
+            ul {
+                padding-left: 0px;
+            }
+
+            .icons {
+                img {
+                    width: 18px;
+                    height: auto;
+                }
+            }
+        }
+    
+        &-bottom {
+    
+            p {
+                text-align: center;
+            }
+
+            ul {
+                padding: 0px;
+            }
+
+            .col-md-6 {
+                text-align: center !important;
+            }
+    
+        }
+    }
+}
