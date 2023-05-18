@@ -4,14 +4,31 @@ import axios from 'axios';
 import { validateEmail, validateForm } from "../../utils/utilities";
 import AuthContext from '../../utils/clusterContext';
 import ForgotPassword from "./forgotPassword";
+import {useForm} from "react-hook-form";
+import {yupResolver} from "@hookform/resolvers/yup";
+import {LoginSchema} from "../../form-schema/loginSchema";
+import {useLogin} from "../../hooks/userClusterHooks";
+import {InvalidFormField} from "../Errors/invalidFormField";
 
 const LoginForm = () => {
+
+    const {
+        register,
+        formState: {errors},
+        handleSubmit
+    } = useForm({
+        resolver: yupResolver(LoginSchema)
+    })
+
+    const {
+        mutate,
+        isSuccess,
+        isError
+    } = useLogin()
     
     const clusterContext = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
     const [loginSuccess, setLoginSuccess] = useState(false);
     const [forgotPassword, setForgotPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
@@ -19,22 +36,9 @@ const LoginForm = () => {
     const handleSubmitLogin = (e) => {
         e.preventDefault();
 
-        const data = {
-            'email': email,
-            'password': password
-        };
-
-        // form validation
-        if (!validateEmail(email)) {
-            setErrorMessage('Email is invalid');
-            return;
-        }
-
-        const isFormValid = validateForm(data);
-
-        if (isFormValid) {
+        // if (isFormValid) {
             // submit form submission data
-            axios.post(`/cluster/login`, data).then((response) => {
+            axios.post(`/cluster/login`, {data: ''}).then((response) => {
 
                 if (response.data.message === 'Successfully Logged In!') {
 
@@ -74,7 +78,12 @@ const LoginForm = () => {
                 
               });
         }
-    };
+    // };
+
+    const handleLogin = (data) => {
+        console.log(data)
+        mutate(data)
+    }
 
     return (
         <>
@@ -90,28 +99,38 @@ const LoginForm = () => {
                 <h2 className="mb-5 text-center">Login</h2>
                 <div className="col-md-3"></div>
                 <div className="col-md-6">
-                    <form>
+                    <form onSubmit={handleSubmit(handleLogin)}>
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">Email</label>
-                            <input type="email" name="email" placeholder="user@email.com" className="form-control" id="email"
-                            value={email}
-                            onChange={(e) => {
-                                setEmail(e.target.value)
-                                setErrorMessage('')
-                            }} required />
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="user@email.com"
+                                className="form-control"
+                                id="email"
+                                {...register('email')}
+                                aria-invalid={!!errors.email ? 'true' : 'false'}
+                            />
+                            {!!errors.email && <InvalidFormField message={errors.email?.message} />}
                         </div>
                         <div className="mb-3">
                             <label htmlFor="password" className="form-label">Password</label>
-                            <input type="password" name="password" placeholder="********" className="form-control" id="password"
-                            value={password}
-                            onChange={(e) => {
-                                setPassword(e.target.value)
-                                setErrorMessage('')
-                            }} autoComplete="" required />
+                            <input
+                                type="password"
+                                name="password"
+                                placeholder="********"
+                                className="form-control"
+                                id="password"
+                                {...register('password')}
+                                aria-invalid={!!errors.password ? 'true' : 'false'}
+                            />
+                            {!!errors.password && <InvalidFormField message={errors.password?.message} />}
                         </div>
                         <div>
-                            <button type="submit" className="btn btn-primary btn-lg"
-                            onClick={(e) => handleSubmitLogin(e)}>Log In</button>                            
+                            <button
+                                type="submit"
+                                className="btn btn-primary btn-lg"
+                            >Log In</button>
                             <p className="text-center text-danger" id="submission-error">{errorMessage}</p>
                         </div>
                     </form>

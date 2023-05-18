@@ -1,4 +1,15 @@
-// const baseURL = "https://ajokudi.herokuapp.com";
+const getEndpoint = () => {
+    const hostName = window?.location?.hostname?.trim?.()?.toLowerCase() || ''
+
+    let env = undefined
+    if (hostName.includes('ajokudi-frontend.vercel.app')) {
+        env = 'prod'
+    } else if (hostName.includes('localhost')) {
+        env = 'http://localhost:8000'
+    }
+
+    return env
+}
 
 const validateForm = (data) => {
 
@@ -53,6 +64,7 @@ const validatePassword = (password) => {
 }
 
 export {
+    getEndpoint,
     validateForm,
     toFirstLetterUpperCase,
     // generateProjectCode,

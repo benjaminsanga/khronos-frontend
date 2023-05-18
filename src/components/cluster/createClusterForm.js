@@ -1,10 +1,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import {useForm} from "react-hook-form";
+import {yupResolver} from "@hookform/resolvers/yup";
 import { validateEmail, validateForm, validatePhone, validateTextField } from "../../utils/utilities";
 import ClusterCreated from "./clusterCreated";
+import {CreateClusterSchema} from "../../form-schema/createClusterSchema";
 
 const CreateClusterForm = () => {
+
+    const {
+        register,
+        handleSubmit,
+        formState: {errors}
+    } = useForm({
+        resolver: yupResolver(CreateClusterSchema)
+    })
 
     // initial states values
     const [states, setStates] = useState({});

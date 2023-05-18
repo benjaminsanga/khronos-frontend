@@ -26,6 +26,9 @@ import { useState } from 'react';
 import LoginFirstPage from './pages/LoginFirst';
 import ResetPasswordPage from './pages/ResetPassword';
 import LandingPage from './pages/LandingPage';
+import {QueryClientProvider, QueryClient} from "@tanstack/react-query";
+
+const queryClient = new QueryClient()
 
 const App = () => {
 
@@ -110,4 +113,10 @@ const App = () => {
   );
 }
 
-export default App;
+const WrappedApp = () => {
+  return <QueryClientProvider client={queryClient}>
+    <App/>
+  </QueryClientProvider>
+}
+
+export default WrappedApp;
