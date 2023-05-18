@@ -27,10 +27,10 @@ const toFirstLetterUpperCase = (text) => {
     return text.slice(0,1).toUpperCase()+text.slice(1).toLowerCase()
 }
 
-const generateProjectCode = () => {
-    let raw_project_code = Math.random().toString(36).slice(2);
-    return raw_project_code.slice(0, 3) + "-" + raw_project_code.slice(3, 7) + "-" + raw_project_code.slice(7);
-}
+// const generateProjectCode = () => {
+//     let raw_project_code = Math.random().toString(36).slice(2);
+//     return raw_project_code.slice(0, 3) + "-" + raw_project_code.slice(3, 7) + "-" + raw_project_code.slice(7);
+// }
 
 const validateTextField = (text) => {
     return !/[0-9]/g.test(text) && text.length > 1
@@ -55,7 +55,7 @@ const validatePassword = (password) => {
 export {
     validateForm,
     toFirstLetterUpperCase,
-    generateProjectCode,
+    // generateProjectCode,
     validateEmail,
     validatePhone,
     validateTextField,

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // import { Redirect } from "react-router";
-import { generateProjectCode, validateForm } from "../../utils/utilities";
+import { validateForm } from "../../utils/utilities";
 // import ProjectDashboardPage from "../dashboard/project-dashboard";
 import AuthContext from '../../utils/clusterContext';
 
@@ -11,6 +11,8 @@ const CreateProjectForm = () => {
     const navigate = useNavigate();
 
     const [isSuccessful, setIsSuccessful] = useState(false);
+    const [projectCode, setProjectCode] = useState("");
+
     const clusterContext = useContext(AuthContext);
 
     // form data hooks
@@ -24,7 +26,7 @@ const CreateProjectForm = () => {
     const [errorMessage, setErrorMessage] = useState("");
 
     // set project code
-    const projectCode = generateProjectCode();
+    // const projectCode = generateProjectCode();
     let projectLink = '';
     let clusterId = clusterContext.userInfo._id;
 
@@ -46,11 +48,8 @@ const CreateProjectForm = () => {
             // add fields without form field checks
             formData['cluster_id'] = clusterId;
             formData['report'] = report;
-            formData['project_code'] = projectCode;
+            // formData['project_code'] = projectCode;
             formData['email'] = clusterContext.userInfo.cluster_admin_email;
-
-            // set project link
-            projectLink = `/project/dashboard/${projectCode}`;
             
              // header options for api
             var options = {
@@ -61,7 +60,9 @@ const CreateProjectForm = () => {
 
             axios.request(options).then((response) => {
 
-                if (response.data.message === 'success') {
+                if (response.data.message === 'success' && !!response.data.projectCode) {
+                    // set project link
+                    setProjectCode(`/project/dashboard/${response.data.projectCode}`);
                     setIsSuccessful(true);
                 } else {
                     throw new Error(response.data.message);
@@ -90,7 +91,7 @@ const CreateProjectForm = () => {
 
     return (
         <>
-        {isSuccessful ? navigate(`${projectLink}`) :
+        {isSuccessful && !!projectCode ? navigate(`${projectLink}`) :
         <div id="create-project" className='container'>
             <div className="d-flex flex-column align-items-center">
                 <h2>Create Project for Cluster</h2>
