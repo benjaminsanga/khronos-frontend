@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
-import ClusterCreated from "./clusterCreated";
+import VerifyCluster from "./verifyCluster";
 import {CreateClusterSchema} from "../../form-schema/createClusterSchema";
 import {useCreateCluster, useGetStatesAndLgas} from "../../hooks/customHooks";
 import Loading from "../../utils/loading";
@@ -55,7 +55,7 @@ const CreateClusterForm = () => {
         <>
             <div id="create-cluster" className='container'>
                 {isCreateClusterError && <h5>{error?.message}</h5>}
-                {isCreateClusterSuccess && <ClusterCreated/>}
+                {isCreateClusterSuccess && <VerifyCluster/>}
 
                 {!isCreateClusterSuccess &&
                     <div className="d-flex flex-column align-items-center">

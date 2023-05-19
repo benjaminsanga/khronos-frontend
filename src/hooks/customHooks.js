@@ -43,3 +43,13 @@ export const useGetStatesAndLgas = () => {
         }
     )
 }
+
+export const useVerifyCluster = () => {
+    const queryClient = useQueryClient()
+    return useMutation((arg) => apiCalls.verifyCluster(arg), {
+        onSuccess: (data) => {
+            queryClient.invalidateQueries(['VerifyCluster'])
+            return data
+        }
+    })
+}

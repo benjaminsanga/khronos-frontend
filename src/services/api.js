@@ -27,11 +27,16 @@ const getStatesAndLgas = async () => {
     return await apiWorker.get('get-states')
 }
 
+const verifyCluster = async (code) => {
+    return await apiWorker.post('cluster/verify', code)
+}
+
 const apiCalls = {
     createCluster,
     login,
     getStatistics,
-    getStatesAndLgas
+    getStatesAndLgas,
+    verifyCluster
 }
 
 export default apiCalls
