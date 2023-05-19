@@ -1,14 +1,29 @@
-const getEndpoint = () => {
+export const getEnvironment = () => {
     const hostName = window?.location?.hostname?.trim?.()?.toLowerCase() || ''
 
     let env = undefined
-    if (hostName.includes('ajokudi-frontend.vercel.app')) {
+    if (hostName.includes('vercel')) {
         env = 'prod'
     } else if (hostName.includes('localhost')) {
-        env = 'http://localhost:8000'
+        env = 'localhost'
     }
 
     return env
+}
+
+export const isLocalHost = () => getEnvironment() === 'localhost'
+
+export const isProd = () => getEnvironment() === 'prod'
+
+export const getApiEndpoint = () => {
+
+    if (isProd()) {
+        return 'https://ajokudi-backend.onrender.com/'
+    }
+
+    // return 'http://localhost:8000/'
+    return 'https://ajokudi-backend.onrender.com/'
+
 }
 
 const validateForm = (data) => {
@@ -64,7 +79,6 @@ const validatePassword = (password) => {
 }
 
 export {
-    getEndpoint,
     validateForm,
     toFirstLetterUpperCase,
     // generateProjectCode,

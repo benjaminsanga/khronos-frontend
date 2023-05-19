@@ -1,19 +1,24 @@
 import axios from 'axios'
-import {getEndpoint} from "../utils/utilities";
+import {getApiEndpoint} from "../utils/utilities";
 
 const apiWorker = axios.create({
-    baseURL: getEndpoint(),
+    baseURL: getApiEndpoint(),
     headers: {
         Accept: 'application/json',
     },
 })
 
 const login = async (data) => {
-    return await apiWorker.post('/cluster/login', data)
+    return await apiWorker.post('cluster/login', data)
+}
+
+const getStatistics = async () => {
+    return await apiWorker.get('statistics')
 }
 
 const apiCalls = {
-    login
+    login,
+    getStatistics
 }
 
 export default apiCalls

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from 'axios';
-import { validateEmail, validateForm } from "../../utils/utilities";
+// import axios from 'axios';
+// import { validateEmail, validateForm } from "../../utils/utilities";
 import AuthContext from '../../utils/clusterContext';
 import ForgotPassword from "./forgotPassword";
 import {useForm} from "react-hook-form";
@@ -23,7 +23,9 @@ const LoginForm = () => {
     const {
         mutate,
         isSuccess,
-        isError
+        isError,
+        error: clusterError,
+        data: clusterData
     } = useLogin()
     
     const clusterContext = useContext(AuthContext);
@@ -33,57 +35,73 @@ const LoginForm = () => {
     const [forgotPassword, setForgotPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
 
-    const handleSubmitLogin = (e) => {
-        e.preventDefault();
+    // const handleSubmitLogin = (e) => {
+    //     e.preventDefault();
 
         // if (isFormValid) {
             // submit form submission data
-            axios.post(`/cluster/login`, {data: ''}).then((response) => {
-
-                if (response.data.message === 'Successfully Logged In!') {
-
-                    // set context values
-                    clusterContext.login(response.data.token, 
-                        response.data.userInfo, 
-                        response.data.tokenExpiration, 
-                        response.data.accountType);
-                    clusterContext.expiration = response.data.expiration;
-                    clusterContext.accountType = response.data.accountType
-                    
-                    setErrorMessage('Logging in...');
-
-                    setLoginSuccess(true);
-                    
-
-                } else {
-                    throw new Error('Server error');
-                }
-
-            }).catch( (error) => {
-                if (error.response) {
-                  // The request was made and the server responded with a status code
-                  // that falls out of the range of 2xx
-                  if (error.response.data.errors.email) setErrorMessage(error.response.data.errors.email)
-                  if (error.response.data.errors.password) setErrorMessage(error.response.data.errors.password);
-                } else if (error.request) {
-                  // The request was made but no response was received
-                  // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-                  // http.ClientRequest in node.js
-                  setErrorMessage(error.request);
-                } else {
-                  // Something happened in setting up the request that triggered an Error
-                  setErrorMessage(error.message);
-                }
-                console.log(error);
-                
-              });
-        }
+        //     axios.post(`/cluster/login`, {data: ''}).then((response) => {
+        //
+        //         if (response.data.message === 'Successfully Logged In!') {
+        //
+        //             // set context values
+        //             clusterContext.login(response.data.token,
+        //                 response.data.userInfo,
+        //                 response.data.tokenExpiration,
+        //                 response.data.accountType);
+        //             clusterContext.expiration = response.data.expiration;
+        //             clusterContext.accountType = response.data.accountType
+        //
+        //             setErrorMessage('Logging in...');
+        //             setLoginSuccess(true);
+        //         } else {
+        //             throw new Error('Server error');
+        //         }
+        //     }).catch( (error) => {
+        //         if (error.response) {
+        //           if (error.response.data.errors.email) setErrorMessage(error.response.data.errors.email)
+        //           if (error.response.data.errors.password) setErrorMessage(error.response.data.errors.password);
+        //         } else if (error.request) {
+        //           setErrorMessage(error.request);
+        //         } else {
+        //           setErrorMessage(error.message);
+        //         }
+        //         console.log(error);
+        //
+        //       });
+        // }
     // };
 
     const handleLogin = (data) => {
         console.log(data)
         mutate(data)
+
+        if (isSuccess) {
+
+            // set context values
+            clusterContext.login(clusterData.data.token,
+                clusterData.data.userInfo,
+                clusterData.data.tokenExpiration,
+                clusterData.data.accountType);
+            clusterContext.expiration = clusterData.data.expiration;
+            clusterContext.accountType = clusterData.data.accountType
+
+            setErrorMessage('Logging in...');
+            setLoginSuccess(true);
+        } else {
+            if (isError) {
+                if (clusterError.response.data.errors.email) setErrorMessage(clusterError.response.data.errors.email)
+                if (clusterError.response.data.errors.password) setErrorMessage(clusterError.response.data.errors.password);
+            } else if (clusterError.request) {
+                setErrorMessage(clusterError.request);
+            } else {
+                setErrorMessage(clusterError.message);
+            }
+            console.log(clusterError);
+        }
     }
+
+    console.log(clusterData, 'clusterData')
 
     return (
         <>

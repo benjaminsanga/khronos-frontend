@@ -10,3 +10,15 @@ export const useLogin = () => {
         }
     })
 }
+
+export const useGetStatistics = () => {
+    return useQuery(
+        ['GetStatistics'],
+        () => apiCalls.getStatistics(),
+        {
+            keepPreviousData: true,
+            staleTime: Infinity,
+            enabled: true
+        }
+    )
+}
