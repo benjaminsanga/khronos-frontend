@@ -7,7 +7,7 @@ import ForgotPassword from "./forgotPassword";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {LoginSchema} from "../../form-schema/loginSchema";
-import {useLogin} from "../../hooks/userClusterHooks";
+import {useLogin} from "../../hooks/customHooks";
 import {InvalidFormField} from "../Errors/invalidFormField";
 
 const LoginForm = () => {

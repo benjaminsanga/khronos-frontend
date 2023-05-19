@@ -1,6 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import {useGetStatistics} from "../../hooks/userClusterHooks";
+import {useGetStatistics} from "../../hooks/customHooks";
 import Loading from "../../utils/loading";
 
 const Statistics = () => {

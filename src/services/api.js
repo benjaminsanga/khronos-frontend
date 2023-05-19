@@ -8,6 +8,13 @@ const apiWorker = axios.create({
     },
 })
 
+const createCluster = async (data) => {
+    // add fields to form data
+    data['verification_code'] = 0;
+    data['verified_account'] = false;
+    return await apiWorker.post('cluster', data)
+}
+
 const login = async (data) => {
     return await apiWorker.post('cluster/login', data)
 }
@@ -16,9 +23,15 @@ const getStatistics = async () => {
     return await apiWorker.get('statistics')
 }
 
+const getStatesAndLgas = async () => {
+    return await apiWorker.get('get-states')
+}
+
 const apiCalls = {
+    createCluster,
     login,
-    getStatistics
+    getStatistics,
+    getStatesAndLgas
 }
 
 export default apiCalls
