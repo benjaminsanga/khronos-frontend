@@ -53,3 +53,13 @@ export const useVerifyCluster = () => {
         }
     })
 }
+
+export const useForgotPassword = () => {
+    const queryClient = useQueryClient()
+    return useMutation((arg) => apiCalls.forgotPassword(arg), {
+        onSuccess: (data) => {
+            queryClient.invalidateQueries(['VerifyCluster'])
+            return data
+        }
+    })
+}

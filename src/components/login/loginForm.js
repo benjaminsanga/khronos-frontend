@@ -33,20 +33,19 @@ const LoginForm = () => {
 
     const [loginSuccess, setLoginSuccess] = useState(false);
     const [forgotPassword, setForgotPassword] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
 
     const handleLogin = (data) => {
-        console.log(data)
+
         mutate(data)
 
         if (isSuccess) {
+            clearErrors()
 
             // set context values
             clusterContext.login(clusterData.data.token, clusterData.data.userInfo, clusterData.data.tokenExpiration, clusterData.data.accountType);
             clusterContext.expiration = clusterData.data.expiration;
             clusterContext.accountType = clusterData.data.accountType
 
-            setErrorMessage('Logging in...');
             setLoginSuccess(true);
         }
 
@@ -106,7 +105,9 @@ const LoginForm = () => {
                                 type="submit"
                                 className="btn btn-primary btn-lg"
                             >Log In</button>
-                            <p className="text-center text-danger" id="submission-error">{errorMessage}</p>
+                            {isError && <p className="text-center text-danger">
+                                {clusterError?.response?.data?.message}
+                            </p>}
                         </div>
                     </form>
                     <div className="d-flex flex-column justify-content-between align-items-center">

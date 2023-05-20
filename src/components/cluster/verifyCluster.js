@@ -24,7 +24,6 @@ const VerifyCluster = () => {
     } = useVerifyCluster()
 
     const handleVerify = (data) => {
-        console.log(data)
         mutate(data)
     }
 
@@ -48,7 +47,7 @@ const VerifyCluster = () => {
                                 {...register('verification_code')}
                                 aria-invalid={!!errors.verification_code ? "true" : "false"}
                             />
-                            {!!errors.verification_code && <InvalidFormField message={errors.verification_code?.mssage} />}
+                            {!!errors.verification_code && <InvalidFormField message={errors.verification_code?.message} />}
                             <button className="btn btn-lg btn-primary mt-3" type="submit">Verify</button>
                             {isError && <p className="text-center text-danger" id="submission-error">{error?.message}</p>}
                         </form>
