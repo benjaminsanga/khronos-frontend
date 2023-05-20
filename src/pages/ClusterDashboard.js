@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import ClusterDashboardPage from "../components/dashboard/cluster-dashboard";
+import ClusterDashboardPage from "../components/dashboard/clusterDashboard";
 
 
 const ClusterDashboard = () => {

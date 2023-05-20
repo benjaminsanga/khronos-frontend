@@ -35,13 +35,23 @@ const forgotPassword = async (data) => {
     return await apiWorker.post('cluster/forgot-password', data)
 }
 
+const getCluster = async (id) => {
+    return await apiWorker.get(`cluster/dashboard/${id}`)
+}
+
+const getAllProjects = async (id) => {
+    return await apiWorker.get(`/projects/${id}`)
+}
+
 const apiCalls = {
     createCluster,
     login,
     getStatistics,
     getStatesAndLgas,
     verifyCluster,
-    forgotPassword
+    forgotPassword,
+    getCluster,
+    getAllProjects
 }
 
 export default apiCalls

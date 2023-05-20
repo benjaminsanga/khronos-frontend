@@ -58,8 +58,30 @@ export const useForgotPassword = () => {
     const queryClient = useQueryClient()
     return useMutation((arg) => apiCalls.forgotPassword(arg), {
         onSuccess: (data) => {
-            queryClient.invalidateQueries(['VerifyCluster'])
+            queryClient.invalidateQueries(['ForgotPassword'])
             return data
         }
     })
+}
+
+export const useGetCluster = (id) => {
+    return useQuery(
+        ['GetCluster'],
+        () => apiCalls.getCluster(id),
+        {
+            keepPreviousData: true,
+            staleTime: Infinity
+        }
+    )
+}
+
+export const useGetAllProjects = (id) => {
+    return useQuery(
+        ['GetAllProjects'],
+        () => apiCalls.getAllProjects(id),
+        {
+            keepPreviousData: true,
+            staleTime: Infinity
+        }
+    )
 }
