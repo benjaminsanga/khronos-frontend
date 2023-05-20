@@ -10867,7 +10867,7 @@ p.loader-p {
   position: sticky;
   left: 0;
   top: 0;
-  height: 12vh;
+  height: 70px;
   background-color: #fff;
   z-index: 1000;
   padding: 0.25rem 0;
@@ -10922,7 +10922,8 @@ p.loader-p {
 
 @media only screen and (max-width: 900px) {
   .navbar {
-    height: 10vh;
+    height: 70px;
+    padding: 0 10px;
   }
   .navbar .container {
     padding: 0;
@@ -10958,8 +10959,9 @@ p.loader-p {
 }
 @media only screen and (max-width: 400px) {
   .navbar {
-    height: 10vh;
+    height: 60px;
     width: 100%;
+    padding: 0 10px;
   }
   .navbar .navbar-brand {
     font-size: 0.9rem;

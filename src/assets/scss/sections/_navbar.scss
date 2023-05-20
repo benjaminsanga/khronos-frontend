@@ -5,7 +5,7 @@
     position: sticky;
     left: 0;
     top: 0;
-    height: 12vh;
+    height: 70px;
     background-color: #fff;
     z-index: 1000;
     @include bottomBorder;
@@ -69,7 +69,8 @@
 
 @media only screen and (max-width: 900px) {
     .navbar {
-        height: 10vh;
+        height: 70px;
+        padding: 0 10px;
 
         .container {
             padding: 0;
@@ -114,8 +115,9 @@
 
 @media only screen and (max-width: 400px) {
     .navbar {
-        height: 10vh;
+        height: 60px;
         width: 100%;
+        padding: 0 10px;
 
         .navbar-brand {
             font-size: 0.9rem;

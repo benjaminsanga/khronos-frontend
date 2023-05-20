@@ -1,7 +1,5 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import axios from 'axios';
-// import { validateEmail, validateForm } from "../../utils/utilities";
 import AuthContext from '../../utils/clusterContext';
 import ForgotPassword from "./forgotPassword";
 import {useForm} from "react-hook-form";
@@ -15,7 +13,9 @@ const LoginForm = () => {
     const {
         register,
         formState: {errors},
-        handleSubmit
+        handleSubmit,
+        setError,
+        clearErrors
     } = useForm({
         resolver: yupResolver(LoginSchema)
     })
@@ -35,43 +35,6 @@ const LoginForm = () => {
     const [forgotPassword, setForgotPassword] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
 
-    // const handleSubmitLogin = (e) => {
-    //     e.preventDefault();
-
-        // if (isFormValid) {
-            // submit form submission data
-        //     axios.post(`/cluster/login`, {data: ''}).then((response) => {
-        //
-        //         if (response.data.message === 'Successfully Logged In!') {
-        //
-        //             // set context values
-        //             clusterContext.login(response.data.token,
-        //                 response.data.userInfo,
-        //                 response.data.tokenExpiration,
-        //                 response.data.accountType);
-        //             clusterContext.expiration = response.data.expiration;
-        //             clusterContext.accountType = response.data.accountType
-        //
-        //             setErrorMessage('Logging in...');
-        //             setLoginSuccess(true);
-        //         } else {
-        //             throw new Error('Server error');
-        //         }
-        //     }).catch( (error) => {
-        //         if (error.response) {
-        //           if (error.response.data.errors.email) setErrorMessage(error.response.data.errors.email)
-        //           if (error.response.data.errors.password) setErrorMessage(error.response.data.errors.password);
-        //         } else if (error.request) {
-        //           setErrorMessage(error.request);
-        //         } else {
-        //           setErrorMessage(error.message);
-        //         }
-        //         console.log(error);
-        //
-        //       });
-        // }
-    // };
-
     const handleLogin = (data) => {
         console.log(data)
         mutate(data)
@@ -79,29 +42,23 @@ const LoginForm = () => {
         if (isSuccess) {
 
             // set context values
-            clusterContext.login(clusterData.data.token,
-                clusterData.data.userInfo,
-                clusterData.data.tokenExpiration,
-                clusterData.data.accountType);
+            clusterContext.login(clusterData.data.token, clusterData.data.userInfo, clusterData.data.tokenExpiration, clusterData.data.accountType);
             clusterContext.expiration = clusterData.data.expiration;
             clusterContext.accountType = clusterData.data.accountType
 
             setErrorMessage('Logging in...');
             setLoginSuccess(true);
-        } else {
-            if (isError) {
-                if (clusterError.response.data.errors.email) setErrorMessage(clusterError.response.data.errors.email)
-                if (clusterError.response.data.errors.password) setErrorMessage(clusterError.response.data.errors.password);
-            } else if (clusterError.request) {
-                setErrorMessage(clusterError.request);
-            } else {
-                setErrorMessage(clusterError.message);
-            }
-            console.log(clusterError);
         }
-    }
 
-    console.log(clusterData, 'clusterData')
+        if (isError) {
+            if (clusterError?.response?.data?.message?.includes('email')) {
+                setError('email', clusterError?.response?.data, {shouldFocus: true})
+            } else {
+                setError('password', clusterError?.response?.data, {shouldFocus: true})
+            }
+        }
+
+    }
 
     return (
         <>
