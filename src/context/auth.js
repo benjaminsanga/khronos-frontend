@@ -1,17 +1,17 @@
 import React, { createContext, useReducer, useContext } from 'react'
 import jwtDecode from 'jwt-decode'
 
-const AuthStateContext = createContext()
-const AuthDispatchContext = createContext()
+const AuthStateContext = createContext(null)
+const AuthDispatchContext = createContext(null)
 
 let user = null
-const token = localStorage.getItem('token')
+const token = localStorage.getItem('ajokudi:token')
 if (token) {
   const decodedToken = jwtDecode(token)
   const expiresAt = new Date(decodedToken.exp * 1000)
 
   if (new Date() > expiresAt) {
-    localStorage.removeItem('token')
+    localStorage.removeItem('ajokudi:token')
   } else {
     user = decodedToken
   }
@@ -20,13 +20,13 @@ if (token) {
 const authReducer = (state, action) => {
   switch (action.type) {
     case 'LOGIN':
-      localStorage.setItem('token', action.payload.token)
+      localStorage.setItem('ajokudi:token', action.payload.token)
       return {
         ...state,
         user: action.payload,
       }
     case 'LOGOUT':
-      localStorage.removeItem('token')
+      localStorage.removeItem('ajokudi:token')
       return {
         ...state,
         user: null,

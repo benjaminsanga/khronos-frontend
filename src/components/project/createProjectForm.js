@@ -1,10 +1,8 @@
 import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { Redirect } from "react-router";
 import { validateForm } from "../../utils/utilities";
-// import ProjectDashboardPage from "../dashboard/project-dashboard";
-import AuthContext from '../../utils/clusterContext';
+import AuthContext from '../../context/clusterContext';
 
 const CreateProjectForm = () => {
 
@@ -94,8 +92,7 @@ const CreateProjectForm = () => {
         {isSuccessful && !!projectCode ? navigate(`${projectLink}`) :
         <div id="create-project" className='container'>
             <div className="d-flex flex-column align-items-center">
-                <h2>Create Project for Cluster</h2>
-                <i className="mb-5">You need to create a cluster before creating a project</i>
+                <h2 className="mb-5">Create Project for Cluster</h2>
                 <div className="col-md-2"></div>
                 <div className="col-md-8">
                     <form>

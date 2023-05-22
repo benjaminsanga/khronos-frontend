@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import AuthContext from '../../utils/clusterContext';
+import AuthContext from '../../context/clusterContext';
 import { toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from "../../utils/loading";
 import {useGetAllProjects, useGetCluster} from "../../hooks/customHooks";
@@ -28,19 +28,19 @@ const ClusterDashboardPage = () => {
             {(clusterSuccess && projectsSuccess) && <div id="dashboard" className="container">
             <div className="row user-info">
                 <div className="col-md-6">
-                    <h2>{toFirstLetterUpperCase(clusterInfo.cluster_name)}</h2>
+                    <h2>{toFirstLetterUpperCase(clusterInfo?.cluster_name)}</h2>
                     <h5>Location</h5>
-                    <p>{`${toFirstLetterUpperCase(clusterInfo.cluster_address)}, ${clusterInfo.cluster_lga}, ${clusterInfo.cluster_state} `}</p>
+                    <p>{`${toFirstLetterUpperCase(clusterInfo?.cluster_address)}, ${clusterInfo?.cluster_lga}, ${clusterInfo?.cluster_state} `}</p>
                     <h5>Created</h5>
                     <p>{clusterInfo?.createdAt?.slice(0, 10)}</p>
                 </div>
                 <div className="col-md-6">
                     <h5>Leader</h5>
-                    <p>{`${toFirstLetterUpperCase(clusterInfo.cluster_admin_firstname)} ${toFirstLetterUpperCase(clusterInfo.cluster_admin_lastname)} `}</p>
+                    <p>{`${toFirstLetterUpperCase(clusterInfo?.cluster_admin_firstname)} ${toFirstLetterUpperCase(clusterInfo?.cluster_admin_lastname)} `}</p>
                     <h5>Phone</h5>
-                    <p>{clusterInfo.cluster_admin_phone}</p>
+                    <p>{clusterInfo?.cluster_admin_phone}</p>
                     <h5>Email</h5>
-                    <p>{clusterInfo.cluster_admin_email}</p>
+                    <p>{clusterInfo?.cluster_admin_email}</p>
                 </div>
             </div>
             <div className="row payments">

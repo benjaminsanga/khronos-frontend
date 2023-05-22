@@ -21,7 +21,7 @@ import Clusters from './pages/Clusters';
 import FourOhFour from './pages/FourOhFour';
 import PaymentRedirectPage from './pages/PaymentRedirectPage';
 
-import AuthContext from './utils/clusterContext';
+import AuthContext from './context/clusterContext';
 import { useState } from 'react';
 import LoginFirstPage from './pages/LoginFirst';
 import ResetPasswordPage from './pages/ResetPassword';

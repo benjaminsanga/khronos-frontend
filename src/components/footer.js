@@ -4,7 +4,7 @@ import TwitterIcon from "../assets/icons/twitter.svg";
 import FacebookIcon from "../assets/icons/facebook.svg";
 import InstagramIcon from "../assets/icons/instagram.svg";
 import { useContext } from "react";
-import AuthContext from '../utils/clusterContext';
+import AuthContext from '../context/clusterContext';
 
 const Footer = () => {
 
