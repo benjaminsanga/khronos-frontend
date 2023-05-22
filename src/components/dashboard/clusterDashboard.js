@@ -35,7 +35,7 @@ const ClusterDashboardPage = () => {
                     <p>{clusterInfo?.createdAt?.slice(0, 10)}</p>
                 </div>
                 <div className="col-md-6">
-                    <h5>Leader</h5>
+                    <h5>Creator</h5>
                     <p>{`${toFirstLetterUpperCase(clusterInfo?.cluster_admin_firstname)} ${toFirstLetterUpperCase(clusterInfo?.cluster_admin_lastname)} `}</p>
                     <h5>Phone</h5>
                     <p>{clusterInfo?.cluster_admin_phone}</p>

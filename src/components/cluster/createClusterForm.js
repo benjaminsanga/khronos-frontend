@@ -135,7 +135,7 @@ const CreateClusterForm = () => {
                                     />
                                     {!!errors.cluster_address && <InvalidFormField message={errors.cluster_address?.message} />}
                                 </div>
-                                <h5 className="mt-4 mb-3">Cluster Leader</h5>
+                                <h5 className="mt-4 mb-3">Cluster Creator</h5>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="cluster_admin_firstname" className="form-label">First

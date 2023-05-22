@@ -85,3 +85,13 @@ export const useGetAllProjects = (id) => {
         }
     )
 }
+
+export const useCreateProject = () => {
+    const queryClient = useQueryClient()
+    return useMutation((arg) => apiCalls.createProject(arg), {
+        onSuccess: (data) => {
+            queryClient.invalidateQueries(['CreateProject'])
+            return data
+        }
+    })
+}

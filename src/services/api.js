@@ -40,7 +40,13 @@ const getCluster = async (id) => {
 }
 
 const getAllProjects = async (id) => {
-    return await apiWorker.get(`/projects/${id}`)
+    return await apiWorker.get(`projects/${id}`)
+}
+
+const createProject = async (data) => {
+    return await apiWorker.post(`project`, data, {
+        'Authorization': `Bearer `
+    })
 }
 
 const apiCalls = {
@@ -51,7 +57,8 @@ const apiCalls = {
     verifyCluster,
     forgotPassword,
     getCluster,
-    getAllProjects
+    getAllProjects,
+    createProject
 }
 
 export default apiCalls

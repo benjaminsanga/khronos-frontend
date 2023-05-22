@@ -58,8 +58,9 @@ const toFirstLetterUpperCase = (text) => {
 //     return raw_project_code.slice(0, 3) + "-" + raw_project_code.slice(3, 7) + "-" + raw_project_code.slice(7);
 // }
 
-const validateTextField = (text) => {
-    return !/[0-9]/g.test(text) && text.length > 1
+const getFullDate = () => {
+    const date = new Date()
+    return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
 }
 
 const validateEmail = (email) => {
@@ -84,6 +85,6 @@ export {
     // generateProjectCode,
     validateEmail,
     validatePhone,
-    validateTextField,
+    getFullDate,
     validatePassword
 }
