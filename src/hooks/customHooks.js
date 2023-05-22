@@ -95,3 +95,13 @@ export const useCreateProject = () => {
         }
     })
 }
+
+export const useGetProject = () => {
+    const queryClient = useQueryClient()
+    return useMutation((arg) => apiCalls.getProject(arg), {
+        onSuccess: (data) => {
+            queryClient.invalidateQueries(['GetProject'])
+            return data
+        }
+    })
+}

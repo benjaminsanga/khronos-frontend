@@ -1,54 +1,51 @@
-import { useState } from "react";
-import axios from "axios";
+import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-import { validateForm } from "../../utils/utilities";
 import CheckBox from '../../assets/icons/checkbox.svg';
+import {useForm} from "react-hook-form";
+import {yupResolver} from "@hookform/resolvers/yup";
+import {FindProjectSchema} from "../../form-schema/findProjectSchema";
+import {InvalidFormField} from "../Errors/invalidFormField";
+import {useGetProject} from "../../hooks/customHooks";
 
 const FindProjectForm = () => {
 
-    const [projectCode, setProjectCode] = useState("");
     const [project, setProject] = useState({});
     const [errorMessage, setErrorMessage] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const {
+        handleSubmit,
+        register,
+        formState: {errors}
+    } = useForm({
+        resolver: yupResolver(FindProjectSchema)
+    })
+    
+    const {
+        isLoading,
+        isError,
+        error,
+        mutate,
+        data,
+        isSuccess
+    } = useGetProject()
 
-        let data = {
-            'project_code': projectCode
+    useEffect(() => {
+        if (isSuccess) {
+            setProject(data?.data?.result);
         }
-
-        const isFormValid = validateForm(data);
-
-        if (isFormValid) {
-            // submit form submission data
-            var options = {
-                method: 'GET',
-                url: `/project/dashboard/${projectCode}`,
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
-            };
-
-            axios.request(options).then((response) => {
-                if (response.data !== '') {
-                    // set data                  
-                    setProject(response.data);
-                } else {
-                    throw new Error('Project not found');
-                }
-
-            }).catch( (error) => {
-                // error not set
-                setErrorMessage(error.message);                
-            });
+        if (isError) {
+            console.log(error, 'error')
+            setErrorMessage(error?.response?.data?.message);
         }
-    };
+    }, [data?.data, error, isError, isSuccess])
+
+    const handleFormSubmit = (data) => {
+        mutate(data?.project_code)
+    }
 
     return (
         <>
-        {Object.keys(project).length > 0 ?
-        
+        {isSuccess ?
         <div className='container pt-5'>
             <div className="row d-flex flex-column align-items-center text-center">
                 <span>Project Name</span>
@@ -72,16 +69,28 @@ const FindProjectForm = () => {
                     <p className="text-center">Let's identify the recipient</p>
                     <div className="col-md-3"></div>
                     <div className="col-md-6">
-                        <form>
+                        <form onSubmit={handleSubmit(handleFormSubmit)}>
                             <div className="mb-3 text-center">
                                 <label htmlFor="project_code" className="form-label">Enter Code</label>
-                                <input type="text" name="project_code" placeholder="*** - **** - ***" className="form-control" id="project_code"
-                                value={projectCode}
-                                onChange={(e) => setProjectCode(e.target.value)} />
+                                <input
+                                    type="text"
+                                    name="project_code"
+                                    placeholder="*** - **** - ***"
+                                    className="form-control"
+                                    id="project_code"
+                                    {...register('project_code')}
+                                    aria-invalid={!!errors?.project_code ? "true" : "false"}
+                                />
+                                {!!errors.project_code && <InvalidFormField message={errors.project_code?.message}/>}
                             </div>
                             <div>
-                                <button type="submit" className="btn btn-primary btn-lg"
-                                onClick={(e) => handleSubmit(e)}>Proceed</button>
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary btn-lg"
+                                    disabled={isLoading}
+                                >
+                                    {isLoading && <i className="fa fa-spinner fa-spin"></i>} Proceed
+                                </button>
                                 <p className="text-center text-danger" id="submission-error">{errorMessage}</p>
                             </div>
                         </form>

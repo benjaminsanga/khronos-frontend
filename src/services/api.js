@@ -49,6 +49,11 @@ const createProject = async (data) => {
     })
 }
 
+const getProject = async (code) => {
+    console.log(code, 'code')
+    return await apiWorker.get(`project/${code}`)
+}
+
 const apiCalls = {
     createCluster,
     login,
@@ -58,7 +63,8 @@ const apiCalls = {
     forgotPassword,
     getCluster,
     getAllProjects,
-    createProject
+    createProject,
+    getProject
 }
 
 export default apiCalls
