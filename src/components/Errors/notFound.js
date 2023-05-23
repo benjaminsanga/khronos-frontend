@@ -13,7 +13,7 @@ const NotFound = () => {
                         <span style={{fontSize: '12rem'}}>404</span>
                         <h5>Page not found</h5>
                         <Link to='/'>
-                            <button className="btn btn-lg btn-primary mt-2">Back to Home</button>
+                            <button className="btn btn-lg btn-primary fw-lighter mt-2">Back to Home</button>
                         </Link>
                     </div>
                 </div>

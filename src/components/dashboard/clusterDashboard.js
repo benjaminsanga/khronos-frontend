@@ -85,7 +85,7 @@ const ClusterDashboardPage = () => {
                 <div className="col-md-4"></div>
                 <div className="col-md-4">
                     <Link to="/create-project">
-                        <button className="btn btn-primary btn-lg w-100">Create Project</button>
+                        <button className="btn btn-primary fw-lighter btn-lg w-100">Create Project</button>
                     </Link>
                 </div>
                 <div className="col-md-4"></div>

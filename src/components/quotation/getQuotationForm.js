@@ -43,7 +43,7 @@ const QuotationForm = () => {
                             <div id="coverageAreaHelp" className="form-text">What is the size of the project physical space?</div>
                         </div>
                         <div>
-                            <button type="submit" className="btn btn-primary btn-lg"
+                            <button type="submit" className="btn btn-primary fw-lighter btn-lg"
                             onClick={(e) => handleSubmitQuotation(e)}>Get Quotation</button>
                         </div>
                     </form>

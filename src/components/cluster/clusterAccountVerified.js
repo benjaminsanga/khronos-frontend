@@ -10,7 +10,7 @@ const ClusterAccountVerified = () => {
                     <img src={CheckIcon} alt="Success face" />
                     <h3 className="text-center">Your account has been created and verified Successfully!</h3>
                     <Link to='/login'>
-                        <button className="btn btn-lg btn-primary mt-2">Go to Login</button>
+                        <button className="btn btn-lg btn-primary fw-lighter mt-2">Go to Login</button>
                     </Link>
                 </div>
             </div>

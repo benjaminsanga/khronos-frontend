@@ -141,7 +141,7 @@ const ProjectDashboardPage = () => {
                 <div className="col-md-4">
                     <p>Want to contribute to cluster's project?</p>
                     <Link to={`/deposit/${id}`}>
-                        <button className="btn btn-primary btn-lg w-100">Deposit</button>
+                        <button className="btn btn-primary fw-lighter btn-lg w-100">Deposit</button>
                     </Link>
                 </div>
                 <div className="col-md-4"></div>

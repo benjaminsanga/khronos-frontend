@@ -103,7 +103,7 @@ const LoginForm = () => {
                             <div>
                                 <button
                                     type="submit"
-                                    className="btn btn-primary btn-lg"
+                                    className="btn btn-primary fw-lighter btn-lg"
                                     disabled={isLoading}
                                 >
                                     {isLoading && <i className="fa fa-spinner fa-spin"></i>} Log In

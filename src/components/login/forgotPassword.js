@@ -71,7 +71,7 @@ const ForgotPassword = () => {
                                         <div>
                                             <button
                                                 type="submit"
-                                                className="btn btn-primary btn-lg"
+                                                className="btn btn-primary fw-lighter btn-lg"
                                             >Proceed
                                             </button>
                                             <p className="text-center text-danger"

@@ -67,7 +67,7 @@ const AboutPage = () => {
                 </div>
                 <div className="col-md-6 mt-5">
                     <h3>You, as a community can take action today to collectively achieve your needs for a better life.</h3>
-                    <Link to="/create-cluster"><button className="btn btn-primary btn-lg mt-5">Create Cluster</button></Link>
+                    <Link to="/create-cluster"><button className="btn btn-primary fw-lighter btn-lg mt-5">Create Cluster</button></Link>
                 </div>
             </section>
             <Team />

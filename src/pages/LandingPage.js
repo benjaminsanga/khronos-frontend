@@ -33,7 +33,7 @@ const LandingPage = () => {
                     <h1>Trust, Accountability, Execution - Accomplish Joint Capital Projects In Time.</h1>
                     <p>Raise capital on our system, payments are visible to all members of your cluster to ensure transparency.</p>
                     <a href='https://forms.gle/PD6QTnX9XakP9rR58' target='_blank' rel='noreferrer'>
-                        <button className='btn btn-lg btn-primary'>Send Feedback</button>
+                        <button className='btn btn-lg btn-primary fw-lighter'>Send Feedback</button>
                     </a>
                     <p>We are targeting communities and groups in Nigeria, starting with Jos, Plateau state.</p>
                 </div>
@@ -59,7 +59,7 @@ const LandingPage = () => {
             <div className="row">
                 <div className="col-md-6 p-5">
                     <a href='https://forms.gle/PD6QTnX9XakP9rR58' target='_blank' rel='noreferrer'>
-                        <button className='btn btn-lg btn-primary'>Send Feedback</button>
+                        <button className='btn btn-lg btn-primary fw-lighter'>Send Feedback</button>
                     </a>
                     <p>
                     Our pilot project targets residents of Jos, which is our current location. We hope to expand to all the states in Nigeria as we grow.
@@ -159,7 +159,7 @@ const LandingPage = () => {
             <div className="row p-0 m-0">
                 <div className="col-md-12 p-5">
                     <a href='https://forms.gle/PD6QTnX9XakP9rR58' target='_blank' rel='noreferrer'>
-                        <button className='btn btn-lg btn-primary'>Send Feedback</button>
+                        <button className='btn btn-lg btn-primary fw-lighter'>Send Feedback</button>
                     </a>
                     <p>
                         Send funds, get notified, follow up, to keep tab of the progress of your cluster's project fund without hassle. While we focus on transparency and giving the best value.

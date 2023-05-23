@@ -283,7 +283,7 @@ const CreateClusterForm = () => {
                                 <div className="mb-3">
                                     <button
                                         type="submit"
-                                        className="btn btn-primary btn-lg"
+                                        className="btn btn-primary fw-lighter btn-lg"
                                     >Create Cluster Profile</button>
                                 </div>
                             </form>

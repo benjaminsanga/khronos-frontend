@@ -65,49 +65,6 @@ const DepositForm = () => {
         }
     }, [depositIsSuccess, depositIsError, depositData, error, depositError])
 
-    // const handleSubmitDeposit = (e) => {
-    //     e.preventDefault();
-    //
-    //     const formData = {
-    //         'name': depositorName,
-    //         'phone': depositorPhone,
-    //         'email': depositorEmail,
-    //         'amount': paymentAmount,
-    //     };
-    //
-    //     const isFormValid = validateForm(formData);
-    //
-    //     formData['project_Id'] = code;
-    //
-    //     if (isFormValid) {
-    //         // header options for api
-    //        var options = {
-    //            method: 'POST',
-    //            url: `/deposit`,
-    //            data: formData
-    //        };
-    //
-    //        axios.request(options).then((response) => {
-    //
-    //            if (response.data.status === "success") {
-    //                window.location.href = response.data.data.link;
-    //
-    //                setIsPaymentInitialized(true);
-    //            }
-    //
-    //        }).catch((error) => {
-    //            if (error.message) {
-    //                // Something happened in setting up the request that triggered an Error
-    //                setErrorMessage(`Error: ${error.message}`);
-    //            }
-    //            setErrorMessage(`Error: ${error}`);
-    //        });
-    //    } else {
-    //         setErrorMessage("Some inputs are empty");
-    //    }
-    //
-    // };
-
     const handleDepositSubmit = (data) => {
         console.log(data, 'form data')
         data['project_Id'] = code;
@@ -196,7 +153,7 @@ const DepositForm = () => {
                                 <br/>
                                 <button
                                     type="submit"
-                                    className="btn btn-primary btn-lg"
+                                    className="btn btn-primary fw-lighter btn-lg"
                                 >Continue</button>
                             </div>
                             <p className="text-center text-danger" id="payment-error">{errorMessage}</p>

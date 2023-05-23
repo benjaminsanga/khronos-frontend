@@ -94,7 +94,7 @@ const ResetPassword = () => {
             <img src={ HappyIcon } alt="success" />
             <p>Your password has been reset successfully!</p>
             <Link to="/login">
-                <button className="btn btn-lg btn-primary">Go To Login Page</button>            
+                <button className="btn btn-lg btn-primary fw-lighter">Go To Login Page</button>
             </Link>
         </div>
 
@@ -124,7 +124,7 @@ const ResetPassword = () => {
                             <span id="password_match" className="text-center" style={{fontSize:"12px"}}></span>
                         </div>
                         <div>
-                            <button type="submit" className="btn btn-primary btn-lg"
+                            <button type="submit" className="btn btn-primary fw-lighter btn-lg"
                             onClick={(e) => handleResetPassword(e)}>Reset Password</button>                            
                             <p className="text-center text-danger" id="submission-error">
                                 {errorMessage}

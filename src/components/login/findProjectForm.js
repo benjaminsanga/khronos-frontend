@@ -56,7 +56,7 @@ const FindProjectForm = () => {
                         <h2 className="mb-2">{project.project_code}</h2>
                         <p className="mt-4">
                             <Link to={`/deposit/${project.project_code}`}>
-                                <button className="btn btn-md btn-primary">Proceed to Payment</button>
+                                <button className="btn btn-md btn-primary fw-lighter">Proceed to Payment</button>
                             </Link>
                         </p>
                     </div>
@@ -88,7 +88,7 @@ const FindProjectForm = () => {
                             <div>
                                 <button
                                     type="submit"
-                                    className="btn btn-primary btn-lg"
+                                    className="btn btn-primary fw-lighter btn-lg"
                                     disabled={isLoading}
                                 >
                                     {isLoading && <i className="fa fa-spinner fa-spin"></i>} Proceed

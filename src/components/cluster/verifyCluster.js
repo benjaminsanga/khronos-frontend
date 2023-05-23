@@ -48,7 +48,7 @@ const VerifyCluster = () => {
                                 aria-invalid={!!errors.verification_code ? "true" : "false"}
                             />
                             {!!errors.verification_code && <InvalidFormField message={errors.verification_code?.message} />}
-                            <button className="btn btn-lg btn-primary mt-3" type="submit">Verify</button>
+                            <button className="btn btn-lg btn-primary fw-lighter mt-3" type="submit">Verify</button>
                             {isError && <p className="text-center text-danger" id="submission-error">{error?.message}</p>}
                         </form>
                     </div>

@@ -126,3 +126,14 @@ export const useProjectDeposit = () => {
         }
     })
 }
+
+export const useGetFlutterwavePaymentInfo = (tx_ref, transaction_id) => {
+    return useQuery(
+        ['GetFlutterwavePaymentInfo'],
+        () => apiCalls.getFlutterwavePaymentInfo(tx_ref, transaction_id),
+        {
+            keepPreviousData: true,
+            staleTime: Infinity
+        }
+    )
+}
