@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-import CheckBox from '../../assets/icons/checkbox.svg';
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {FindProjectSchema} from "../../form-schema/findProjectSchema";
@@ -46,19 +45,22 @@ const FindProjectForm = () => {
     return (
         <>
         {isSuccess ?
-        <div className='container pt-5'>
-            <div className="row d-flex flex-column align-items-center text-center">
-                <span>Project Name</span>
-                <h2 className="mb-4"><strong>{project.project_name}</strong></h2>
-                <img src={CheckBox} alt="found" style={{width: '20%'}} />
-                <div className="col-md-2"></div>
-                <div className="col-md-8 text-center">
-                    <p className="mb-4">Code: <strong>{project.project_code}</strong></p>
-                    <p><Link to={`/deposit/${project.project_code}`}>
-                        <button className="btn btn-md btn-primary">Proceed to Payment</button>
-                    </Link></p>
+        <div className='container pt-5' style={{height: '70vh'}}>
+            <div className="row d-flex flex-column justify-content-center align-items-center">
+                <div className="d-flex flex-row justify-content-start align-items-start w-auto mt-5 pt-5">
+                    {/*<img src={CheckBox} alt="found" style={{width: '200px'}} />*/}
+                    <div>
+                        <p className="m-0 fw-lighter">Project Name</p>
+                        <h2 className="mb-3">{project.project_name}</h2>
+                        <p className="m-0 fw-lighter">Code</p>
+                        <h2 className="mb-2">{project.project_code}</h2>
+                        <p className="mt-4">
+                            <Link to={`/deposit/${project.project_code}`}>
+                                <button className="btn btn-md btn-primary">Proceed to Payment</button>
+                            </Link>
+                        </p>
+                    </div>
                 </div>
-                <div className="col-md-2"></div>
             </div>
         </div>        
         : 

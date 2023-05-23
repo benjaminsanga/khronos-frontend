@@ -105,3 +105,24 @@ export const useGetProject = () => {
         }
     })
 }
+
+export const useGetProjectByCode = (code) => {
+    return useQuery(
+        ['GetProjectByCode'],
+        () => apiCalls.getProject(code),
+        {
+            keepPreviousData: true,
+            staleTime: Infinity
+        }
+    )
+}
+
+export const useProjectDeposit = () => {
+    const queryClient = useQueryClient()
+    return useMutation((arg) => apiCalls.projectDeposit(arg), {
+        onSuccess: (data) => {
+            queryClient.invalidateQueries(['ProjectDeposit'])
+            return data
+        }
+    })
+}

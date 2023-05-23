@@ -50,8 +50,11 @@ const createProject = async (data) => {
 }
 
 const getProject = async (code) => {
-    console.log(code, 'code')
     return await apiWorker.get(`project/${code}`)
+}
+
+const projectDeposit = async (data) => {
+    return await apiWorker.post('deposit', data)
 }
 
 const apiCalls = {
@@ -64,7 +67,8 @@ const apiCalls = {
     getCluster,
     getAllProjects,
     createProject,
-    getProject
+    getProject,
+    projectDeposit
 }
 
 export default apiCalls
