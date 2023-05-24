@@ -1,14 +1,17 @@
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthContext from '../../context/clusterContext';
 import ForgotPassword from "./forgotPassword";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {LoginSchema} from "../../form-schema/loginSchema";
 import {useLogin} from "../../hooks/customHooks";
 import {InvalidFormField} from "../Errors/invalidFormField";
+import {useDispatch} from "react-redux";
+import {login} from "../../context/authSlice";
 
 const LoginForm = () => {
+
+    const dispatch = useDispatch();
 
     const {
         register,
@@ -29,8 +32,6 @@ const LoginForm = () => {
         data: clusterData
     } = useLogin()
 
-    const { login } = useContext(AuthContext);
-
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -38,10 +39,13 @@ const LoginForm = () => {
         if (isSuccess) {
             clearErrors()
             // set context values
-            login(clusterData?.data?.token, clusterData?.data?.userInfo, clusterData?.data?.expiration, clusterData?.data?.accountType);
-            // expiration = clusterData?.data?.expiration;
-            // accountType = clusterData?.data?.accountType
-            console.log(clusterData, 'clusterData')
+            const user = {
+                token: clusterData?.data?.token,
+                info: clusterData?.data?.userInfo,
+                expiration: clusterData?.data?.expiration,
+                accountType: clusterData?.data?.accountType
+            };
+            dispatch(login(user));
         }
 
         if (isError) {

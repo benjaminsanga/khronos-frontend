@@ -61,6 +61,10 @@ const getFlutterwavePaymentInfo = async (tx_ref, transaction_id) => {
     return await apiWorker.get(`flutterwave/confirm/?tx_ref=${tx_ref}&tx_id=${transaction_id}`)
 }
 
+const getProjectDeposits = async (id) => {
+    return await apiWorker.get(`/deposits/${id}`)
+}
+
 const apiCalls = {
     createCluster,
     login,
@@ -73,7 +77,8 @@ const apiCalls = {
     createProject,
     getProject,
     projectDeposit,
-    getFlutterwavePaymentInfo
+    getFlutterwavePaymentInfo,
+    getProjectDeposits
 }
 
 export default apiCalls

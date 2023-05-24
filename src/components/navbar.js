@@ -1,12 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import AuthContext from '../context/clusterContext';
+import {useDispatch, useSelector} from "react-redux";
+import {logout} from "../context/authSlice";
 
 const Navbar = () => {
     // get current location
     let location = useLocation();
-    const clusterContext = useContext(AuthContext);
     const navigate = useNavigate();
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
+    const user = useSelector((state) => state.auth.user);
+    const dispatch = useDispatch();
 
     // set path of location
     const [ path ] = useState(location.pathname);
@@ -18,7 +21,8 @@ const Navbar = () => {
             boxShadow: "none",
         },
     }
-
+    console.log(user, 'user')
+    console.log(isAuthenticated, 'isAuthenticated')
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -49,15 +53,15 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className="nav-item">
-                        { clusterContext.token ? 
+                        { isAuthenticated ?
                             <Link to="/" className="nav-link" onClick={(e) => {
                                 e.preventDefault();
 
-                                clusterContext.logout();
+                                dispatch(logout())
 
                                 navigate(`/`, { replace: true });
                             }}>
-                                Logout
+                                {} Logout
                             </Link> :
                             <Link to="/login" className="nav-link">
                                 Log In

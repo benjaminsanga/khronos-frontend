@@ -1,18 +1,26 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import AuthContext from '../../context/clusterContext';
 import { toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from "../../utils/loading";
 import {useGetAllProjects, useGetCluster} from "../../hooks/customHooks";
+import {useSelector} from "react-redux";
 
 const ClusterDashboardPage = () => {
 
     // const location = useLocation();
-    const clusterContext = useContext(AuthContext); // get context
     const { id } = useParams();
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
 
-    const {isLoading: clusterLoading, isSuccess: clusterSuccess, data: clusterData} = useGetCluster(id)
-    const {isLoading: projectsLoading, isSuccess: projectsSuccess, data: projectsData} = useGetAllProjects(id)
+    const {
+        isLoading: clusterLoading,
+        isSuccess: clusterSuccess,
+        data: clusterData
+    } = useGetCluster(id)
+    const {
+        isLoading: projectsLoading,
+        isSuccess: projectsSuccess,
+        data: projectsData
+    } = useGetAllProjects(id)
 
     const [clusterInfo, setClusterInfo] = useState({});
     const [projects, setProjects] = useState([]);
@@ -24,7 +32,7 @@ const ClusterDashboardPage = () => {
 
     return (
         <>
-            {(clusterLoading && projectsLoading) && <Loading />}
+            {(clusterLoading || projectsLoading) && <Loading />}
             {(clusterSuccess && projectsSuccess) && <div id="dashboard" className="container">
             <div className="row user-info">
                 <div className="col-md-6">
@@ -59,19 +67,25 @@ const ClusterDashboardPage = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {projects?.map((project, index) => {
+                            {projects?.map(({
+                                                project_code,
+                                                project_name,
+                                                project_purpose,
+                                                project_target,
+                                                contribution_end_date
+                                            }, index) => {
                                 return (
                                     <tr key={index}>
                                         <th scope="row">{index+1}</th>
                                         <td>
-                                            <Link to={`/project/dashboard/${project.project_code}`}>
-                                                {project.project_name}
+                                            <Link to={`/project/dashboard/${project_code}`}>
+                                                {project_name}
                                             </Link>
                                         </td>
-                                        <td>{project.project_purpose}</td>
-                                        <td>{project.project_target}</td>
-                                        <td>{project.project_code}</td>
-                                        <td>{project.contribution_end_date}</td>
+                                        <td>{project_purpose}</td>
+                                        <td>{project_target}</td>
+                                        <td>{project_code}</td>
+                                        <td>{contribution_end_date}</td>
                                     </tr>
                                 );
                             })}
@@ -80,7 +94,7 @@ const ClusterDashboardPage = () => {
                     }
                 </div>
             </div>     
-            {clusterContext.token &&        
+            {isAuthenticated &&
             <div className="row">
                 <div className="col-md-4"></div>
                 <div className="col-md-4">

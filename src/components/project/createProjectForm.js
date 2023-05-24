@@ -1,21 +1,21 @@
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import {getFullDate} from "../../utils/utilities";
-import AuthContext from '../../context/clusterContext';
 import {useForm} from "react-hook-form";
 import {InvalidFormField} from "../Errors/invalidFormField";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {CreateProjectSchema} from "../../form-schema/createProjectSchema";
 import {useCreateProject} from "../../hooks/customHooks";
+import {useSelector} from "react-redux";
 
 const CreateProjectForm = () => {
 
     const navigate = useNavigate();
+    const user = useSelector((state) => state.auth.user);
 
     const [projectCode, setProjectCode] = useState("");
     const [report, setReport] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
-    const clusterContext = useContext(AuthContext);
 
     const {
         register,
@@ -44,13 +44,13 @@ const CreateProjectForm = () => {
     }, [data, error, isError, isSuccess])
 
     let projectURL = '';
-    let clusterId = clusterContext?.userInfo?._id;
+    let clusterId = user?.info?._id;
 
     const handleSubmitProject = (data) => {
         // add fields without form field checks
         data['cluster_id'] = clusterId;
         data['report'] = report;
-        data['email'] = clusterContext?.userInfo?.cluster_admin_email;
+        data['email'] = user?.info?.cluster_admin_email;
 
         mutate(data)
     }
@@ -202,7 +202,7 @@ const CreateProjectForm = () => {
                                     className="btn btn-primary fw-lighter btn-lg"
                                     disabled={isLoading}
                                 >
-                                    {isLoading && <i className="fa fa-spinner fa-spin"></i>}Create Project
+                                    {isLoading && <i className="fa fa-spinner fa-spin"></i>} Create Project
                                 </button>
                                 <p className="text-center text-danger" id="submission-error">{errorMessage}</p>
                             </div>

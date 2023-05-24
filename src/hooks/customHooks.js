@@ -106,6 +106,17 @@ export const useGetProject = () => {
     })
 }
 
+export const useGetProjectById = (id) => {
+    return useQuery(
+        ['GetProjectById'],
+        () => apiCalls.getProject(id),
+        {
+            keepPreviousData: true,
+            staleTime: Infinity
+        }
+    )
+}
+
 export const useGetProjectByCode = (code) => {
     return useQuery(
         ['GetProjectByCode'],
@@ -131,6 +142,17 @@ export const useGetFlutterwavePaymentInfo = (tx_ref, transaction_id) => {
     return useQuery(
         ['GetFlutterwavePaymentInfo'],
         () => apiCalls.getFlutterwavePaymentInfo(tx_ref, transaction_id),
+        {
+            keepPreviousData: true,
+            staleTime: Infinity
+        }
+    )
+}
+
+export const useGetProjectDeposits = (id) => {
+    return useQuery(
+        ['GetProjectDeposits'],
+        () => apiCalls.getProjectDeposits(id),
         {
             keepPreviousData: true,
             staleTime: Infinity

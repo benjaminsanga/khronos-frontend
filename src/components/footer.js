@@ -1,15 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
-// import HappyFaceIcon from "../assets/images/happy_face.svg";
 import TwitterIcon from "../assets/icons/twitter.svg";
 import FacebookIcon from "../assets/icons/facebook.svg";
 import InstagramIcon from "../assets/icons/instagram.svg";
-import { useContext } from "react";
-import AuthContext from '../context/clusterContext';
+import {useDispatch, useSelector} from "react-redux";
+import {logout} from "../context/authSlice";
 
 const Footer = () => {
 
-    const clusterContext = useContext(AuthContext);
     const navigate = useNavigate();
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
+    const dispatch = useDispatch();
 
     return (
         <div id="footer" className="container-fluid">
@@ -47,10 +47,10 @@ const Footer = () => {
                         <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                         <li><Link to="/terms-and-conditions">Terms &amp; Conditions</Link></li>
                         <li>
-                            { clusterContext.token ? <a href="/" onClick={(e) => {
+                            { isAuthenticated ? <a href="/" onClick={(e) => {
                                 e.preventDefault();
 
-                                clusterContext.logout();
+                                dispatch(logout())
 
                                 navigate(`/`, { replace: true });
                             }}>Logout</a> :

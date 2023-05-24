@@ -68,6 +68,7 @@ const DepositForm = () => {
     const handleDepositSubmit = (data) => {
         console.log(data, 'form data')
         data['project_Id'] = code;
+        data['project_title'] = projectInfo?.project_name
         depositMutate(data)
     }
 
