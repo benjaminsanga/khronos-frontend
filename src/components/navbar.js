@@ -8,7 +8,7 @@ const Navbar = () => {
     let location = useLocation();
     const navigate = useNavigate();
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
-    const user = useSelector((state) => state.auth.user);
+    // const user = useSelector((state) => state.auth.user);
     const dispatch = useDispatch();
 
     // set path of location
@@ -21,8 +21,7 @@ const Navbar = () => {
             boxShadow: "none",
         },
     }
-    console.log(user, 'user')
-    console.log(isAuthenticated, 'isAuthenticated')
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -61,7 +60,7 @@ const Navbar = () => {
 
                                 navigate(`/`, { replace: true });
                             }}>
-                                {} Logout
+                                Logout
                             </Link> :
                             <Link to="/login" className="nav-link">
                                 Log In

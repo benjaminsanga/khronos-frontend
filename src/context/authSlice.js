@@ -12,7 +12,7 @@ const authSlice = createSlice({
     reducers: {
         login: (state, action) => {
             state.isAuthenticated = true;
-            state.user = action.payload.user;
+            state.user = action.payload.userId;
             localStorage.setItem('ajokudi::user', JSON.stringify(action.payload));
         },
         logout: (state) => {

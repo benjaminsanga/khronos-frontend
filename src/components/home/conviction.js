@@ -13,7 +13,11 @@ const Conviction = () => {
             <div className="row">
                 <div className="col-md-2"></div>
                 <div className="col-md-8">
-                    <h3 className="text-center"><i>Crowdfunding</i><span style={{fontWeight: 'lighter'}}>, the practice of funding a project or venture by raising money from a large number of people, in modern times typically via the Internet.</span></h3>
+                    <h3 className="text-center">
+                        <i>crowdfunding</i>
+                        <span style={{fontWeight: 'lighter', fontSize: '14px'}}>/ˈkraʊd.fʌn.dɪŋ/</span>
+                        <br/>
+                        <span style={{fontWeight: 'lighter'}}>the practice of funding a project or venture by raising money from a large number of people, in modern times typically via the Internet.</span></h3>
                 </div>
                 <div className="col-md-2"></div>
             </div>

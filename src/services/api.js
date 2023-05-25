@@ -1,10 +1,14 @@
 import axios from 'axios'
 import {getApiEndpoint} from "../utils/utilities";
 
+// get logged in user
+const userId = JSON.parse(localStorage.getItem('ajokudi::user'))?.userId
+
 const apiWorker = axios.create({
     baseURL: getApiEndpoint(),
     headers: {
         Accept: 'application/json',
+        Authorization: `Bearer ${userId}`
     },
 })
 
@@ -44,9 +48,7 @@ const getAllProjects = async (id) => {
 }
 
 const createProject = async (data) => {
-    return await apiWorker.post(`project`, data, {
-        'Authorization': `Bearer `
-    })
+    return await apiWorker.post(`project`, data)
 }
 
 const getProject = async (code) => {

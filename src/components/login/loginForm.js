@@ -40,10 +40,7 @@ const LoginForm = () => {
             clearErrors()
             // set context values
             const user = {
-                token: clusterData?.data?.token,
-                info: clusterData?.data?.userInfo,
-                expiration: clusterData?.data?.expiration,
-                accountType: clusterData?.data?.accountType
+                userId: clusterData?.data?.user?.userId
             };
             dispatch(login(user));
         }
@@ -67,7 +64,7 @@ const LoginForm = () => {
     return (
         <>
             { forgotPassword && <ForgotPassword />}
-            {(isSuccess && clusterData) && navigate(`/cluster/dashboard/${clusterData?.data?.userInfo?._id}`, {replace: true})}
+            {(isSuccess && clusterData) && navigate(`/cluster/dashboard/${clusterData?.data?.user?.userId}`, {replace: true})}
 
             <div id="login" className='container'>
 
