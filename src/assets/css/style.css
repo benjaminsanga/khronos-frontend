@@ -11533,22 +11533,20 @@ p.loader-p {
 #clusters .cluster {
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
-  padding: 20px 10px;
+  border: 1px solid lightgray;
+  padding: 20px;
   margin: 20px 10px;
-  transition: 0.1s;
-  background-color: #312440;
+  transition: 0.15s;
+  height: 200px;
 }
 #clusters .cluster span {
   display: block;
 }
 #clusters .cluster a {
   text-decoration: none;
-  color: #fff;
 }
 #clusters .cluster:hover {
-  border: none;
-  box-shadow: 2px 2px 15px #7befb2, 2px 2px 5px #7befb2;
+  transform: scale(1.1);
 }
 
 #create-project {
@@ -11574,23 +11572,19 @@ p.loader-p {
 #projects .project {
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
-  padding: 20px 10px;
+  border: 1px solid lightgray;
+  padding: 20px;
   margin: 20px 10px;
-  transition: 0.1s;
-  background-color: #312440;
-  height: 100%;
+  transition: 0.15s;
 }
 #projects .project span {
   display: block;
 }
 #projects .project a {
   text-decoration: none;
-  color: #fff;
 }
 #projects .project:hover {
-  border: none;
-  box-shadow: 2px 2px 15px #7befb2, 2px 2px 5px #7befb2;
+  transform: scale(1.1);
 }
 
 #deposit {

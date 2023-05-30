@@ -75,7 +75,7 @@ export const useGetCluster = (id) => {
     )
 }
 
-export const useGetAllProjects = (id) => {
+export const useGetClusterProjects = (id) => {
     return useQuery(
         ['GetAllProjects'],
         () => apiCalls.getAllProjects(id),
@@ -153,6 +153,28 @@ export const useGetProjectDeposits = (id) => {
     return useQuery(
         ['GetProjectDeposits'],
         () => apiCalls.getProjectDeposits(id),
+        {
+            keepPreviousData: true,
+            staleTime: Infinity
+        }
+    )
+}
+
+export const useGetAllProjects = () => {
+    return useQuery(
+        ['GetAllProjects'],
+        () => apiCalls.getAllProjects(),
+        {
+            keepPreviousData: true,
+            staleTime: Infinity
+        }
+    )
+}
+
+export const useGetAllClusters = () => {
+    return useQuery(
+        ['GetAllClusters'],
+        () => apiCalls.getAllClusters(),
         {
             keepPreviousData: true,
             staleTime: Infinity

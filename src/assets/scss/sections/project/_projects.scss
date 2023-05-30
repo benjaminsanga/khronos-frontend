@@ -12,12 +12,10 @@
     .project {
         display: flex;
         flex-direction: column;
-        border-radius: 5px;
-        padding: 20px 10px;
+        border: 1px solid lightgray;
+        padding: 20px;
         margin: 20px 10px;
-        transition: .1s;
-        background-color: $primary;
-        height: 100%;
+        transition: .15s;
 
         span {
             display: block;
@@ -25,12 +23,13 @@
 
         a {
             text-decoration: none;
-            color: #fff;
+            //color: #fff;
         }
 
         &:hover {
-            border: none;
-            box-shadow: 2px 2px 15px $secondary, 2px 2px 5px $secondary;
+            //border: none;
+            //box-shadow: 2px 4px 15px lightgray, 2px 4px 5px lightgray;
+            transform: scale(1.1);
         }
     }
 

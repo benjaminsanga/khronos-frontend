@@ -43,7 +43,7 @@ const getCluster = async (id) => {
     return await apiWorker.get(`cluster/dashboard/${id}`)
 }
 
-const getAllProjects = async (id) => {
+const getClusterProjects = async (id) => {
     return await apiWorker.get(`projects/${id}`)
 }
 
@@ -67,6 +67,14 @@ const getProjectDeposits = async (id) => {
     return await apiWorker.get(`/deposits/${id}`)
 }
 
+const getAllProjects = async () => {
+    return await apiWorker.get('/projects')
+}
+
+const getAllClusters = async () => {
+    return await apiWorker.get('/cluster')
+}
+
 const apiCalls = {
     createCluster,
     login,
@@ -75,12 +83,14 @@ const apiCalls = {
     verifyCluster,
     forgotPassword,
     getCluster,
-    getAllProjects,
+    getClusterProjects,
     createProject,
     getProject,
     projectDeposit,
     getFlutterwavePaymentInfo,
-    getProjectDeposits
+    getProjectDeposits,
+    getAllProjects,
+    getAllClusters
 }
 
 export default apiCalls

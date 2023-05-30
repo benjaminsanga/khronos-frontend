@@ -25,9 +25,9 @@ const ProjectDashboardPage = () => {
 
     useEffect(() => {
         // set states values in hook array
-        setProjectInfo(projectData.data);
+        setProjectInfo(projectData?.data?.result);
         setDeposits(depositData?.data);
-    }, [depositData?.data, projectData.data]);
+    }, [depositData?.data, projectData?.data]);
 
     return (
         <>
@@ -42,7 +42,7 @@ const ProjectDashboardPage = () => {
                     </div>
                     <div className="col-md-6 text-end">
                         <p>Status: <span className="text-success">Open</span></p>
-                        <p>Created: {projectInfo?.createdAt.slice(0, 10)}</p>
+                        <p>Created: {projectInfo?.createdAt?.slice(0, 10)}</p>
                     </div>
                 </div>
                 <div className="row text-center project-stats">
@@ -79,7 +79,7 @@ const ProjectDashboardPage = () => {
                             </thead>
                             <tbody>
                                 {
-                                    deposits?.map(({
+                                    deposits?.length > 0 && deposits?.map(({
                                                         name,
                                                         amount,
                                                         phone,

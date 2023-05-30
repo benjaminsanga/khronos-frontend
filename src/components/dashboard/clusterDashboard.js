@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from "../../utils/loading";
-import {useGetAllProjects, useGetCluster} from "../../hooks/customHooks";
+import {useGetClusterProjects, useGetCluster} from "../../hooks/customHooks";
 import {useSelector} from "react-redux";
 
 const ClusterDashboardPage = () => {
@@ -20,7 +20,7 @@ const ClusterDashboardPage = () => {
         isLoading: projectsLoading,
         isSuccess: projectsSuccess,
         data: projectsData
-    } = useGetAllProjects(id)
+    } = useGetClusterProjects(id)
 
     const [clusterInfo, setClusterInfo] = useState({});
     const [projects, setProjects] = useState([]);
