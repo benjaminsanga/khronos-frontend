@@ -35,7 +35,7 @@ export const useGetStatistics = () => {
 
 export const useGetStatesAndLgas = () => {
     return useQuery(
-        ['getStatesAndLgas'],
+        ['GetStatesAndLgas'],
         () => apiCalls.getStatesAndLgas(),
         {
             keepPreviousData: true,
@@ -77,7 +77,7 @@ export const useGetCluster = (id) => {
 
 export const useGetClusterProjects = (id) => {
     return useQuery(
-        ['GetAllProjects'],
+        ['GetClusterProjects'],
         () => apiCalls.getAllProjects(id),
         {
             keepPreviousData: true,
