@@ -2,7 +2,7 @@ import axios from 'axios'
 import {getApiEndpoint} from "../utils/utilities";
 
 // get logged in user
-const userId = JSON.parse(localStorage.getItem('ajokudi::user'))?.userId
+const userId = JSON.parse(localStorage.getItem('khronos::user'))?.userId
 
 const apiWorker = axios.create({
     baseURL: getApiEndpoint(),

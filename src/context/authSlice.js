@@ -13,12 +13,12 @@ const authSlice = createSlice({
         login: (state, action) => {
             state.isAuthenticated = true;
             state.user = action.payload.userId;
-            localStorage.setItem('ajokudi::user', JSON.stringify(action.payload));
+            localStorage.setItem('khronos::user', JSON.stringify(action.payload));
         },
         logout: (state) => {
             state.isAuthenticated = false;
             state.user = null;
-            localStorage.removeItem('ajokudi::user');
+            localStorage.removeItem('khronos::user');
         },
     },
 });

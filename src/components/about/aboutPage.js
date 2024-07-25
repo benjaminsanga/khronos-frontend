@@ -12,7 +12,7 @@ const AboutPage = () => {
         <div id="about" className="container-fluid">
             <section className="row">
                 <div className="col-md-6">
-                    <h1>Welcome to Ajokudi.</h1>
+                    <h1>Welcome to Khronos.</h1>
                     <p>The place to fulfil your projects, using the right system.</p>
                 </div>
                 <div className="col-md-6">
@@ -32,7 +32,7 @@ const AboutPage = () => {
                 <div className="col-md-6">
                     <h2>What we do.</h2>
                     <p>Our solution provides a platform that enables people of all types in groups and communities to achieve their goals by contributing openly and spending publicly to achieve a project.</p>
-                    <p>This project which is funded by the community is executed by registered companies on Ajokudi, and progress is monitored periodically by the general public.</p>
+                    <p>This project which is funded by the community is executed by registered companies on Khronos, and progress is monitored periodically by the general public.</p>
                 </div>
                 <div className="col-md-6">
                     <img src={Image3} alt="Welcome" />

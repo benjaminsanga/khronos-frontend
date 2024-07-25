@@ -25,7 +25,7 @@ const ProjectsComponent = () => {
         <>
         {isSuccess && <div id="projects" className='container'>
             <h1 style={{fontSize: '3.5rem'}}>{projects?.length}</h1>
-            <h2 className="mb-5">Projects on Ajokudi</h2>
+            <h2 className="mb-5">Projects on Khronos</h2>
             <div className="row">
                 {projects?.map((project, index) => {
                     return (

@@ -262,7 +262,7 @@ const CreateClusterForm = () => {
                                         className="form-check-label"
                                         htmlFor="agree_to_register_cluster"
                                     >
-                                        I agree to the <Link to="/terms-and-conditions">Terms and Conditions</Link> of Ajokudi
+                                        I agree to the <Link to="/terms-and-conditions">Terms and Conditions</Link> of Khronos
                                     </label>
                                 </div>
                                 <div className="mb-3 form-check">

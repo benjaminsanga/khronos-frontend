@@ -15,7 +15,7 @@ const ContactPage = () => {
                 <div className="col-md-6">
                     <div className="row">    
                         <p>Email</p>
-                        <h3>contactajokudi@gmail.com</h3>
+                        <h3>khronostechnologies@gmail.com</h3>
                     </div>
                     <div className="row">
                         <p>Phone</p>
@@ -24,9 +24,9 @@ const ContactPage = () => {
                     <div className="row icons">
                         <p>Social</p>
                         <ul>
-                            <li><a href="https://www.twitter.com/ajokudi" target="_blank" rel="noreferrer"><img src={TwitterIcon} alt="Twitter" className="icon" /></a></li>
-                            <li><a href="https://www.facebook.com/ajokudi" target="_blank" rel="noreferrer"><img src={FacebookIcon} alt="Facebook" className="icon" /></a></li>
-                            <li><a href="https://www.facebook.com/ajokudi" target="_blank" rel="noreferrer"><img src={InstagramIcon} alt="Instagram" className="icon" /></a></li>
+                            <li><a href="https://www.twitter.com/khronos" target="_blank" rel="noreferrer"><img src={TwitterIcon} alt="Twitter" className="icon" /></a></li>
+                            <li><a href="https://www.facebook.com/khronos" target="_blank" rel="noreferrer"><img src={FacebookIcon} alt="Facebook" className="icon" /></a></li>
+                            <li><a href="https://www.facebook.com/khronos" target="_blank" rel="noreferrer"><img src={InstagramIcon} alt="Instagram" className="icon" /></a></li>
                         </ul>
                     </div>
                 </div>

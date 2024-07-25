@@ -18,11 +18,11 @@ export const isProd = () => getEnvironment() === 'prod'
 export const getApiEndpoint = () => {
 
     if (isProd()) {
-        return 'https://ajokudi-backend.onrender.com/'
+        return 'https://khronos-backend.onrender.com/'
     }
 
     // return 'http://localhost:8000/'
-    return 'https://ajokudi-backend.onrender.com/'
+    return 'https://khronos-backend.onrender.com/'
 
 }
 

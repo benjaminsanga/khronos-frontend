@@ -25,7 +25,7 @@ const ClustersComponent = () => {
         <>
         {isSuccess && <div id="clusters" className='container'>
             <h1 style={{fontSize: '3.5rem'}}>{clusters?.length}</h1>
-            <h2 className="mb-5">Clusters on Ajokudi</h2>
+            <h2 className="mb-5">Clusters on Khronos</h2>
             <div className="row">
                 {clusters?.map((cluster, index) => {
                     return (

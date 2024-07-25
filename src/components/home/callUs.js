@@ -7,7 +7,7 @@ const CallUs = () => {
                     <p>Reach out to us today, we will response within the earliest time period.</p>
                 </div>
                 <div className="col-md-5 text-end">
-                    <h2>contactajokudi@gmail.com</h2>
+                    <h2>khronostechnologies@gmail.com</h2>
                 </div>
             </div>
         </div>

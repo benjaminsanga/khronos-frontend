@@ -32,7 +32,7 @@ const Navbar = () => {
                 
                 <Link className="navbar-brand" to="/">
                     {/* <img src={Logo} alt="Company Logo" width="36" height="36" className="d-inline-block align-text-center"/> */}
-                    Ajokudi 💵 
+                    Khronos 💵 
                 </Link>
 
                 <div className="nav">

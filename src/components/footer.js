@@ -16,8 +16,8 @@ const Footer = () => {
             <div className="row justify-content-between align-items-center" id="footer-top">
                 <div className="col-md-3">
                     <Link to="/#" className="brand-text">
-                        {/* <img src={HappyFaceIcon} alt="Ajokudi Logo" /> */}
-                        Ajokudi
+                        {/* <img src={HappyFaceIcon} alt="Khronos Logo" /> */}
+                        Khronos
                     </Link>
                 </div>
                 <div className="col-md-9 pt-3">
@@ -33,9 +33,9 @@ const Footer = () => {
                         </div>
                         <div className="col-md-5 text-end icons">
                             <ul>
-                                <li><a href="https://www.twitter.com/ajokudi" target="_blank" rel="noreferrer"><img src={TwitterIcon} alt="Twitter" className="icon" /></a></li>
-                                <li><a href="https://www.facebook.com/ajokudi" target="_blank" rel="noreferrer"><img src={FacebookIcon} alt="Facebook" className="icon" /></a></li>
-                                <li><a href="https://www.instagram.com/ajokudi" target="_blank" rel="noreferrer"><img src={InstagramIcon} alt="Instagram" className="icon" /></a></li>
+                                <li><a href="https://www.twitter.com/khronos" target="_blank" rel="noreferrer"><img src={TwitterIcon} alt="Twitter" className="icon" /></a></li>
+                                <li><a href="https://www.facebook.com/khronos" target="_blank" rel="noreferrer"><img src={FacebookIcon} alt="Facebook" className="icon" /></a></li>
+                                <li><a href="https://www.instagram.com/khronos" target="_blank" rel="noreferrer"><img src={InstagramIcon} alt="Instagram" className="icon" /></a></li>
                             </ul>
                         </div>
                     </div>

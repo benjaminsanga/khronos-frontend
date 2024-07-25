@@ -96,7 +96,7 @@ const LandingPage = () => {
                 <div className="col-md-6 p-5">
                     <h1>Reliable and Trusted Purse</h1>
                     <p>
-                        Ajokudi runs on world-class servers, and performs it's customers financial transactions using cutting-edge technologies used by millions of people across the world.
+                        Khronos runs on world-class servers, and performs it's customers financial transactions using cutting-edge technologies used by millions of people across the world.
                     </p>
                 </div>
                 <div className="col-md-6 p-5 mt-5">
@@ -121,35 +121,35 @@ const LandingPage = () => {
             <h1 className='text-center pb-5'>Frequently Asked Questions</h1>
             <div>
                 <div className='d-flex flex-row justify-content-between'>
-                    <h4 className='pt-2'>Why should I use Ajokudi?</h4>
+                    <h4 className='pt-2'>Why should I use Khronos?</h4>
                     <img src={PlusIcon} alt='toggle' style={{width: '24px'}} />
                 </div>
-                <p>Use Ajokudi to stop the risk of losing your money to people who are not trusted, and have failed too many times to count for a project execution.</p>
+                <p>Use Khronos to stop the risk of losing your money to people who are not trusted, and have failed too many times to count for a project execution.</p>
             </div>
             <div>
                 <div className='d-flex flex-row justify-content-between'>
-                    <h4 className='pt-2'>Is Ajokudi an online bank?</h4>
+                    <h4 className='pt-2'>Is Khronos an online bank?</h4>
                     <img src={PlusIcon} alt='toggle' style={{width: '24px'}} />
                 </div>
                 <p>No, we are not an online bank. We provide a platfom that help people create and monitor their project funds, and offer to execute that project on their behave.</p>
             </div>
             <div>
                 <div className='d-flex flex-row justify-content-between'>
-                    <h4 className='pt-2'>Who can use Ajokudi?</h4>
+                    <h4 className='pt-2'>Who can use Khronos?</h4>
                     <img src={PlusIcon} alt='toggle' style={{width: '24px'}} />
                 </div>
                 <p>Leaders of communities or groups are examples of people who can create and manage accounts on our platform. After which they can create projects for members of their group or communities to deposit towards the project.</p>
             </div>
             <div>
                 <div className='d-flex flex-row justify-content-between'>
-                    <h4 className='pt-2'>Can I withdraw money from Ajokudi?</h4>
+                    <h4 className='pt-2'>Can I withdraw money from Khronos?</h4>
                     <img src={PlusIcon} alt='toggle' style={{width: '24px'}} />
                 </div>
-                <p>No. A single individual cannot withdraw funds from Ajokudi, this can only be done with the consent of the community or group members who have contributed towards the project.</p>
+                <p>No. A single individual cannot withdraw funds from Khronos, this can only be done with the consent of the community or group members who have contributed towards the project.</p>
             </div>
             <div>
                 <div className='d-flex flex-row justify-content-between'>
-                    <h4 className='pt-2'>Where is Ajokudi office located?</h4>
+                    <h4 className='pt-2'>Where is Khronos office located?</h4>
                     <img src={PlusIcon} alt='toggle' style={{width: '24px'}} />
                 </div>
                 <p>We are currently located in Jos.</p>
@@ -174,7 +174,7 @@ const LandingPage = () => {
                     <a href='https://twitter.com' target='_blank' rel='noreferrer'>Twitter</a>
                     <a href='https://facebook.com' target='_blank' rel='noreferrer'>Facebook</a>
                     <a href='https://youtube.com' target='_blank' rel='noreferrer'>YouTube</a>
-                    <p className='mt-5'>&copy; Ajokudi Inc. {new Date().getFullYear()}</p>
+                    <p className='mt-5'>&copy; Khronos Inc. {new Date().getFullYear()}</p>
                 </div>
             </div>
         </div>

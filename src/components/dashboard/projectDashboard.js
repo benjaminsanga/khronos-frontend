@@ -38,7 +38,7 @@ const ProjectDashboardPage = () => {
                     <div className="col-md-6">
                         <h3>{toFirstLetterUpperCase(projectInfo?.project_name)}</h3>
                         <span>Code: <strong>{projectInfo?.project_code}</strong></span><br/>
-                        <span>Share: <code>{`https://ajokudi.herokuapp.com/deposit/${projectInfo?.project_code}`}</code></span>
+                        <span>Share: <code>{`https://khronos.herokuapp.com/deposit/${projectInfo?.project_code}`}</code></span>
                     </div>
                     <div className="col-md-6 text-end">
                         <p>Status: <span className="text-success">Open</span></p>
