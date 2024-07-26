@@ -8,8 +8,8 @@ const Hero = () => {
         <div id="hero" className="container-fluid bg-image">
             <div className="row">
                 <div className="col-md-5 welcome-text">
-                    <p>Create the change you want to see</p>
-                    <h1>Fund projects collectively, execute with ease.</h1>
+                    <p>Be part of something beyond yourself</p>
+                    <h1>Fund projects collectively. Execute with ease.</h1>
                     <div className="action-btns">
                         <Link to="/create-cluster"><button className="get-started">Get Started</button></Link>
                         <Link to="/join"><button className="get-quote">Deposit</button></Link>

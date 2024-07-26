@@ -52,7 +52,7 @@ const LoginForm = () => {
                 setError('password', clusterError?.response?.data, {shouldFocus: true})
             }
         }
-    }, [clusterData])
+    }, [clusterData, clusterError])
 
     // const [loginSuccess, setLoginSuccess] = useState(false);
     const [forgotPassword, setForgotPassword] = useState(false);
@@ -119,7 +119,7 @@ const LoginForm = () => {
                                 e.preventDefault();
                                 setForgotPassword(true);
                              }}>Forgot Password?</Link></p>
-                            <p><Link to="/create-cluster">Create Cluster</Link></p>
+                            <p><Link to="/create-cluster">Register</Link></p>
                         </div>
                     </div>
                     <div className="col-md-3"></div>

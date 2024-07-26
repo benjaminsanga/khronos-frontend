@@ -43,7 +43,7 @@ const Navbar = () => {
                     </div>
                     <div className="nav-item">
                         <Link to="/create-cluster" className="nav-link">
-                            Create Cluster
+                            Register
                         </Link>
                     </div>
                     <div className="nav-item">

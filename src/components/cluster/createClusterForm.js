@@ -57,9 +57,9 @@ const CreateClusterForm = () => {
                 {isCreateClusterError && <h5>{error?.message}</h5>}
                 {isCreateClusterSuccess && <VerifyCluster/>}
 
-                {!isCreateClusterSuccess &&
+                {!isStatesSuccess &&
                     <div className="d-flex flex-column align-items-center">
-                        <h2 className="mb-5">Create Cluster Account</h2>
+                        <h2 className="mb-5">Register Account</h2>
                         <div className="col-md-2"></div>
                         <div className="col-md-8">
                             <h5 className="mb-4">Profile</h5>
@@ -284,7 +284,7 @@ const CreateClusterForm = () => {
                                     <button
                                         type="submit"
                                         className="btn btn-primary fw-lighter btn-lg"
-                                    >Create Cluster Profile</button>
+                                    >Register Profile</button>
                                 </div>
                             </form>
                             <div>

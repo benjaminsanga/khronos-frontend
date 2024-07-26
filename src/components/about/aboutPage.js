@@ -11,9 +11,9 @@ const AboutPage = () => {
     return (
         <div id="about" className="container-fluid">
             <section className="row">
-                <div className="col-md-6">
-                    <h1>Welcome to Khronos.</h1>
-                    <p>The place to fulfil your projects, using the right system.</p>
+                <div className="col-md-6 d-flex flex-column justify-content-center align-items-start">
+                    <h1>Khronos.</h1>
+                    <p>Achieve your projects, with the right support system.</p>
                 </div>
                 <div className="col-md-6">
                     <img src={Image1} alt="Welcome" />
@@ -24,13 +24,13 @@ const AboutPage = () => {
                     <img src={Image2} alt="Welcome" />
                 </div>
                 <div className="col-md-6">
-                    <h2>Who we are.</h2>
+                    <h2><i>who we are.</i></h2>
                     <p>We are a community who believe in the power of the people. The power to create a better life for the people, by the people.</p>
                 </div>
             </section>
             <section className="row">
                 <div className="col-md-6">
-                    <h2>What we do.</h2>
+                    <h2><i>what we do.</i></h2>
                     <p>Our solution provides a platform that enables people of all types in groups and communities to achieve their goals by contributing openly and spending publicly to achieve a project.</p>
                     <p>This project which is funded by the community is executed by registered companies on Khronos, and progress is monitored periodically by the general public.</p>
                 </div>
@@ -39,11 +39,11 @@ const AboutPage = () => {
                 </div>
             </section>
             <section className="row text-center hwdi">
-                <h2 className="mb-5">How we do it.</h2>
+                <h2 className="mb-5"><i>how we do it.</i></h2>
                 <div className="row how-we-do-it">
                     <div className="col-md-4">
                         <div>
-                            <h3>Create cluster</h3>
+                            <h3>Register</h3>
                             <p>Give your project an identity, and location.</p>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ const AboutPage = () => {
                 </div>
                 <div className="col-md-6 mt-5">
                     <h3>You, as a community can take action today to collectively achieve your needs for a better life.</h3>
-                    <Link to="/create-cluster"><button className="btn btn-primary fw-lighter btn-lg mt-5">Create Cluster</button></Link>
+                    <Link to="/create-cluster"><button className="btn btn-primary fw-lighter btn-lg mt-5">Register</button></Link>
                 </div>
             </section>
             <Team />

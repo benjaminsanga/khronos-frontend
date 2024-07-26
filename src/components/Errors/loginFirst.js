@@ -12,7 +12,7 @@ const LoginFirst = () => {
                         <h3>Off the grid.</h3>
                         <h5>Please create a cluster first, then log in</h5>
                         <Link to='/create-cluster'>
-                            <button className="btn btn-lg btn-primary fw-lighter mt-2">Create Cluster</button>
+                            <button className="btn btn-lg btn-primary fw-lighter mt-2">Register</button>
                         </Link>
                     </div>
                 </div>

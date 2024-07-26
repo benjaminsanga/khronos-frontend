@@ -48,7 +48,7 @@ const QuotationForm = () => {
                         </div>
                     </form>
                     <div>
-                        <p><Link to="/create-cluster">Create Cluster</Link></p>
+                        <p><Link to="/create-cluster">Register</Link></p>
                     </div>
                 </div>
             </div>
