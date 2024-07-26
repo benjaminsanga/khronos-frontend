@@ -25,7 +25,7 @@ const Footer = () => {
                         <div className="col-md-7 text-end">
                             <ul>
                                 <li><Link to="/about">About</Link></li>
-                                <li><Link to="/clusters">Clusters</Link></li>
+                                <li><Link to="/users">Users</Link></li>
                                 <li><Link to="/projects">Projects</Link></li>
                                 <li><Link to="/contact">Contact</Link></li>
                                 <li><Link to="/faq">FAQ</Link></li>

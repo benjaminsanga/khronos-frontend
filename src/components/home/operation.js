@@ -23,7 +23,7 @@ const Operation = () => {
                     <h5>Monitor project execution</h5>
                     <p>Members of the community or group, and the public can view the progress made on the fundraising and the people involved.</p>
                 </div>
-                <Link to="/create-cluster">
+                <Link to="/create-account">
                     <div className="d-flex flex-row justify-content-center align-items-center get-started">
                         <img src={PlayIcon} alt="Get started" />
                             <div>

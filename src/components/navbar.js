@@ -42,7 +42,7 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className="nav-item">
-                        <Link to="/create-cluster" className="nav-link">
+                        <Link to="/create-account" className="nav-link">
                             Register
                         </Link>
                     </div>

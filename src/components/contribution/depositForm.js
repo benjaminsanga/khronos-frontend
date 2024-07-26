@@ -160,7 +160,7 @@ const DepositForm = () => {
                             <p className="text-center text-danger" id="payment-error">{errorMessage}</p>
                         </form>
                         <div>
-                            <p><Link to="/create-cluster">Register</Link></p>
+                            <p><Link to="/create-account">Register</Link></p>
                         </div>
                     </div>
                     <div className="col-md-2"></div>

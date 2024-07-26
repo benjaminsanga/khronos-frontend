@@ -70,7 +70,7 @@ const ResetPassword = () => {
 
         if (isFormValid) {
             // submit form submission data
-            axios.post(`/cluster/reset-password`, data).then((response) => {
+            axios.post(`/user/reset-password`, data).then((response) => {
 
                 if (response.data.message === 'success') {
                     // set context values

@@ -1,11 +1,11 @@
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 import apiCalls from '../services/api'
 
-export const useCreateCluster = () => {
+export const useCreateUser = () => {
     const queryClient = useQueryClient()
-    return useMutation((arg) => apiCalls.createCluster(arg), {
+    return useMutation((arg) => apiCalls.createUser(arg), {
         onSuccess: (data) => {
-            queryClient.invalidateQueries(['CreateCluster'])
+            queryClient.invalidateQueries(['CreateUser'])
             return data
         }
     })
@@ -44,11 +44,11 @@ export const useGetStatesAndLgas = () => {
     )
 }
 
-export const useVerifyCluster = () => {
+export const useVerifyUser = () => {
     const queryClient = useQueryClient()
-    return useMutation((arg) => apiCalls.verifyCluster(arg), {
+    return useMutation((arg) => apiCalls.verifyUser(arg), {
         onSuccess: (data) => {
-            queryClient.invalidateQueries(['VerifyCluster'])
+            queryClient.invalidateQueries(['VerifyUser'])
             return data
         }
     })
@@ -64,10 +64,10 @@ export const useForgotPassword = () => {
     })
 }
 
-export const useGetCluster = (id) => {
+export const useGetUser = (id) => {
     return useQuery(
-        ['GetCluster'],
-        () => apiCalls.getCluster(id),
+        ['GetUser'],
+        () => apiCalls.getUser(id),
         {
             keepPreviousData: true,
             staleTime: Infinity
@@ -75,9 +75,9 @@ export const useGetCluster = (id) => {
     )
 }
 
-export const useGetClusterProjects = (id) => {
+export const useGetUserProjects = (id) => {
     return useQuery(
-        ['GetClusterProjects'],
+        ['GetUserProjects'],
         () => apiCalls.getAllProjects(id),
         {
             keepPreviousData: true,
@@ -171,10 +171,10 @@ export const useGetAllProjects = () => {
     )
 }
 
-export const useGetAllClusters = () => {
+export const useGetAllUsers = () => {
     return useQuery(
-        ['GetAllClusters'],
-        () => apiCalls.getAllClusters(),
+        ['GetAllUsers'],
+        () => apiCalls.getAllUsers(),
         {
             keepPreviousData: true,
             staleTime: Infinity

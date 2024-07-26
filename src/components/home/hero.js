@@ -11,7 +11,7 @@ const Hero = () => {
                     <p>Be part of something beyond yourself</p>
                     <h1>Fund projects collectively. Execute with ease.</h1>
                     <div className="action-btns">
-                        <Link to="/create-cluster"><button className="get-started">Get Started</button></Link>
+                        <Link to="/create-account"><button className="get-started">Get Started</button></Link>
                         <Link to="/join"><button className="get-quote">Deposit</button></Link>
                     </div>
                 </div>

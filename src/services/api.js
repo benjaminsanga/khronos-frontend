@@ -12,15 +12,15 @@ const apiWorker = axios.create({
     },
 })
 
-const createCluster = async (data) => {
+const createUser = async (data) => {
     // add fields to form data
     data['verification_code'] = 0;
     data['verified_account'] = false;
-    return await apiWorker.post('cluster', data)
+    return await apiWorker.post('user', data)
 }
 
 const login = async (data) => {
-    return await apiWorker.post('cluster/login', data)
+    return await apiWorker.post('user/login', data)
 }
 
 const getStatistics = async () => {
@@ -31,19 +31,19 @@ const getStatesAndLgas = async () => {
     return await apiWorker.get('get-states')
 }
 
-const verifyCluster = async (data) => {
-    return await apiWorker.post('cluster/verify', data)
+const verifyUser = async (data) => {
+    return await apiWorker.post('user/verify', data)
 }
 
 const forgotPassword = async (data) => {
-    return await apiWorker.post('cluster/forgot-password', data)
+    return await apiWorker.post('user/forgot-password', data)
 }
 
-const getCluster = async (id) => {
-    return await apiWorker.get(`cluster/dashboard/${id}`)
+const getUser = async (id) => {
+    return await apiWorker.get(`user/dashboard/${id}`)
 }
 
-const getClusterProjects = async (id) => {
+const getUserProjects = async (id) => {
     return await apiWorker.get(`projects/${id}`)
 }
 
@@ -71,26 +71,26 @@ const getAllProjects = async () => {
     return await apiWorker.get('/projects')
 }
 
-const getAllClusters = async () => {
-    return await apiWorker.get('/cluster')
+const getAllUsers = async () => {
+    return await apiWorker.get('/user')
 }
 
 const apiCalls = {
-    createCluster,
+    createUser,
     login,
     getStatistics,
     getStatesAndLgas,
-    verifyCluster,
+    verifyUser,
     forgotPassword,
-    getCluster,
-    getClusterProjects,
+    getUser,
+    getUserProjects,
     createProject,
     getProject,
     projectDeposit,
     getFlutterwavePaymentInfo,
     getProjectDeposits,
     getAllProjects,
-    getAllClusters
+    getAllUsers
 }
 
 export default apiCalls

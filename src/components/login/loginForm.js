@@ -28,8 +28,8 @@ const LoginForm = () => {
         isSuccess,
         isError,
         isLoading,
-        error: clusterError,
-        data: clusterData
+        error: userError,
+        data: userData
     } = useLogin()
 
     const navigate = useNavigate();
@@ -40,19 +40,19 @@ const LoginForm = () => {
             clearErrors()
             // set context values
             const user = {
-                userId: clusterData?.data?.user?.userId
+                userId: userData?.data?.user?.userId
             };
             dispatch(login(user));
         }
 
         if (isError) {
-            if (clusterError?.response?.data?.message?.includes('email')) {
-                setError('email', clusterError?.response?.data, {shouldFocus: true})
+            if (userError?.response?.data?.message?.includes('email')) {
+                setError('email', userError?.response?.data, {shouldFocus: true})
             } else {
-                setError('password', clusterError?.response?.data, {shouldFocus: true})
+                setError('password', userError?.response?.data, {shouldFocus: true})
             }
         }
-    }, [clusterData, clusterError])
+    }, [userData, userError])
 
     // const [loginSuccess, setLoginSuccess] = useState(false);
     const [forgotPassword, setForgotPassword] = useState(false);
@@ -64,7 +64,7 @@ const LoginForm = () => {
     return (
         <>
             { forgotPassword && <ForgotPassword />}
-            {(isSuccess && clusterData) && navigate(`/cluster/dashboard/${clusterData?.data?.user?.userId}`, {replace: true})}
+            {(isSuccess && userData) && navigate(`/user/dashboard/${userData?.data?.user?.userId}`, {replace: true})}
 
             <div id="login" className='container'>
 
@@ -110,7 +110,7 @@ const LoginForm = () => {
                                     {isLoading && <i className="fa fa-spinner fa-spin"></i>} Log In
                                 </button>
                                 {isError && <p className="text-center text-danger">
-                                    {clusterError?.response?.data?.message}
+                                    {userError?.response?.data?.message}
                                 </p>}
                             </div>
                         </form>
@@ -119,7 +119,7 @@ const LoginForm = () => {
                                 e.preventDefault();
                                 setForgotPassword(true);
                              }}>Forgot Password?</Link></p>
-                            <p><Link to="/create-cluster">Register</Link></p>
+                            <p><Link to="/create-account">Register</Link></p>
                         </div>
                     </div>
                     <div className="col-md-3"></div>

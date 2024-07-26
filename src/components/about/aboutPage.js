@@ -56,7 +56,7 @@ const AboutPage = () => {
                     <div className="col-md-4">
                         <div>
                             <h3>Get result</h3>
-                            <p>We deliver the completed project to your cluster.</p>
+                            <p>We deliver the completed project to your user.</p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ const AboutPage = () => {
                 </div>
                 <div className="col-md-6 mt-5">
                     <h3>You, as a community can take action today to collectively achieve your needs for a better life.</h3>
-                    <Link to="/create-cluster"><button className="btn btn-primary fw-lighter btn-lg mt-5">Register</button></Link>
+                    <Link to="/create-account"><button className="btn btn-primary fw-lighter btn-lg mt-5">Register</button></Link>
                 </div>
             </section>
             <Team />

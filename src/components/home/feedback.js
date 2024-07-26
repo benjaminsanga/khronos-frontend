@@ -19,7 +19,7 @@ const Feedback = () => {
                 {/* <h3>What people say about us</h3> */}
                 <h3>Join us today!</h3>
                 <p>Start the process of a new creation</p>
-                <Link to="/create-cluster"><button>Get Started - For Free!</button></Link>
+                <Link to="/create-account"><button>Get Started - For Free!</button></Link>
             </div>
             {/* <div className="row text-center">
                 <div className="col-md-4 customer">

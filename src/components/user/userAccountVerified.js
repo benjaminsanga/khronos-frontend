@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import CheckIcon from '../../assets/icons/circle-check.svg';
 
-const ClusterAccountVerified = () => {
+const UserAccountVerified = () => {
     return (
         <div className="row">
             <div className="col-md-3"></div>
@@ -19,4 +19,4 @@ const ClusterAccountVerified = () => {
     );
 };
 
-export default ClusterAccountVerified;
+export default UserAccountVerified;

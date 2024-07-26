@@ -1,16 +1,16 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import ClusterDashboardPage from "../components/dashboard/clusterDashboard";
+import UserDashboardPage from "../components/dashboard/userDashboard";
 
 
-const ClusterDashboard = () => {
+const UserDashboard = () => {
     return (
         <>
             <Navbar />
-            <ClusterDashboardPage />
+            <UserDashboardPage />
             <Footer />
         </>
     );
 };
 
-export default ClusterDashboard;
+export default UserDashboard;

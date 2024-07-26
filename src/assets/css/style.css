@@ -11501,36 +11501,36 @@ p.loader-p {
     height: 140%;
   }
 }
-#create-cluster {
+#create-account {
   margin-top: 3rem;
   color: #312440;
 }
-#create-cluster .btn {
+#create-account .btn {
   width: 100%;
   margin-bottom: 1.5rem;
 }
-#create-cluster .success img {
+#create-account .success img {
   width: 40%;
 }
 
 @media only screen and (max-width: 900px) {
-  #create-cluster .success img {
+  #create-account .success img {
     width: 60%;
   }
 }
 @media only screen and (max-width: 600px) {
-  #create-cluster .success img {
+  #create-account .success img {
     width: 70%;
   }
 }
-#clusters {
+#users {
   margin-top: 3rem;
   color: #312440;
 }
-#clusters h2 {
+#users h2 {
   color: #7befb2;
 }
-#clusters .cluster {
+#users .user {
   display: flex;
   flex-direction: column;
   border: 1px solid lightgray;
@@ -11539,13 +11539,13 @@ p.loader-p {
   transition: 0.15s;
   height: 200px;
 }
-#clusters .cluster span {
+#users .user span {
   display: block;
 }
-#clusters .cluster a {
+#users .user a {
   text-decoration: none;
 }
-#clusters .cluster:hover {
+#users .user:hover {
   transform: scale(1.1);
 }
 

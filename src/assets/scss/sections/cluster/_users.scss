@@ -1,7 +1,7 @@
 @use '../../components/mixins' as *;
 @use '../../custom' as *;
 
-#clusters {
+#users {
     margin-top: 3rem;
     color: $primary;
 
@@ -9,7 +9,7 @@
         color: $secondary;
     }
 
-    .cluster {
+    .user {
         display: flex;
         flex-direction: column;
         border: 1px solid lightgray;

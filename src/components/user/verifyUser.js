@@ -1,19 +1,19 @@
 import EmailIcon from '../../assets/icons/email.svg';
-import ClusterAccountVerified from "./clusterAccountVerified";
-import {useVerifyCluster} from "../../hooks/customHooks";
+import UserAccountVerified from "./userAccountVerified";
+import {useVerifyUser} from "../../hooks/customHooks";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
-import {VerifyClusterSchema} from "../../form-schema/verifyClusterSchema";
+import {VerifyUserSchema} from "../../form-schema/verifyUserSchema";
 import {InvalidFormField} from "../Errors/invalidFormField";
 
-const VerifyCluster = () => {
+const VerifyUser = () => {
 
     const {
         register,
         handleSubmit,
         formState: {errors}
     } = useForm({
-        resolver: yupResolver(VerifyClusterSchema)
+        resolver: yupResolver(VerifyUserSchema)
     })
 
     const {
@@ -21,7 +21,7 @@ const VerifyCluster = () => {
         isSuccess,
         isError,
         error
-    } = useVerifyCluster()
+    } = useVerifyUser()
 
     const handleVerify = (data) => {
         mutate(data)
@@ -29,7 +29,7 @@ const VerifyCluster = () => {
 
     return (
         <>
-            {isSuccess && <ClusterAccountVerified />}
+            {isSuccess && <UserAccountVerified />}
 
             {!isSuccess &&
             <div className="row" style={{maxWidth: '100%'}}>
@@ -60,4 +60,4 @@ const VerifyCluster = () => {
     );
 }
 
-export default VerifyCluster;
+export default VerifyUser;

@@ -11,8 +11,8 @@ const Company = () => {
                     <h5>Khronos represents integrity, accountability, and speedy execution. We are confident that our unique approach will serve the needs of our customers.</h5>
                 </div>
                 <div className="col-md-6">
-                    <p>We provide an avenue for clusters (communities, sponsors, and groups) to raise funds collectively on our platform and we keep everyone in the circle up to date about the progress.</p>
-                    <p>We also sub-contract projects issued by clusters after raising capital to credible companies who register with us for execution.</p>
+                    <p>We provide an avenue for users (communities, sponsors, and groups) to raise funds collectively on our platform and we keep everyone in the circle up to date about the progress.</p>
+                    <p>We also sub-contract projects issued by users after raising capital to credible companies who register with us for execution.</p>
                 </div>
             </div>
             <div className="row text-center justify-content-center procedure">

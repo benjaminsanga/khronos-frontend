@@ -2,53 +2,53 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from "../../utils/loading";
-import {useGetClusterProjects, useGetCluster} from "../../hooks/customHooks";
+import {useGetUserProjects, useGetUser} from "../../hooks/customHooks";
 import {useSelector} from "react-redux";
 
-const ClusterDashboardPage = () => {
+const UserDashboardPage = () => {
 
     // const location = useLocation();
     const { id } = useParams();
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
 
     const {
-        isLoading: clusterLoading,
-        isSuccess: clusterSuccess,
-        data: clusterData
-    } = useGetCluster(id)
+        isLoading: userLoading,
+        isSuccess: userSuccess,
+        data: userData
+    } = useGetUser(id)
     const {
         isLoading: projectsLoading,
         isSuccess: projectsSuccess,
         data: projectsData
-    } = useGetClusterProjects(id)
+    } = useGetUserProjects(id)
 
-    const [clusterInfo, setClusterInfo] = useState({});
+    const [userInfo, setUserInfo] = useState({});
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        setClusterInfo(clusterData?.data)
+        setUserInfo(userData?.data)
         setProjects(projectsData?.data?.result)
-    }, [clusterData, projectsData]);
+    }, [userData, projectsData]);
 
     return (
         <>
-            {(clusterLoading || projectsLoading) && <Loading />}
-            {(clusterSuccess && projectsSuccess) && <div id="dashboard" className="container">
+            {(userLoading || projectsLoading) && <Loading />}
+            {(userSuccess && projectsSuccess) && <div id="dashboard" className="container">
             <div className="row user-info">
                 <div className="col-md-6">
-                    <h2>{toFirstLetterUpperCase(clusterInfo?.cluster_name)}</h2>
+                    <h2>{toFirstLetterUpperCase(userInfo?.user_name)}</h2>
                     <h5>Location</h5>
-                    <p>{`${toFirstLetterUpperCase(clusterInfo?.cluster_address)}, ${clusterInfo?.cluster_lga}, ${clusterInfo?.cluster_state} `}</p>
+                    <p>{`${toFirstLetterUpperCase(userInfo?.user_address)}, ${userInfo?.user_lga}, ${userInfo?.user_state} `}</p>
                     <h5>Created</h5>
-                    <p>{clusterInfo?.createdAt?.slice(0, 10)}</p>
+                    <p>{userInfo?.createdAt?.slice(0, 10)}</p>
                 </div>
                 <div className="col-md-6">
                     <h5>Creator</h5>
-                    <p>{`${toFirstLetterUpperCase(clusterInfo?.cluster_admin_firstname)} ${toFirstLetterUpperCase(clusterInfo?.cluster_admin_lastname)} `}</p>
+                    <p>{`${toFirstLetterUpperCase(userInfo?.user_admin_firstname)} ${toFirstLetterUpperCase(userInfo?.user_admin_lastname)} `}</p>
                     <h5>Phone</h5>
-                    <p>{clusterInfo?.cluster_admin_phone}</p>
+                    <p>{userInfo?.user_admin_phone}</p>
                     <h5>Email</h5>
-                    <p>{clusterInfo?.cluster_admin_email}</p>
+                    <p>{userInfo?.user_admin_email}</p>
                 </div>
             </div>
             <div className="row payments">
@@ -111,4 +111,4 @@ const ClusterDashboardPage = () => {
     );
 };
 
-export default ClusterDashboardPage;
+export default UserDashboardPage;

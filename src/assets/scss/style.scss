@@ -10,8 +10,8 @@
 @use 'sections/navbar';
 
 @use 'sections/home/index';
-@use 'sections/cluster/create_cluster';
-@use 'sections/cluster/clusters';
+@use 'sections/user/create_user';
+@use 'sections/user/users';
 @use 'sections/project/create_project';
 @use 'sections/project/projects';
 @use 'sections/deposit/deposit';

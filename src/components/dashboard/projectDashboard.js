@@ -34,7 +34,7 @@ const ProjectDashboardPage = () => {
             {(depositLoading || projectLoading) && <Loading />}
             {(depositSuccess && projectSuccess) && <div id="dashboard" className="container">
                 <div className="row user-info">
-                    <h2 className="text-center"><span>{toFirstLetterUpperCase(projectInfo?.cluster_name)} </span>Project Dashboard</h2>
+                    <h2 className="text-center"><span>{toFirstLetterUpperCase(projectInfo?.user_name)} </span>Project Dashboard</h2>
                     <div className="col-md-6">
                         <h3>{toFirstLetterUpperCase(projectInfo?.project_name)}</h3>
                         <span>Code: <strong>{projectInfo?.project_code}</strong></span><br/>
@@ -105,7 +105,7 @@ const ProjectDashboardPage = () => {
                 <div className="row">
                     <div className="col-md-4"></div>
                     <div className="col-md-4">
-                        <p>Want to contribute to cluster's project?</p>
+                        <p>Want to contribute to user's project?</p>
                         <Link to={`/deposit/${id}`}>
                             <button className="btn btn-primary fw-lighter btn-lg w-100">Deposit</button>
                         </Link>

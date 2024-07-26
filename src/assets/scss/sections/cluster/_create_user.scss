@@ -1,7 +1,7 @@
 @use '../../components/mixins' as *;
 @use '../../custom' as *;
 
-#create-cluster {
+#create-account {
     margin-top: 3rem;
     color: $primary;
 
@@ -18,7 +18,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-    #create-cluster {
+    #create-account {
         .success {
             img {
                 width: 60%;
@@ -28,7 +28,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    #create-cluster {
+    #create-account {
         .success {
             img {
                 width: 70%;

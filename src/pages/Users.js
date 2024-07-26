@@ -1,15 +1,15 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import CreateClusterForm from "../components/cluster/createClusterForm";
+import UsersComponent from "../components/user/users";
 
-const CreateCluster = () => {
+const Users = () => {
     return (
         <>
             <Navbar />
-            <CreateClusterForm />
+            <UsersComponent />
             <Footer />
         </>
     );
 };
 
-export default CreateCluster;
+export default Users;

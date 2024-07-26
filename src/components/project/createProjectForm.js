@@ -44,13 +44,13 @@ const CreateProjectForm = () => {
     }, [data, error, isError, isSuccess])
 
     let projectURL = '';
-    let clusterId = user?.info?._id;
+    let userId = user?.info?._id;
 
     const handleSubmitProject = (data) => {
         // add fields without form field checks
-        data['cluster_id'] = clusterId;
+        data['user_id'] = userId;
         data['report'] = report;
-        data['email'] = user?.info?.cluster_admin_email;
+        data['email'] = user?.info?.user_admin_email;
 
         mutate(data)
     }
@@ -60,7 +60,7 @@ const CreateProjectForm = () => {
             {(isSuccess && !!projectCode) && navigate(`${projectURL}`)}
             <div id="create-project" className='container'>
                 <div className="d-flex flex-column align-items-center">
-                    <h2 className="mb-5">Create Project for Cluster</h2>
+                    <h2 className="mb-5">Create Project for User</h2>
                     <div className="col-md-2"></div>
                     <div className="col-md-8">
                         <form onSubmit={handleSubmit(handleSubmitProject)}>
@@ -208,7 +208,7 @@ const CreateProjectForm = () => {
                             </div>
                         </form>
                         {/*<div>*/}
-                        {/*    <p><Link to="/create-cluster">Register</Link></p>*/}
+                        {/*    <p><Link to="/create-account">Register</Link></p>*/}
                         {/*</div>*/}
                     </div>
                     <div className="col-md-2"></div>

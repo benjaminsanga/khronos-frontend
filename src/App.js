@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 import Home from './pages/Home';
-import CreateCluster from './pages/CreateCluster';
+import CreateUser from './pages/CreateUser';
 import CreateProject from './pages/CreateProject';
 import GetQuotation from './pages/GetQuotation';
 import Deposit from './pages/Deposit';
@@ -14,10 +14,10 @@ import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/Terms';
 import ProjectDashboard from './pages/ProjectDashboard';
-import ClusterDashboard from './pages/ClusterDashboard';
+import UserDashboard from './pages/UserDashboard';
 import Projects from './pages/Projects';
 import Join from './pages/Join';
-import Clusters from './pages/Clusters';
+import Users from './pages/Users';
 import FourOhFour from './pages/FourOhFour';
 import PaymentRedirectPage from './pages/PaymentRedirectPage';
 import LoginFirstPage from './pages/LoginFirst';
@@ -37,7 +37,7 @@ const App = () => {
         <Router>
             <Routes>
 
-                <Route path="/create-cluster" element={<CreateCluster/>}/>
+                <Route path="/create-account" element={<CreateUser/>}/>
 
                 {!isAuthenticated && <Route path="/create-project" element={<LoginFirstPage/>}/>}
 
@@ -51,7 +51,7 @@ const App = () => {
 
                 <Route path="/login" element={<Login/>}/>
 
-                <Route path="/cluster/reset-password/:hash" element={<ResetPasswordPage/>}/>
+                <Route path="/user/reset-password/:hash" element={<ResetPasswordPage/>}/>
 
                 <Route path="/about" element={<About/>}/>
 
@@ -65,11 +65,11 @@ const App = () => {
 
                 <Route path="/project/dashboard/:id" element={<ProjectDashboard/>}/>
 
-                <Route path="/cluster/dashboard/:id" element={<ClusterDashboard/>}/>
+                <Route path="/user/dashboard/:id" element={<UserDashboard/>}/>
 
                 <Route path="/projects" element={<Projects/>}/>
 
-                <Route path="/clusters" element={<Clusters/>}/>
+                <Route path="/users" element={<Users/>}/>
 
                 <Route path="/flutterwave/confirm" element={<PaymentRedirectPage/>}/>
 
