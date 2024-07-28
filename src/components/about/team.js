@@ -4,7 +4,7 @@ const Team = () => {
     return (
         <div id="team" className="container">
             <div className="d-flex flex-column justify-content-center align-items-center mt-5 mb-1">
-                <h2>Our Team</h2>
+                <h2>Our Squad</h2>
                 <p>People who make things happen here</p>
             </div>
             <div className="row text-center">

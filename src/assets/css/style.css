@@ -11745,6 +11745,8 @@ p.loader-p {
   #about section h1 {
     padding-top: 2rem;
     font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
   }
   #about section h2 {
     font-size: 2rem;
@@ -11802,7 +11804,6 @@ p.loader-p {
   #team .team-member img {
     width: 64px;
     height: auto;
-    border: 3px solid #fff;
     position: relative;
     bottom: -40px;
   }
@@ -11831,7 +11832,6 @@ p.loader-p {
   #team .team-member img {
     width: 32px;
     height: auto;
-    border: 3px solid #fff;
     position: relative;
     bottom: 2px;
   }
