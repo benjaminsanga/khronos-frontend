@@ -12,7 +12,7 @@ const Operation = () => {
             </div>
             <div className="col-md-6 right">
                 <div className="operation-point">
-                    <h5>Register and project</h5>
+                    <h5>Register project</h5>
                     <p>The community head or group leader registers an account with us, then creates the project(s) which the members can contribute to.</p>
                 </div>
                 <div className="operation-point">

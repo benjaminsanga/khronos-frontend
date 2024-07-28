@@ -96,7 +96,7 @@ const LandingPage = () => {
                 <div className="col-md-6 p-5">
                     <h1>Reliable and Trusted Purse</h1>
                     <p>
-                        Khronos runs on world-class servers, and performs it's customers financial transactions using cutting-edge technologies used by millions of people across the world.
+                        Khronos runs on world-class servers, and performs it's users financial transactions using cutting-edge technologies used by millions of people across the world.
                     </p>
                 </div>
                 <div className="col-md-6 p-5 mt-5">
