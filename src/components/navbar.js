@@ -31,7 +31,7 @@ const Navbar = () => {
             <div className="container d-flex justify-content-between">
                 
                 <Link className="navbar-brand" to="/">
-                    {/* <img src={Logo} alt="Company Logo" width="36" height="36" className="d-inline-block align-text-center"/> */}
+                    {/* <img src={Logo} alt="Product Logo" width="36" height="36" className="d-inline-block align-text-center"/> */}
                     Khronos<strong className="text-secondary">.</strong> 
                 </Link>
 

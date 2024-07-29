@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar";
 import Hero from "../components/home/hero";
-import Company from "../components/home/company";
+import Product from "../components/home/product";
 import Conviction from "../components/home/conviction";
 import Operation from "../components/home/operation";
 import Statistics from "../components/home/statistics";
@@ -14,7 +14,7 @@ const Home = () => {
         <>
             <Navbar />
             <Hero />
-            <Company />
+            <Product />
             <Conviction />
             <Operation />
             <Statistics />

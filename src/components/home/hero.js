@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import Slider1 from "../../assets/images/achievement.svg";
-import Slider2 from "../../assets/images/construction.svg";
-import Slider3 from "../../assets/images/team_success.svg";
+import Slider2 from "../../assets/images/team_success.svg";
+import Slider3 from "../../assets/images/construction.svg";
 
 const Hero = () => {
     return (
         <div id="hero" className="container-fluid bg-image">
             <div className="row">
                 <div className="col-md-5 welcome-text">
-                    <p>Be part of something beyond yourself</p>
-                    <h1>Fund projects collectively. Execute with ease.</h1>
+                    <p>Let's build together</p>
+                    <h1>Empowering Communities, One Wallet at a Time</h1>
                     <div className="action-btns">
                         <Link to="/create-account"><button className="get-started">Get Started</button></Link>
                         <Link to="/join"><button className="get-quote">Deposit</button></Link>

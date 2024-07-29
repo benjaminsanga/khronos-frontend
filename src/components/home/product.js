@@ -2,18 +2,17 @@ import Picture1 from '../../assets/images/target.svg'
 import Picture2 from '../../assets/images/motivation.svg'
 import Picture3 from '../../assets/images/happy_face.svg'
 
-const Company = () => {
+const Product = () => {
     return (
         <div id="company" className="container-fluid">
             <div className="row">
-                <div className="col-md-6">
-                    <p>Our Company</p>
-                    <h5>Khronos represents integrity, accountability, and speedy execution. We are confident that our unique approach will serve the needs of our users.</h5>
+                <div className="col-md-1"></div>
+                <div className="col-md-10">
+                    <p>Our Product</p>
+                    <p><strong>At Khronos, we provide a secure and reliable digital wallet designed to help communities overcome financial and infrastructural challenges.</strong></p>
+                    <p>By streamlining transactions, offering robust financial tools, and ensuring transparency, we empower communities to successfully complete and enjoy accomplished projects. Trusted by local governments and non-profits, Khronos is your partner in driving community success.</p>
                 </div>
-                <div className="col-md-6">
-                    <p>We provide an avenue for users (communities, sponsors, and groups) to raise funds collectively on our platform and we keep everyone in the circle up to date about the progress.</p>
-                    <p>We also sub-contract projects issued by users after raising capital to credible companies who register with us for execution.</p>
-                </div>
+                <div className="col-md-1"></div>
             </div>
             <div className="row text-center justify-content-center procedure">
                 <div className="col-md-3 procedure-item">
@@ -33,4 +32,4 @@ const Company = () => {
     )
 };
 
-export default Company;
+export default Product;
