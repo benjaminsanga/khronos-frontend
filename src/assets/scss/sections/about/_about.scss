@@ -24,14 +24,14 @@
             font-size: 1.2rem;
         }
 
-        &:nth-child(2) {
-            text-align: right;
-        }
+        // &:nth-child(2) {
+        //     text-align: right;
+        // }
         
         .how-we-do-it {
 
             .col-md-4 div {
-                height: 40vh;
+                height: fit-content;
                 border: 5px solid $secondary;
                 border-radius: 10px;
                 padding: 4rem 20px;

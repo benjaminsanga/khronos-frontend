@@ -7,7 +7,7 @@ const ContactPage = () => {
         <div id="contact" className="container">
             <section className="row">
                 <div className="col-md-6">
-                    <h1>Make Contact</h1>
+                    <h1>React Out</h1>
                     <p>Stay in touch with us.</p>
                 </div>
             </section>
@@ -15,14 +15,14 @@ const ContactPage = () => {
                 <div className="col-md-6">
                     <div className="row">    
                         <p>Email</p>
-                        <h3>khronostechnologies@gmail.com</h3>
+                        <h4>📧  khronos@gmail.com</h4>
                     </div>
                     <div className="row">
                         <p>Phone</p>
-                        <h3>+234 708 668 2008</h3>
+                        <h4>📱 +234(0)7062220012</h4>
                     </div>
                     <div className="row icons">
-                        <p>Social</p>
+                        <p>Socials</p>
                         <ul>
                             <li><a href="https://www.twitter.com/khronos" target="_blank" rel="noreferrer"><img src={TwitterIcon} alt="Twitter" className="icon" /></a></li>
                             <li><a href="https://www.facebook.com/khronos" target="_blank" rel="noreferrer"><img src={FacebookIcon} alt="Facebook" className="icon" /></a></li>
@@ -32,7 +32,7 @@ const ContactPage = () => {
                 </div>
                 <div className="col-md-6">
                     <p>Address</p>
-                    <h3>Jos - Nigeria.</h3>
+                    <h4>🌐 Remote</h4>
                 </div>
             </section>
         </div>

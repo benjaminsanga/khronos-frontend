@@ -17,9 +17,9 @@ const Feedback = () => {
             </div>
             <div className="d-flex flex-column justify-content-center align-items-center mt-5 mb-1">
                 {/* <h3>What people say about us</h3> */}
-                <h3>Join us today!</h3>
-                <p>Start the process of a new creation</p>
-                <Link to="/create-account"><button>Get Started - For Free!</button></Link>
+                {/* <h3>Join us today!</h3> */}
+                {/* <p>Start the process of a new creation</p> */}
+                <Link to="/create-account"><button>Register Now</button></Link>
             </div>
             {/* <div className="row text-center">
                 <div className="col-md-4 customer">

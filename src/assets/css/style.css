@@ -11643,11 +11643,8 @@ p.loader-p {
 #about section p {
   font-size: 1.2rem;
 }
-#about section:nth-child(2) {
-  text-align: right;
-}
 #about section .how-we-do-it .col-md-4 div {
-  height: 40vh;
+  height: fit-content;
   border: 5px solid #7befb2;
   border-radius: 10px;
   padding: 4rem 20px;
