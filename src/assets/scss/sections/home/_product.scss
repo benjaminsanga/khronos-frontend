@@ -1,10 +1,10 @@
 @use '../../custom' as *;
 @use '../../components/mixins' as *;
 
-#company {
+#product {
     height: 100vh;
     background-color: $secondary;
-    padding: 7vh 20vmin;
+    padding: 7vh inherit;
     margin-bottom: 0vh;
 
     .row:first-child {
@@ -47,7 +47,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-    #company {
+    #product {
         height: 50%;
         margin-bottom: 0;
         padding: 5vh;
@@ -78,7 +78,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    #company {
+    #product {
         height: 190%;
         margin-bottom: 0;
         padding: 7vh 5vh;

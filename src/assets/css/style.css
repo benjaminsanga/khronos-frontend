@@ -11051,36 +11051,36 @@ p.loader-p {
     padding: 10vh 0 5vh;
   }
 }
-#company {
+#product {
   height: 100vh;
   background-color: #7befb2;
-  padding: 7vh 20vmin;
+  padding: 7vh inherit;
   margin-bottom: 0vh;
 }
-#company .row:first-child {
+#product .row:first-child {
   padding-right: 5vh;
 }
-#company p {
+#product p {
   font-size: 1rem;
   font-weight: lighter;
 }
-#company h5 {
+#product h5 {
   color: #312440;
   font-weight: bold;
 }
-#company .procedure {
+#product .procedure {
   padding-top: 20px;
   margin: 0 auto;
 }
-#company .procedure-item {
+#product .procedure-item {
   margin: 20px;
 }
-#company .procedure-item img {
+#product .procedure-item img {
   background-image: radial-gradient(farthest-corner at 50% 55%, #7befb2, #fff);
   border: 3px solid #312440;
   max-width: 100%;
 }
-#company .procedure-item p {
+#product .procedure-item p {
   padding: 1rem 2rem;
   background-color: #312440;
   color: #fff;
@@ -11090,35 +11090,35 @@ p.loader-p {
 }
 
 @media only screen and (max-width: 900px) {
-  #company {
+  #product {
     height: 50%;
     margin-bottom: 0;
     padding: 5vh;
   }
-  #company .row:first-child {
+  #product .row:first-child {
     padding: 0;
   }
-  #company h5 {
+  #product h5 {
     font-weight: normal;
   }
-  #company .procedure-item img {
+  #product .procedure-item img {
     border: 2px solid #312440;
   }
-  #company .procedure-item p {
+  #product .procedure-item p {
     padding: 16px 5px;
     font-size: 1.2rem;
   }
 }
 @media only screen and (max-width: 600px) {
-  #company {
+  #product {
     height: 190%;
     margin-bottom: 0;
     padding: 7vh 5vh;
   }
-  #company .row:first-child {
+  #product .row:first-child {
     padding: 0;
   }
-  #company h5 {
+  #product h5 {
     font-weight: normal;
   }
 }

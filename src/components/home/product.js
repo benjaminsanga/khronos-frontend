@@ -4,12 +4,12 @@ import Picture3 from '../../assets/images/happy_face.svg'
 
 const Product = () => {
     return (
-        <div id="company" className="container-fluid">
+        <div id="product" className="container-fluid pt-5">
             <div className="row">
                 <div className="col-md-1"></div>
                 <div className="col-md-10">
                     <p>Our Product</p>
-                    <p><strong>At Khronos, we provide a secure and reliable digital wallet designed to help communities overcome financial and infrastructural challenges.</strong></p>
+                    <p><strong>At <i>Khronos</i>, we provide a secure and reliable digital wallet designed to help communities overcome financial and infrastructural challenges.</strong></p>
                     <p>By streamlining transactions, offering robust financial tools, and ensuring transparency, we empower communities to successfully complete and enjoy accomplished projects. Trusted by local governments and non-profits, Khronos is your partner in driving community success.</p>
                 </div>
                 <div className="col-md-1"></div>

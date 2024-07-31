@@ -1,7 +1,7 @@
 import Navbar from "../components/navbar";
 import Hero from "../components/home/hero";
 import Product from "../components/home/product";
-import Conviction from "../components/home/conviction";
+import Mission from "../components/home/mission";
 import Operation from "../components/home/operation";
 import Statistics from "../components/home/statistics";
 import CallUs from "../components/home/callUs";
@@ -15,7 +15,7 @@ const Home = () => {
             <Navbar />
             <Hero />
             <Product />
-            <Conviction />
+            <Mission />
             <Operation />
             <Statistics />
             <CallUs />

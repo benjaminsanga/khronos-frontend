@@ -7,17 +7,16 @@ import TrustedIcon from '../../assets/icons/trust.svg';
 import TransparentIcon from '../../assets/icons/receipt.svg';
 import SecuredIcon from '../../assets/icons/wallet.svg';
 
-const Conviction = () => {
+const Mission = () => {
     return (
-        <div id="conviction" className="container-fluid">
+        <div id="mission" className="container-fluid">
             <div className="row">
                 <div className="col-md-2"></div>
-                <div className="col-md-8">
-                    <h3 className="text-center">
-                        <i>crowdfunding</i>
-                        <span style={{fontWeight: 'lighter', fontSize: '14px'}}>/ˈkraʊd.fʌn.dɪŋ/</span>
-                        <br/>
-                        <span style={{fontWeight: 'lighter'}}>the practice of funding a project or venture by raising money from a large number of people, in modern times typically via the Internet.</span></h3>
+                <div className="col-md-8 text-center">
+                    <h3 className="text-center"><i>Our Mission</i></h3>
+                    <h4 style={{fontWeight: 'lighter'}}>
+                        To build bridges over the chasm of financial and infrastructural challenges. By creating a seamless, secure digital ecosystem, empowering communities to unlock their full potential. 
+                    </h4>
                 </div>
                 <div className="col-md-2"></div>
             </div>
@@ -71,4 +70,4 @@ const Conviction = () => {
     );
 };
 
-export default Conviction;
+export default Mission;

@@ -20,6 +20,7 @@ const Navbar = () => {
             borderBottom: "none",
             boxShadow: "none",
         },
+        navbar_container: {padding: '20vh 20vmin'}
     }
 
     useEffect(() => {
@@ -28,10 +29,9 @@ const Navbar = () => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light navbar-custom" style={path === "/" ? styles.navbar : {}} >
-            <div className="container d-flex justify-content-between">
+            <div className="container-fluid d-flex justify-content-between" style={styles.navbar_container}>
                 
                 <Link className="navbar-brand" to="/">
-                    {/* <img src={Logo} alt="Product Logo" width="36" height="36" className="d-inline-block align-text-center"/> */}
                     Khronos<strong className="text-secondary">.</strong> 
                 </Link>
 
