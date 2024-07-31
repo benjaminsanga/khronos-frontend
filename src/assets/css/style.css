@@ -11122,52 +11122,52 @@ p.loader-p {
     font-weight: normal;
   }
 }
-#conviction {
+#mission {
   height: 150vh;
   margin-top: 10vh;
   padding: 10vh 20vmin;
 }
-#conviction h3 {
+#mission h3 {
   color: #312440;
 }
-#conviction .down-arrows {
+#mission .down-arrows {
   padding: 10vh 0;
 }
-#conviction #sections {
+#mission #sections {
   height: 50vh;
   margin-bottom: 10vh;
 }
-#conviction #sections h4 {
+#mission #sections h4 {
   margin-top: 5vh;
 }
-#conviction #sections .section div {
+#mission #sections .section div {
   width: 60%;
   height: 60%;
   padding: 5vh;
   margin: 1.5vh auto;
 }
-#conviction #sections .section div img {
+#mission #sections .section div img {
   width: 50%;
   height: auto;
   margin-bottom: 20px;
 }
-#conviction #sections .section div h5 {
+#mission #sections .section div h5 {
   text-transform: uppercase;
   font-weight: lighter;
 }
 
 @media only screen and (max-width: 900px) {
-  #conviction {
+  #mission {
     height: 90%;
     margin: 0;
   }
-  #conviction .down-arrows {
+  #mission .down-arrows {
     padding: 2vh 0;
   }
-  #conviction #sections h4 {
+  #mission #sections h4 {
     margin-top: 0;
   }
-  #conviction #sections .section div {
+  #mission #sections .section div {
     width: 100%;
     height: fit-content;
     padding: 10;
@@ -11177,24 +11177,24 @@ p.loader-p {
     justify-content: center;
     align-items: center;
   }
-  #conviction #sections .section div img {
+  #mission #sections .section div img {
     width: 64px;
     height: auto;
     margin-bottom: 10px;
   }
 }
 @media only screen and (max-width: 600px) {
-  #conviction {
+  #mission {
     min-height: 200%;
     margin: 5vh 0 180% 0;
   }
-  #conviction .down-arrows {
+  #mission .down-arrows {
     padding: 5vh 0;
   }
-  #conviction #sections h4 {
+  #mission #sections h4 {
     margin-top: 0;
   }
-  #conviction #sections .section div {
+  #mission #sections .section div {
     width: 100%;
     height: fit-content;
     padding: 10;
@@ -11202,7 +11202,7 @@ p.loader-p {
   }
 }
 @media only screen and (max-width: 400px) {
-  #conviction {
+  #mission {
     margin-bottom: 190%;
   }
 }

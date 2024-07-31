@@ -1,7 +1,7 @@
 @use '../../custom' as *;
 @use '../../components/mixins' as *;
 
-#conviction {
+#mission {
     height: 150vh;
     margin-top: 10vh;
     padding: 10vh 20vmin;
@@ -49,7 +49,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-    #conviction {
+    #mission {
         height: 90%;
         margin: 0;
 
@@ -89,7 +89,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    #conviction {
+    #mission {
         min-height: 200%;
         margin: 5vh 0 180% 0;
 
@@ -116,7 +116,7 @@
 }
 
 @media only screen and (max-width: 400px) {
-    #conviction {
+    #mission {
         margin-bottom: 190%;
     }
 }
