@@ -17,15 +17,15 @@ const Product = () => {
             <div className="row text-center justify-content-center procedure">
                 <div className="col-md-3 procedure-item">
                     <img src={Picture1} alt="Project target" />
-                    <p>set<br/>target</p>
+                    <p>create</p>
                 </div>
                 <div className="col-md-3 procedure-item">
                     <img src={Picture2} alt="Raise funds" />
-                    <p>accept<br/>funds</p>
+                    <p>connect</p>
                 </div>
                 <div className="col-md-3 procedure-item">
                     <img src={Picture3} alt="Deliver project" />
-                    <p>achieve<br/>project</p>
+                    <p>grow</p>
                 </div>
             </div>
         </div>

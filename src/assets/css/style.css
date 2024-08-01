@@ -11630,8 +11630,8 @@ p.loader-p {
 }
 #about section {
   height: 70vh;
-  margin: 10vh;
-  padding: 5% 10vmin 5%;
+  margin: 10vh 0;
+  padding: 20vh 20vmin;
 }
 #about section h1 {
   padding-top: 2rem;

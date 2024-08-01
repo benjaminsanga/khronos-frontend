@@ -10,7 +10,7 @@ import Image4 from '../../assets/images/target.svg';
 const AboutPage = () => {
     return (
         <div id="about" className="container-fluid">
-            <section className="row">
+            <section className="row m-0">
                 <div className="col-md-6 d-flex flex-column justify-content-center align-items-start">
                     <h1>Khronos.</h1>
                     <p>...more than a digital wallet; it's a catalyst for change.</p>
@@ -19,22 +19,19 @@ const AboutPage = () => {
                     <img src={Image1} alt="Welcome" />
                 </div>
             </section>
-            <section className="row">
-                <div className="col-md-12">
+            <section className="row m-0">
+                <div className="col-md-12 p-0 m-0">
                     <h2><i>the problem.</i></h2>
                     {/* <p><strong>Khronos: Bridge the Gap</strong></p> */}
-                    <p>Imagine a world where financial hurdles are history. Where communities aren’t held back by outdated systems. Khronos is the architect of this future. We’re building bridges over the chasm of financial and infrastructural challenges. By creating a seamless, secure digital ecosystem, we're empowering communities to unlock their full potential. Let Khronos be the cornerstone of your progress. 
+                    <p>Imagine a world where financial hurdles are history. Where communities aren't held back by outdated systems. Khronos is the architect of this future. We’re building bridges over the chasm of financial and infrastructural challenges. By creating a seamless, secure digital ecosystem, we're empowering communities to unlock their full potential. Let Khronos be the cornerstone of your progress. 
                     </p>
                 </div>
                 {/* <div className="col-md-6">
                     <img src={Image2} alt="Welcome" />
                 </div> */}
             </section>
-            <section className="row">
-                {/* <div className="col-md-6">
-                    <img src={Image2} alt="Welcome" />
-                </div> */}
-                <div className="col-md-12 text-left">
+            <section className="row m-0">
+                <div className="col-md-12 p-0 m-0 text-left">
                     <h2><i>the solution.</i></h2>
                     <p>Designed with communities in mind, Khronos empowers individuals and organizations to thrive. By streamlining financial transactions and providing essential tools, we're building a future where projects are realized, and communities flourish. Trust, transparency, and security are at the core of everything we do. 
                     </p>
