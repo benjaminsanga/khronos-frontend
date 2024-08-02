@@ -11226,7 +11226,7 @@ p.loader-p {
   padding-bottom: 1.5rem;
 }
 #operation .left p {
-  color: #8a8a8a;
+  color: #dee2e6;
 }
 #operation .left img {
   width: 92px;
@@ -12410,18 +12410,15 @@ p.loader-p {
 #footer-top .icon {
   width: 24px;
   height: auto;
-  margin-left: 10px;
+  margin-right: 10px;
   border: 1px solid transparent;
-}
-#footer-top .icon:hover {
-  border: 1px solid #312440;
-  border-radius: 3px;
 }
 #footer-top > div:first-child {
   margin: 15px 0 0 0;
 }
 #footer-top a {
-  padding: 0 10px;
+  padding: 0;
+  padding-right: 10px;
   text-decoration: none;
   color: #453179;
   font-size: 0.9rem;
@@ -12432,6 +12429,7 @@ p.loader-p {
 #footer-top a.brand-text {
   padding: 20px 0;
   font-size: 1.2rem;
+  font-weight: lighter;
 }
 #footer-bottom {
   padding: 10px 10vmin;

@@ -46,23 +46,23 @@ const Mission = () => {
                         <h5>project</h5>
                     </div>
                 </div>
-                <h4 className="text-center">We are</h4>
+                <h4 className="text-center mt-5">Our Values</h4>
                 <div className="col-md-4 section">
                     <div>
                         <img src={TrustedIcon} alt="trusted" />
-                        <h5>trusted</h5>
+                        <h5>trust</h5>
                     </div>
                 </div>
                 <div className="col-md-4 section">
                     <div>
                         <img src={TransparentIcon} alt="transparent" />
-                        <h5>transparent</h5>
+                        <h5>transparency</h5>
                     </div>
                 </div>
                 <div className="col-md-4 section">
                     <div>
                         <img src={SecuredIcon} alt="secured" />
-                        <h5>secured</h5>
+                        <h5>security</h5>
                     </div>
                 </div>
             </div>

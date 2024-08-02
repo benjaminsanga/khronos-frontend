@@ -14,24 +14,20 @@ const Footer = () => {
     return (
         <div id="footer" className="container-fluid">
             <div className="row justify-content-between align-items-center" id="footer-top">
-                <div className="col-md-3">
-                    <Link to="/#" className="brand-text">
-                        {/* <img src={HappyFaceIcon} alt="Khronos Logo" /> */}
-                        Khronos
-                    </Link>
+                <div className="col-md-12">
+                    <a href="https://www.twitter.com/khronos" target="_blank" rel="noreferrer"><img src={TwitterIcon} alt="Twitter" className="icon" /></a>
+                    <a href="https://www.facebook.com/khronos" target="_blank" rel="noreferrer"><img src={FacebookIcon} alt="Facebook" className="icon" /></a>
+                    <a href="https://www.instagram.com/khronos" target="_blank" rel="noreferrer"><img src={InstagramIcon} alt="Instagram" className="icon" /></a>
+                    <span><i>@thisiskhronos</i></span>
                 </div>
-                <div className="col-md-9 pt-3">
+                {/* <div className="col-md-9 pt-3">
                     <div className="row">
                         <div className="col-md-7 text-end">
                             <ul>
-                                <li><Link to="/about">About</Link></li>
-                                <li><Link to="/users">Users</Link></li>
-                                <li><Link to="/projects">Projects</Link></li>
-                                <li><Link to="/contact">Contact</Link></li>
-                                <li><Link to="/faq">FAQ</Link></li>
+                                
                             </ul>
                         </div>
-                        <div className="col-md-5 text-end icons">
+                        <div className="col-md-12 text-end icons">
                             <ul>
                                 <li><a href="https://www.twitter.com/khronos" target="_blank" rel="noreferrer"><img src={TwitterIcon} alt="Twitter" className="icon" /></a></li>
                                 <li><a href="https://www.facebook.com/khronos" target="_blank" rel="noreferrer"><img src={FacebookIcon} alt="Facebook" className="icon" /></a></li>
@@ -39,7 +35,7 @@ const Footer = () => {
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className="row justify-content-between align-items-center" id="footer-bottom">
                 <div className="col-md-6">
@@ -57,6 +53,11 @@ const Footer = () => {
                             <Link to='/login'>Login</Link>
                             }
                         </li>
+                        <li><Link to="/about">About</Link></li>
+                        {/* <li><Link to="/users">Users</Link></li> */}
+                        {/* <li><Link to="/projects">Projects</Link></li> */}
+                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/faq">FAQ</Link></li>
                     </ul>
                 </div>
                 <div className="col-md-6 pt-3 text-end">

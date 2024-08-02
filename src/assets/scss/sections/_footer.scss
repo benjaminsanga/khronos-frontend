@@ -25,13 +25,13 @@
         .icon {
             width: 24px;
             height: auto;
-            margin-left: 10px;
+            margin-right: 10px;
             border: 1px solid transparent;
 
-            &:hover {
-                border: 1px solid $primary;
-                border-radius: 3px;
-            }
+            // &:hover {
+            //     border: 1px solid $primary;
+            //     border-radius: 3px;
+            // }
         }
 
         & > div:first-child {
@@ -39,7 +39,8 @@
         }
 
         a {
-            padding: 0 10px;
+            padding: 0;
+            padding-right: 10px;
             text-decoration: none;
             color: $primary-light;
             font-size: 0.9rem;
@@ -51,7 +52,7 @@
             &.brand-text {
                 padding: 20px 0;
                 font-size: 1.2rem;
-                
+                font-weight: lighter;
             }
         }
 
