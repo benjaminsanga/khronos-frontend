@@ -20,7 +20,7 @@ const Navbar = () => {
             borderBottom: "none",
             boxShadow: "none",
         },
-        navbar_container: {padding: '20vh 20vmin'}
+        navbar_container: {padding: '0 20vmin'}
     }
 
     useEffect(() => {
