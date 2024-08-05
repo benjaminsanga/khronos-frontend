@@ -63,9 +63,8 @@ const LoginForm = () => {
 
     return (
         <>
-            { forgotPassword && <ForgotPassword />}
             {(isSuccess && userData) && navigate(`/user/dashboard/${userData?.data?.user?.userId}`, {replace: true})}
-
+            { forgotPassword ? <ForgotPassword /> :
             <div id="login" className='container'>
 
                 <div className="d-flex flex-column align-items-center">
@@ -124,7 +123,7 @@ const LoginForm = () => {
                     </div>
                     <div className="col-md-3"></div>
                 </div>
-            </div>
+            </div>}
         </>
     );
 };
