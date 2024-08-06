@@ -47,8 +47,11 @@ const CreateUserForm = () => {
     }
 
     const handleSubmitUser = (data) => {
-        console.log(data, 'data')
-        mutate(data)
+        const transformedValues = {
+            ...data,
+            agree_to_register_user: data.agree_to_register_user === "on",
+          }
+        mutate(transformedValues)
     }
 
     return (
@@ -57,7 +60,7 @@ const CreateUserForm = () => {
                 {isCreateUserError && <h5>{error?.message}</h5>}
                 {isCreateUserSuccess && <VerifyUser/>}
 
-                {!isStatesSuccess &&
+                {isStatesSuccess &&
                     <div className="d-flex flex-column align-items-center">
                         <h2 className="mb-5">Register Account</h2>
                         <div className="col-md-2"></div>
@@ -80,7 +83,7 @@ const CreateUserForm = () => {
                                     {!!errors.user_name && <InvalidFormField message={errors.user_name?.message} />}
                                     <div id="userNameHelp" className="form-text">The name of community or group</div>
                                 </div>
-                                {isStatesSuccess && <div className="row">
+                                <div className="row">
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="user_state" className="form-label">State</label>
                                         <select 
@@ -121,7 +124,7 @@ const CreateUserForm = () => {
                                         </select>
                                         {!!errors.user_lga && <InvalidFormField message={errors.user_lga?.message} />}
                                     </div>
-                                </div>}
+                                </div>
                                 <div className="mb-3">
                                     <label htmlFor="user_address" className="form-label">Address</label>
                                     <input 
@@ -135,7 +138,7 @@ const CreateUserForm = () => {
                                     />
                                     {!!errors.user_address && <InvalidFormField message={errors.user_address?.message} />}
                                 </div>
-                                <h5 className="mt-4 mb-3">User Creator</h5>
+                                <h5 className="mt-4 mb-3">Account Creator</h5>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="user_admin_firstname" className="form-label">First
@@ -251,7 +254,7 @@ const CreateUserForm = () => {
                                 <div className="mb-3 form-check">
                                     <input
                                         type="checkbox"
-                                        name=""
+                                        name="agree_to_register_user"
                                         className="form-check-input"
                                         id="agree_to_register_user"
                                         {...register('agree_to_register_user')}
@@ -268,7 +271,7 @@ const CreateUserForm = () => {
                                 <div className="mb-3 form-check">
                                     <input
                                         type="checkbox"
-                                        name=""
+                                        name="verify_user_information"
                                         className="form-check-input"
                                         id="verify_user_information"
                                         {...register('verify_user_information')}

@@ -20,6 +20,6 @@ export const CreateUserSchema = Yup.object().shape({
     user_admin_lastname: Yup.string().required('Last Name is required'),
     user_admin_firstname: Yup.string().required('First Name is required'),
     user_admin_phone: Yup.string().matches(/^(\+)?(234|0)[0-9]{10}$/, 'Must be a valid phone number'),
-    agree_to_register_user: Yup.boolean().required('Agreement is required'),
-    verify_user_information: Yup.boolean().required('Verification is required')
+    agree_to_register_user: Yup.boolean().required('You must agree to register'),
+    verify_user_information: Yup.boolean().required('Your consent is required')
 })
