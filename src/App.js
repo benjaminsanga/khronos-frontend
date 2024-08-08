@@ -26,6 +26,7 @@ import LandingPage from './pages/LandingPage';
 import {QueryClientProvider, QueryClient} from "@tanstack/react-query";
 import {Provider, useSelector} from "react-redux";
 import store from "./context/store";
+import ErrorBoundary from './pages/ErrorBoundary';
 
 const queryClient = new QueryClient()
 
@@ -86,7 +87,9 @@ const App = () => {
 const WrappedApp = () => {
     return <Provider store={store}>
         <QueryClientProvider client={queryClient}>
-            <App/>
+            <ErrorBoundary>
+                <App/>
+            </ErrorBoundary>
         </QueryClientProvider>
     </Provider>
 }

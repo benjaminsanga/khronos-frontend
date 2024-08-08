@@ -32,19 +32,19 @@ const Statistics = () => {
                         <div className="row">
                             <div className="col-md-4 stat-item">
                                 <div>
-                                    <h1>{statistics?.accounts || '...'}</h1>
+                                    <h1>{statistics?.accounts}</h1>
                                     <p>Users</p>
                                 </div>
                             </div>
                             <div className="col-md-4 stat-item">
                                 <div>
-                                    <h1>{statistics?.projects || '...'}</h1>
+                                    <h1>{statistics?.projects}</h1>
                                     <p>Projects</p>
                                 </div>
                             </div>
                             <div className="col-md-4 stat-item">
                                 <div>
-                                    <h1>{statistics?.deposits || '...'}</h1>
+                                    <h1>{statistics?.deposits}</h1>
                                     <p>Deposits</p>
                                 </div>
                             </div>
