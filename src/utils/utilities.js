@@ -2,7 +2,7 @@ export const getEnvironment = () => {
     const hostName = window?.location?.hostname?.trim?.()?.toLowerCase() || ''
 
     let env = undefined
-    if (hostName.includes('vercel')) {
+    if (hostName.includes('khronos')) {
         env = 'prod'
     } else if (hostName.includes('localhost')) {
         env = 'localhost'
@@ -21,8 +21,7 @@ export const getApiEndpoint = () => {
         return 'https://khronos-backend.onrender.com'
     }
 
-    // return 'http://localhost:8000/'
-    return 'https://khronos-backend.onrender.com'
+    return 'http://localhost:8000/'
 
 }
 

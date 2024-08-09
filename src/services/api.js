@@ -1,8 +1,8 @@
 import axios from 'axios'
 import {getApiEndpoint} from "../utils/utilities";
 
-// get logged in user
-const userId = JSON.parse(localStorage.getItem('khronos::user'))?.userId
+// get logged in account
+const userId = JSON.parse(localStorage.getItem('khronos::account'))?.userId
 
 const apiWorker = axios.create({
     baseURL: getApiEndpoint(),
@@ -12,15 +12,15 @@ const apiWorker = axios.create({
     },
 })
 
-const createUser = async (data) => {
+const createAccount = async (data) => {
     // add fields to form data
     data['verification_code'] = 0;
-    data['verified_account'] = false;
-    return await apiWorker.post('user', data)
+    data['is_verified_account'] = false;
+    return await apiWorker.post('account', data)
 }
 
 const login = async (data) => {
-    return await apiWorker.post('user/login', data)
+    return await apiWorker.post('account/login', data)
 }
 
 const getStatistics = async () => {
@@ -31,19 +31,19 @@ const getStatesAndLgas = async () => {
     return await apiWorker.get('get-states')
 }
 
-const verifyUser = async (data) => {
-    return await apiWorker.post('user/verify', data)
+const verifyAccount = async (data) => {
+    return await apiWorker.post('account/verify', data)
 }
 
 const forgotPassword = async (data) => {
-    return await apiWorker.post('user/forgot-password', data)
+    return await apiWorker.post('account/forgot-password', data)
 }
 
-const getUser = async (id) => {
-    return await apiWorker.get(`user/dashboard/${id}`)
+const getAccount = async (id) => {
+    return await apiWorker.get(`account/dashboard/${id}`)
 }
 
-const getUserProjects = async (id) => {
+const getAccountProjects = async (id) => {
     return await apiWorker.get(`projects/${id}`)
 }
 
@@ -71,26 +71,26 @@ const getAllProjects = async () => {
     return await apiWorker.get('/projects')
 }
 
-const getAllUsers = async () => {
-    return await apiWorker.get('/user')
+const getAllAccounts = async () => {
+    return await apiWorker.get('/account')
 }
 
 const apiCalls = {
-    createUser,
+    createAccount,
     login,
     getStatistics,
     getStatesAndLgas,
-    verifyUser,
+    verifyAccount,
     forgotPassword,
-    getUser,
-    getUserProjects,
+    getAccount,
+    getAccountProjects,
     createProject,
     getProject,
     projectDeposit,
     getFlutterwavePaymentInfo,
     getProjectDeposits,
     getAllProjects,
-    getAllUsers
+    getAllAccounts
 }
 
 export default apiCalls

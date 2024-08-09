@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import UsersComponent from "../components/user/users";
+import UsersComponent from "../components/account/accounts";
 
 const Users = () => {
     return (

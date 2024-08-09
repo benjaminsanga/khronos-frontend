@@ -63,7 +63,7 @@ const LoginForm = () => {
 
     return (
         <>
-            {(isSuccess && userData) && navigate(`/user/dashboard/${userData?.data?.user?.userId}`, {replace: true})}
+            {(isSuccess && userData) && navigate(`/account/dashboard/${userData?.data?.user?.userId}`, {replace: true})}
             { forgotPassword ? <ForgotPassword /> :
             <div id="login" className='container'>
 

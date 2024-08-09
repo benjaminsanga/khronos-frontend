@@ -2,13 +2,13 @@ import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
-import VerifyUser from "./verifyUser";
+import VerifyUser from "./verifyAccount";
 import {CreateUserSchema} from "../../form-schema/createUserSchema";
 import {useCreateUser, useGetStatesAndLgas} from "../../hooks/customHooks";
 import Loading from "../../utils/loading";
 import {InvalidFormField} from "../Errors/invalidFormField";
 
-const CreateUserForm = () => {
+const CreateAccountForm = () => {
     const [states, setStates] = useState({});
     const [lgas, setLgas] = useState([]);
 
@@ -302,4 +302,4 @@ const CreateUserForm = () => {
     );
 };
 
-export default CreateUserForm;
+export default CreateAccountForm;

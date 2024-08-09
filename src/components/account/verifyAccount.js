@@ -1,5 +1,5 @@
 import EmailIcon from '../../assets/icons/email.svg';
-import UserAccountVerified from "./userAccountVerified";
+import AccountVerified from "./accountVerified";
 import {useVerifyUser} from "../../hooks/customHooks";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
@@ -29,7 +29,7 @@ const VerifyUser = () => {
 
     return (
         <>
-            {isSuccess && <UserAccountVerified />}
+            {isSuccess && <AccountVerified />}
 
             {!isSuccess &&
             <div className="row" style={{maxWidth: '100%'}}>

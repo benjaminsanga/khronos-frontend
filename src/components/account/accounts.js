@@ -31,7 +31,7 @@ const UsersComponent = () => {
                     return (
                     <div className="col-md-3" key={index}>
                         <div className="user">
-                            <Link to={`/user/dashboard/${user._id}`}>
+                            <Link to={`/account/dashboard/${user._id}`}>
                                 <h3>{toFirstLetterUpperCase(user.user_name)}</h3>
                                 <span>@ {`${user.user_lga} ${user.user_state}`}</span>
                                     {/*<span>Admin: {`${toFirstLetterUpperCase(user.user_admin_firstname)} ${toFirstLetterUpperCase(user.user_admin_lastname)}`}</span>*/}

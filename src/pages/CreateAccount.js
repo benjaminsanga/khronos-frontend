@@ -1,15 +1,15 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import CreateUserForm from "../components/user/createUserForm";
+import CreateAccountForm from "../components/account/createAccountForm";
 
-const CreateUser = () => {
+const CreateAccount = () => {
     return (
         <>
             <Navbar />
-            <CreateUserForm />
+            <CreateAccountForm />
             <Footer />
         </>
     );
 };
 
-export default CreateUser;
+export default CreateAccount;

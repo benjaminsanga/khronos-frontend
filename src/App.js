@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 import Home from './pages/Home';
-import CreateUser from './pages/CreateUser';
+import CreateAccount from './pages/CreateAccount';
 import CreateProject from './pages/CreateProject';
 import GetQuotation from './pages/GetQuotation';
 import Deposit from './pages/Deposit';
@@ -38,7 +38,7 @@ const App = () => {
         <Router>
             <Routes>
 
-                <Route path="/create-account" element={<CreateUser/>}/>
+                <Route path="/create-account" element={<CreateAccount/>}/>
 
                 {!isAuthenticated && <Route path="/create-project" element={<LoginFirstPage/>}/>}
 
@@ -52,7 +52,7 @@ const App = () => {
 
                 <Route path="/login" element={<Login/>}/>
 
-                <Route path="/user/reset-password/:hash" element={<ResetPasswordPage/>}/>
+                <Route path="/account/reset-password/:hash" element={<ResetPasswordPage/>}/>
 
                 <Route path="/about" element={<About/>}/>
 
@@ -66,11 +66,11 @@ const App = () => {
 
                 <Route path="/project/dashboard/:id" element={<ProjectDashboard/>}/>
 
-                <Route path="/user/dashboard/:id" element={<UserDashboard/>}/>
+                <Route path="/account/dashboard/:id" element={<UserDashboard/>}/>
 
                 <Route path="/projects" element={<Projects/>}/>
 
-                <Route path="/users" element={<Users/>}/>
+                <Route path="/accounts" element={<Users/>}/>
 
                 <Route path="/flutterwave/confirm" element={<PaymentRedirectPage/>}/>
 

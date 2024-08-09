@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import CheckIcon from '../../assets/icons/circle-check.svg';
 
-const UserAccountVerified = () => {
+const AccountVerified = () => {
     return (
         <div className="row">
             <div className="col-md-3"></div>
@@ -19,4 +19,4 @@ const UserAccountVerified = () => {
     );
 };
 
-export default UserAccountVerified;
+export default AccountVerified;

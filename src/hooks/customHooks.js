@@ -5,7 +5,7 @@ export const useCreateUser = () => {
     const queryClient = useQueryClient()
     return useMutation((arg) => apiCalls.createUser(arg), {
         onSuccess: (data) => {
-            queryClient.invalidateQueries(['CreateUser'])
+            queryClient.invalidateQueries(['CreateAccount'])
             return data
         }
     })
@@ -46,7 +46,7 @@ export const useGetStatesAndLgas = () => {
 
 export const useVerifyUser = () => {
     const queryClient = useQueryClient()
-    return useMutation((arg) => apiCalls.verifyUser(arg), {
+    return useMutation((arg) => apiCalls.verifyAccount(arg), {
         onSuccess: (data) => {
             queryClient.invalidateQueries(['VerifyUser'])
             return data
