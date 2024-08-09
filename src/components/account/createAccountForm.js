@@ -49,7 +49,7 @@ const CreateAccountForm = () => {
     const handleSubmitUser = (data) => {
         const transformedValues = {
             ...data,
-            agree_to_register_user: data.agree_to_register_user === "on",
+            agree_to_register_account: data.agree_to_register_account === "on",
           }
         mutate(transformedValues)
     }
@@ -68,31 +68,31 @@ const CreateAccountForm = () => {
                             <h5 className="mb-4">Profile</h5>
                             <form onSubmit={handleSubmit(handleSubmitUser)}>
                                 <div className="mb-3">
-                                    <label htmlFor="user_name" className="form-label">User Name <i
+                                    <label htmlFor="account_name" className="form-label">User Name <i
                                         style={{fontSize: '12px'}}> (Text only)</i></label>
                                     <input 
                                         type="text" 
-                                        name="user_name" 
+                                        name="account_name" 
                                         placeholder="" 
                                         className="form-control"
-                                        id="user_name" 
-                                        aria-describedby="userNameHelp"
-                                        {...register('user_name')}
-                                        aria-invalid={!!errors.user_name ? 'true' : 'false'}
+                                        id="account_name" 
+                                        aria-describedby="accountNameHelp"
+                                        {...register('account_name')}
+                                        aria-invalid={!!errors.account_name ? 'true' : 'false'}
                                     />
-                                    {!!errors.user_name && <InvalidFormField message={errors.user_name?.message} />}
-                                    <div id="userNameHelp" className="form-text">The name of community or group</div>
+                                    {!!errors.account_name && <InvalidFormField message={errors.account_name?.message} />}
+                                    <div id="accountNameHelp" className="form-text">The name of community or group</div>
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
-                                        <label htmlFor="user_state" className="form-label">State</label>
+                                        <label htmlFor="account_state" className="form-label">State</label>
                                         <select 
                                             className="form-select" 
-                                            id="user_state" 
-                                            name="user_state"
+                                            id="account_state" 
+                                            name="account_state"
                                             aria-label="form-select example"
-                                            {...register('user_state')}
-                                            aria-invalid={!!errors.user_state ? 'true' : 'false'}
+                                            {...register('account_state')}
+                                            aria-invalid={!!errors.account_state ? 'true' : 'false'}
                                             onChange={(e) => handleStateSelectionChange(e)}
                                         >
                                             <option defaultValue value="">Select</option>
@@ -103,17 +103,17 @@ const CreateAccountForm = () => {
                                                     })
                                             }
                                         </select>
-                                        {!!errors.user_state && <InvalidFormField message={errors.user_state?.message} />}
+                                        {!!errors.account_state && <InvalidFormField message={errors.account_state?.message} />}
                                     </div>
                                     <div className="col-md-6 mb-3">
-                                        <label htmlFor="user_lga" className="form-label">LGA</label>
+                                        <label htmlFor="account_lga" className="form-label">LGA</label>
                                         <select 
                                             className="form-select" 
-                                            id="user_lga" 
-                                            name="user_lga"
+                                            id="account_lga" 
+                                            name="account_lga"
                                             aria-label="form-select example"
-                                            {...register('user_lga')}
-                                            aria-invalid={!!errors.user_lga ? 'true' : 'false'}
+                                            {...register('account_lga')}
+                                            aria-invalid={!!errors.account_lga ? 'true' : 'false'}
                                         >
                                             <option defaultValue value="">Select</option>
                                             {
@@ -122,117 +122,117 @@ const CreateAccountForm = () => {
                                                 })
                                             }
                                         </select>
-                                        {!!errors.user_lga && <InvalidFormField message={errors.user_lga?.message} />}
+                                        {!!errors.account_lga && <InvalidFormField message={errors.account_lga?.message} />}
                                     </div>
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="user_address" className="form-label">Address</label>
+                                    <label htmlFor="account_address" className="form-label">Address</label>
                                     <input 
                                         type="text" 
-                                        name="user_address" 
+                                        name="account_address" 
                                         placeholder="" 
                                         className="form-control"
-                                        id="user_address"
-                                        {...register('user_address')}
-                                        aria-invalid={!!errors.user_address ? 'true' : 'false'}
+                                        id="account_address"
+                                        {...register('account_address')}
+                                        aria-invalid={!!errors.account_address ? 'true' : 'false'}
                                     />
-                                    {!!errors.user_address && <InvalidFormField message={errors.user_address?.message} />}
+                                    {!!errors.account_address && <InvalidFormField message={errors.account_address?.message} />}
                                 </div>
                                 <h5 className="mt-4 mb-3">Account Creator</h5>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
-                                        <label htmlFor="user_admin_firstname" className="form-label">First
+                                        <label htmlFor="account_admin_firstname" className="form-label">First
                                             name</label>
                                         <input 
                                             type="text" 
-                                            name="user_admin_firstname" 
+                                            name="account_admin_firstname" 
                                             placeholder=""
                                             className="form-control" 
-                                            id="user_admin_firstname"
-                                            {...register('user_admin_firstname')}
-                                            aria-invalid={!!errors.user_admin_firstname ? 'true' : 'false'}
+                                            id="account_admin_firstname"
+                                            {...register('account_admin_firstname')}
+                                            aria-invalid={!!errors.account_admin_firstname ? 'true' : 'false'}
                                         />
-                                        {!!errors.user_admin_firstname && <InvalidFormField message={errors.user_admin_firstname?.message} />}
+                                        {!!errors.account_admin_firstname && <InvalidFormField message={errors.account_admin_firstname?.message} />}
                                     </div>
                                     <div className="col-md-6 mb-3">
-                                        <label htmlFor="user_admin_lastname" className="form-label">Last name</label>
+                                        <label htmlFor="account_admin_lastname" className="form-label">Last name</label>
                                         <input
                                             type="text"
-                                            name="user_admin_lastname"
+                                            name="account_admin_lastname"
                                             placeholder=""
                                             className="form-control"
-                                            id="user_admin_lastname"
-                                            {...register('user_admin_lastname')}
-                                            aria-invalid={!!errors.user_admin_lastname ? 'true' : 'false'}
+                                            id="account_admin_lastname"
+                                            {...register('account_admin_lastname')}
+                                            aria-invalid={!!errors.account_admin_lastname ? 'true' : 'false'}
                                         />
-                                        {!!errors.user_admin_lastname && <InvalidFormField message={errors.user_admin_lastname?.message} />}
+                                        {!!errors.account_admin_lastname && <InvalidFormField message={errors.account_admin_lastname?.message} />}
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
-                                        <label htmlFor="user_admin_gender" className="form-label">Gender</label>
+                                        <label htmlFor="account_admin_gender" className="form-label">Gender</label>
                                         <select
                                             className="form-select"
-                                            id="user_admin_gender"
+                                            id="account_admin_gender"
                                             aria-label="form-select example"
-                                            {...register('user_admin_gender')}
-                                            aria-invalid={!!errors.user_admin_gender ? 'true' : 'false'}
+                                            {...register('account_admin_gender')}
+                                            aria-invalid={!!errors.account_admin_gender ? 'true' : 'false'}
                                         >
                                             <option defaultValue value="">Select</option>
                                             <option value="female">Female</option>
                                             <option value="male">Male</option>
                                         </select>
-                                        {!!errors.user_admin_gender && <InvalidFormField message={errors.user_admin_gender?.message} />}
+                                        {!!errors.account_admin_gender && <InvalidFormField message={errors.account_admin_gender?.message} />}
                                     </div>
                                     <div className="col-md-6 mb-3"></div>
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
                                         <label
-                                            htmlFor="user_admin_phone"
+                                            htmlFor="account_admin_phone"
                                             className="form-label"
                                         >Contact Phone <i style={{fontSize: '12px'}}> (+2348000000000)</i></label>
                                         <input
                                             type="phone"
-                                            name="user_admin_phone"
+                                            name="account_admin_phone"
                                             placeholder=""
                                             className="form-control"
-                                            id="user_admin_phone"
-                                            {...register('user_admin_phone')}
-                                            aria-invalid={!!errors.user_admin_phone ? 'true' : 'false'}
+                                            id="account_admin_phone"
+                                            {...register('account_admin_phone')}
+                                            aria-invalid={!!errors.account_admin_phone ? 'true' : 'false'}
                                         />
-                                        {!!errors.user_admin_phone && <InvalidFormField message={errors.user_admin_phone?.message} />}
+                                        {!!errors.account_admin_phone && <InvalidFormField message={errors.account_admin_phone?.message} />}
                                     </div>
                                     <div className="col-md-6 mb-3">
                                         <label
-                                            htmlFor="user_admin_email"
+                                            htmlFor="account_admin_email"
                                             className="form-label"
                                         >Contact Email</label>
                                         <input
                                             type="email"
-                                            name="user_admin_email"
+                                            name="account_admin_email"
                                             placeholder=""
                                                className="form-control"
-                                            id="user_admin_email"
-                                            {...register('user_admin_email')}
-                                            aria-invalid={!!errors.user_admin_email ? 'true' : 'false'}
+                                            id="account_admin_email"
+                                            {...register('account_admin_email')}
+                                            aria-invalid={!!errors.account_admin_email ? 'true' : 'false'}
                                         />
-                                        {!!errors.user_admin_email && <InvalidFormField message={errors.user_admin_email?.message} />}
+                                        {!!errors.account_admin_email && <InvalidFormField message={errors.account_admin_email?.message} />}
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
-                                        <label htmlFor="user_password" className="form-label">Password
+                                        <label htmlFor="account_password" className="form-label">Password
                                             <i style={{fontSize: '12px'}}> (Minimum of 8 characters)</i></label>
                                         <input type="password"
-                                               name="user_password"
+                                               name="account_password"
                                                placeholder=""
                                                className="form-control"
-                                               id="user_password"
-                                               {...register('user_password')}
-                                               aria-invalid={!!errors.user_password ? 'true' : 'false'}
+                                               id="account_password"
+                                               {...register('account_password')}
+                                               aria-invalid={!!errors.account_password ? 'true' : 'false'}
                                         />
-                                        {!!errors.user_password && <InvalidFormField message={errors.user_password?.message} />}
+                                        {!!errors.account_password && <InvalidFormField message={errors.account_password?.message} />}
                                     </div>
                                     <div className="col-md-6 mb-3">
                                         <label
@@ -254,16 +254,16 @@ const CreateAccountForm = () => {
                                 <div className="mb-3 form-check">
                                     <input
                                         type="checkbox"
-                                        name="agree_to_register_user"
+                                        name="agree_to_register_account"
                                         className="form-check-input"
-                                        id="agree_to_register_user"
-                                        {...register('agree_to_register_user')}
-                                        aria-invalid={!!errors.agree_to_register_user ? 'true' : 'false'}
+                                        id="agree_to_register_account"
+                                        {...register('agree_to_register_account')}
+                                        aria-invalid={!!errors.agree_to_register_account ? 'true' : 'false'}
                                     />
-                                    {!!errors.agree_to_register_user && <InvalidFormField message={errors.agree_to_register_user?.message} />}
+                                    {!!errors.agree_to_register_account && <InvalidFormField message={errors.agree_to_register_account?.message} />}
                                     <label
                                         className="form-check-label"
-                                        htmlFor="agree_to_register_user"
+                                        htmlFor="agree_to_register_account"
                                     >
                                         I agree to the <Link to="/terms-and-conditions">Terms and Conditions</Link> of Khronos
                                     </label>
@@ -271,16 +271,16 @@ const CreateAccountForm = () => {
                                 <div className="mb-3 form-check">
                                     <input
                                         type="checkbox"
-                                        name="verify_user_information"
+                                        name="verify_account_information"
                                         className="form-check-input"
-                                        id="verify_user_information"
-                                        {...register('verify_user_information')}
-                                        aria-invalid={!!errors.verify_user_information ? 'true' : 'false'}
+                                        id="verify_account_information"
+                                        {...register('verify_account_information')}
+                                        aria-invalid={!!errors.verify_account_information ? 'true' : 'false'}
                                     />
-                                    {!!errors.verify_user_information && <InvalidFormField message={errors.verify_user_information?.message} />}
+                                    {!!errors.verify_account_information && <InvalidFormField message={errors.verify_account_information?.message} />}
                                     <label
                                         className="form-check-label"
-                                        htmlFor="verify_user_information"
+                                        htmlFor="verify_account_information"
                                     >I verify that the information provided are true</label>
                                 </div>
                                 <div className="mb-3">

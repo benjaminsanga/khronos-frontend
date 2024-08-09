@@ -31,7 +31,7 @@ const LandingPage = () => {
             <div className="row p-0 m-0">
                 <div className="col-md-7 pt-5">
                     <h1>Trust, Accountability, Execution - Accomplish Joint Capital Projects In Time.</h1>
-                    <p>Raise capital on our system, payments are visible to all members of your user to ensure transparency.</p>
+                    <p>Raise capital on our system, payments are visible to all members of your account to ensure transparency.</p>
                     <a href='https://forms.gle/PD6QTnX9XakP9rR58' target='_blank' rel='noreferrer'>
                         <button className='btn btn-lg btn-primary fw-lighter'>Send Feedback</button>
                     </a>
@@ -50,7 +50,7 @@ const LandingPage = () => {
                 <div className="col-md-6 p-5">
                     <h1>Choose Us</h1>
                     <p>
-                        Keep funds in one place, get notified, follow up to keep tab of the progress of your user's project fund without hassle. While we focus on transparency and giving the best value.
+                        Keep funds in one place, get notified, follow up to keep tab of the progress of your account's project fund without hassle. While we focus on transparency and giving the best value.
                     </p>
                 </div>
             </div>
@@ -96,7 +96,7 @@ const LandingPage = () => {
                 <div className="col-md-6 p-5">
                     <h1>Reliable and Trusted Purse</h1>
                     <p>
-                        Khronos runs on world-class servers, and performs it's users financial transactions using cutting-edge technologies used by millions of people across the world.
+                        Khronos runs on world-class servers, and performs it's accounts financial transactions using cutting-edge technologies used by millions of people across the world.
                     </p>
                 </div>
                 <div className="col-md-6 p-5 mt-5">
@@ -162,7 +162,7 @@ const LandingPage = () => {
                         <button className='btn btn-lg btn-primary fw-lighter'>Send Feedback</button>
                     </a>
                     <p>
-                        Send funds, get notified, follow up, to keep tab of the progress of your user's project fund without hassle. While we focus on transparency and giving the best value.
+                        Send funds, get notified, follow up, to keep tab of the progress of your account's project fund without hassle. While we focus on transparency and giving the best value.
                     </p>
                 </div>
             </div>

@@ -5,16 +5,16 @@ import Loading from "../../utils/loading";
 import {useGetUserProjects, useGetUser} from "../../hooks/customHooks";
 import {useSelector} from "react-redux";
 
-const UserDashboardPage = () => {
+const AccountDashboardPage = () => {
 
     // const location = useLocation();
     const { id } = useParams();
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
 
     const {
-        isLoading: userLoading,
-        isSuccess: userSuccess,
-        data: userData
+        isLoading: accountLoading,
+        isSuccess: accountSuccess,
+        data: accountData
     } = useGetUser(id)
     const {
         isLoading: projectsLoading,
@@ -22,33 +22,33 @@ const UserDashboardPage = () => {
         data: projectsData
     } = useGetUserProjects(id)
 
-    const [userInfo, setUserInfo] = useState({});
+    const [accountInfo, setUserInfo] = useState({});
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        setUserInfo(userData?.data)
+        setUserInfo(accountData?.data)
         setProjects(projectsData?.data?.result)
-    }, [userData, projectsData]);
+    }, [accountData, projectsData]);
 
     return (
         <>
-            {(userLoading || projectsLoading) && <Loading />}
-            {(userSuccess && projectsSuccess) && <div id="dashboard" className="container">
-            <div className="row user-info">
+            {(accountLoading || projectsLoading) && <Loading />}
+            {(accountSuccess && projectsSuccess) && <div id="dashboard" className="container">
+            <div className="row account-info">
                 <div className="col-md-6">
-                    <h2>{toFirstLetterUpperCase(userInfo?.user_name)}</h2>
+                    <h2>{toFirstLetterUpperCase(accountInfo?.account_name)}</h2>
                     <h5>Location</h5>
-                    <p>{`${toFirstLetterUpperCase(userInfo?.user_address)}, ${userInfo?.user_lga}, ${userInfo?.user_state} `}</p>
+                    <p>{`${toFirstLetterUpperCase(accountInfo?.account_address)}, ${accountInfo?.account_lga}, ${accountInfo?.account_state} `}</p>
                     <h5>Created</h5>
-                    <p>{userInfo?.createdAt?.slice(0, 10)}</p>
+                    <p>{accountInfo?.createdAt?.slice(0, 10)}</p>
                 </div>
                 <div className="col-md-6">
                     <h5>Creator</h5>
-                    <p>{`${toFirstLetterUpperCase(userInfo?.user_admin_firstname)} ${toFirstLetterUpperCase(userInfo?.user_admin_lastname)} `}</p>
+                    <p>{`${toFirstLetterUpperCase(accountInfo?.account_admin_firstname)} ${toFirstLetterUpperCase(accountInfo?.account_admin_lastname)} `}</p>
                     <h5>Phone</h5>
-                    <p>{userInfo?.user_admin_phone}</p>
+                    <p>{accountInfo?.account_admin_phone}</p>
                     <h5>Email</h5>
-                    <p>{userInfo?.user_admin_email}</p>
+                    <p>{accountInfo?.account_admin_email}</p>
                 </div>
             </div>
             <div className="row payments">
@@ -111,4 +111,4 @@ const UserDashboardPage = () => {
     );
 };
 
-export default UserDashboardPage;
+export default AccountDashboardPage;

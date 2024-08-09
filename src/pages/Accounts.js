@@ -1,16 +1,15 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import UserDashboardPage from "../components/dashboard/userDashboard";
+import AccountsComponent from "../components/account/accounts";
 
-
-const UserDashboard = () => {
+const Accounts = () => {
     return (
         <>
             <Navbar />
-            <UserDashboardPage />
+            <AccountsComponent />
             <Footer />
         </>
     );
 };
 
-export default UserDashboard;
+export default Accounts;

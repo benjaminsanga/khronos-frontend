@@ -33,7 +33,7 @@ const Statistics = () => {
                             <div className="col-md-4 stat-item">
                                 <div>
                                     <h1>{statistics?.accounts}</h1>
-                                    <p>Users</p>
+                                    <p>Accounts</p>
                                 </div>
                             </div>
                             <div className="col-md-4 stat-item">

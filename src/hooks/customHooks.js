@@ -171,10 +171,10 @@ export const useGetAllProjects = () => {
     )
 }
 
-export const useGetAllUsers = () => {
+export const useGetAllAccounts = () => {
     return useQuery(
-        ['GetAllUsers'],
-        () => apiCalls.getAllUsers(),
+        ['GetAllAccounts'],
+        () => apiCalls.getAllAccounts(),
         {
             keepPreviousData: true,
             staleTime: Infinity

@@ -11,7 +11,7 @@ import {useSelector} from "react-redux";
 const CreateProjectForm = () => {
 
     const navigate = useNavigate();
-    const user = useSelector((state) => state.auth.user);
+    const account = useSelector((state) => state.auth.account);
 
     const [projectCode, setProjectCode] = useState("");
     const [report, setReport] = useState("");
@@ -44,13 +44,13 @@ const CreateProjectForm = () => {
     }, [data, error, isError, isSuccess])
 
     let projectURL = '';
-    let userId = user?.info?._id;
+    let accountId = account?.info?._id;
 
     const handleSubmitProject = (data) => {
         // add fields without form field checks
-        data['user_id'] = userId;
+        data['account_id'] = accountId;
         data['report'] = report;
-        data['email'] = user?.info?.user_admin_email;
+        data['email'] = account?.info?.account_admin_email;
 
         mutate(data)
     }

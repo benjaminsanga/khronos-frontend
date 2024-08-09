@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     isAuthenticated: false,
-    user: null,
+    account: null,
 };
 
 const authSlice = createSlice({
@@ -12,13 +12,13 @@ const authSlice = createSlice({
     reducers: {
         login: (state, action) => {
             state.isAuthenticated = true;
-            state.user = action.payload.userId;
-            localStorage.setItem('khronos::user', JSON.stringify(action.payload));
+            state.account = action.payload.accountId;
+            localStorage.setItem('khronos::account', JSON.stringify(action.payload));
         },
         logout: (state) => {
             state.isAuthenticated = false;
-            state.user = null;
-            localStorage.removeItem('khronos::user');
+            state.account = null;
+            localStorage.removeItem('khronos::account');
         },
     },
 });

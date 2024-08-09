@@ -2,13 +2,13 @@ import axios from 'axios'
 import {getApiEndpoint} from "../utils/utilities";
 
 // get logged in account
-const userId = JSON.parse(localStorage.getItem('khronos::account'))?.userId
+const accountId = JSON.parse(localStorage.getItem('khronos::account'))?.accountId
 
 const apiWorker = axios.create({
     baseURL: getApiEndpoint(),
     headers: {
         Accept: 'application/json',
-        Authorization: `Bearer ${userId}`
+        Authorization: `Bearer ${accountId}`
     },
 })
 

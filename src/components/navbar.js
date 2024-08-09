@@ -8,7 +8,7 @@ const Navbar = () => {
     let location = useLocation();
     const navigate = useNavigate();
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
-    // const user = useSelector((state) => state.auth.user);
+    // const account = useSelector((state) => state.auth.account);
     const dispatch = useDispatch();
 
     // set path of location

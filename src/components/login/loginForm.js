@@ -28,8 +28,8 @@ const LoginForm = () => {
         isSuccess,
         isError,
         isLoading,
-        error: userError,
-        data: userData
+        error: accountError,
+        data: accountData
     } = useLogin()
 
     const navigate = useNavigate();
@@ -39,20 +39,20 @@ const LoginForm = () => {
         if (isSuccess) {
             clearErrors()
             // set context values
-            const user = {
-                userId: userData?.data?.user?.userId
+            const account = {
+                accountId: accountData?.data?.account?.accountId
             };
-            dispatch(login(user));
+            dispatch(login(account));
         }
 
         if (isError) {
-            if (userError?.response?.data?.message?.includes('email')) {
-                setError('email', userError?.response?.data, {shouldFocus: true})
+            if (accountError?.response?.data?.message?.includes('email')) {
+                setError('email', accountError?.response?.data, {shouldFocus: true})
             } else {
-                setError('password', userError?.response?.data, {shouldFocus: true})
+                setError('password', accountError?.response?.data, {shouldFocus: true})
             }
         }
-    }, [userData, userError])
+    }, [accountData, accountError])
 
     // const [loginSuccess, setLoginSuccess] = useState(false);
     const [forgotPassword, setForgotPassword] = useState(false);
@@ -63,7 +63,7 @@ const LoginForm = () => {
 
     return (
         <>
-            {(isSuccess && userData) && navigate(`/account/dashboard/${userData?.data?.user?.userId}`, {replace: true})}
+            {(isSuccess && accountData) && navigate(`/account/dashboard/${accountData?.data?.account?.accountId}`, {replace: true})}
             { forgotPassword ? <ForgotPassword /> :
             <div id="login" className='container'>
 
@@ -77,7 +77,7 @@ const LoginForm = () => {
                                 <input
                                     type="email"
                                     name="email"
-                                    placeholder="user@email.com"
+                                    placeholder="account@email.com"
                                     className="form-control"
                                     id="email"
                                     {...register('email')}
@@ -109,7 +109,7 @@ const LoginForm = () => {
                                     {isLoading && <i className="fa fa-spinner fa-spin"></i>} Log In
                                 </button>
                                 {isError && <p className="text-center text-danger">
-                                    {userError?.response?.data?.message}
+                                    {accountError?.response?.data?.message}
                                 </p>}
                             </div>
                         </form>

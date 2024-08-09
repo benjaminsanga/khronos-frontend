@@ -1,12 +1,12 @@
 import * as Yup from 'yup'
 
 export const CreateUserSchema = Yup.object().shape({
-    user_name: Yup.string().required('User Name is required'),
-    user_address: Yup.string().required('User Address is required'),
-    user_lga: Yup.string().required('User LGA is required'),
-    user_state: Yup.string().required('User State is required'),
-    user_admin_gender: Yup.string().required('Gender is required'),
-    user_password: Yup.string()
+    account_name: Yup.string().required('User Name is required'),
+    account_address: Yup.string().required('User Address is required'),
+    account_lga: Yup.string().required('User LGA is required'),
+    account_state: Yup.string().required('User State is required'),
+    account_admin_gender: Yup.string().required('Gender is required'),
+    account_password: Yup.string()
         .required('Password is required')
         .min(3, 'Password must be at 3 char long')
         .matches(
@@ -15,11 +15,11 @@ export const CreateUserSchema = Yup.object().shape({
         ),
     confirm_password: Yup.string()
         .required('Confirm Password field is mandatory')
-        .oneOf([Yup.ref('user_password')], 'Passwords does not match'),
-    user_admin_email: Yup.string().email('Must be a valid email').required('Email is required'),
-    user_admin_lastname: Yup.string().required('Last Name is required'),
-    user_admin_firstname: Yup.string().required('First Name is required'),
-    user_admin_phone: Yup.string().matches(/^(\+)?(234|0)[0-9]{10}$/, 'Must be a valid phone number'),
-    agree_to_register_user: Yup.boolean().required('You must agree to register'),
-    verify_user_information: Yup.boolean().required('Your consent is required')
+        .oneOf([Yup.ref('account_password')], 'Passwords does not match'),
+    account_admin_email: Yup.string().email('Must be a valid email').required('Email is required'),
+    account_admin_lastname: Yup.string().required('Last Name is required'),
+    account_admin_firstname: Yup.string().required('First Name is required'),
+    account_admin_phone: Yup.string().matches(/^(\+)?(234|0)[0-9]{10}$/, 'Must be a valid phone number'),
+    agree_to_register_account: Yup.boolean().required('You must agree to register'),
+    verify_account_information: Yup.boolean().required('Your consent is required')
 })

@@ -4,7 +4,7 @@
     min-height: 100vh;
     padding: 2.5rem 0px;
 
-    .user-info {
+    .account-info {
         padding-bottom: 2.5rem;
 
         div {
@@ -52,7 +52,7 @@
 
 @media only screen and (max-width: 600px) {
     #dashboard {
-        .user-info {
+        .account-info {
             .col-md-6 {
                 display: flex !important;
                 flex-direction: column !important;

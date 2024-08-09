@@ -14,10 +14,10 @@ import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/Terms';
 import ProjectDashboard from './pages/ProjectDashboard';
-import UserDashboard from './pages/UserDashboard';
+import UserDashboard from './pages/AccountDashboard';
 import Projects from './pages/Projects';
 import Join from './pages/Join';
-import Users from './pages/Users';
+import Accounts from './pages/Accounts';
 import FourOhFour from './pages/FourOhFour';
 import PaymentRedirectPage from './pages/PaymentRedirectPage';
 import LoginFirstPage from './pages/LoginFirst';
@@ -70,7 +70,7 @@ const App = () => {
 
                 <Route path="/projects" element={<Projects/>}/>
 
-                <Route path="/accounts" element={<Users/>}/>
+                <Route path="/accounts" element={<Accounts/>}/>
 
                 <Route path="/flutterwave/confirm" element={<PaymentRedirectPage/>}/>
 
