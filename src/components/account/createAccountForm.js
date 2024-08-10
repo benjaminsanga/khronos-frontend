@@ -2,9 +2,9 @@ import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
-import VerifyUser from "./verifyAccount";
-import {CreateUserSchema} from "../../form-schema/createUserSchema";
-import {useCreateUser, useGetStatesAndLgas} from "../../hooks/customHooks";
+import VerifyAccount from "./verifyAccount";
+import {CreateAccountSchema} from "../../form-schema/createAccountSchema";
+import {useCreateAccount, useGetStatesAndLgas} from "../../hooks/customHooks";
 import Loading from "../../utils/loading";
 import {InvalidFormField} from "../Errors/invalidFormField";
 
@@ -17,7 +17,7 @@ const CreateAccountForm = () => {
         handleSubmit,
         formState: {errors}
     } = useForm({
-        resolver: yupResolver(CreateUserSchema)
+        resolver: yupResolver(CreateAccountSchema)
     })
 
     const {
@@ -27,11 +27,11 @@ const CreateAccountForm = () => {
     } = useGetStatesAndLgas()
 
     const {
-        isSuccess: isCreateUserSuccess,
-        isError: isCreateUserError,
+        isSuccess: isCreateAccountSuccess,
+        isError: isCreateAccountError,
         error,
         mutate
-    } = useCreateUser()
+    } = useCreateAccount()
 
     useEffect(() => {
         setStates(statesData?.data)
@@ -46,7 +46,7 @@ const CreateAccountForm = () => {
         setLgas(states[selectedState]);
     }
 
-    const handleSubmitUser = (data) => {
+    const handleSubmitAccount = (data) => {
         const transformedValues = {
             ...data,
             agree_to_register_account: data.agree_to_register_account === "on",
@@ -57,8 +57,8 @@ const CreateAccountForm = () => {
     return (
         <>
             <div id="create-account" className='container'>
-                {isCreateUserError && <h5>{error?.message}</h5>}
-                {isCreateUserSuccess && <VerifyUser/>}
+                {isCreateAccountError && <h5>{error?.message}</h5>}
+                {isCreateAccountSuccess && <VerifyAccount/>}
 
                 {isStatesSuccess &&
                     <div className="d-flex flex-column align-items-center">
@@ -66,9 +66,9 @@ const CreateAccountForm = () => {
                         <div className="col-md-2"></div>
                         <div className="col-md-8">
                             <h5 className="mb-4">Profile</h5>
-                            <form onSubmit={handleSubmit(handleSubmitUser)}>
+                            <form onSubmit={handleSubmit(handleSubmitAccount)}>
                                 <div className="mb-3">
-                                    <label htmlFor="account_name" className="form-label">User Name <i
+                                    <label htmlFor="account_name" className="form-label">Account Name <i
                                         style={{fontSize: '12px'}}> (Text only)</i></label>
                                     <input 
                                         type="text" 

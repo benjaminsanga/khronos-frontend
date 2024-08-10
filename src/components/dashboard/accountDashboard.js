@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from "../../utils/loading";
-import {useGetUserProjects, useGetUser} from "../../hooks/customHooks";
+import {useGetAccountProjects, useGetAccount} from "../../hooks/customHooks";
 import {useSelector} from "react-redux";
 
 const AccountDashboardPage = () => {
@@ -15,18 +15,18 @@ const AccountDashboardPage = () => {
         isLoading: accountLoading,
         isSuccess: accountSuccess,
         data: accountData
-    } = useGetUser(id)
+    } = useGetAccount(id)
     const {
         isLoading: projectsLoading,
         isSuccess: projectsSuccess,
         data: projectsData
-    } = useGetUserProjects(id)
+    } = useGetAccountProjects(id)
 
-    const [accountInfo, setUserInfo] = useState({});
+    const [accountInfo, setAccountInfo] = useState({});
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        setUserInfo(accountData?.data)
+        setAccountInfo(accountData?.data)
         setProjects(projectsData?.data?.result)
     }, [accountData, projectsData]);
 

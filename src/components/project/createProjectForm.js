@@ -60,7 +60,7 @@ const CreateProjectForm = () => {
             {(isSuccess && !!projectCode) && navigate(`${projectURL}`)}
             <div id="create-project" className='container'>
                 <div className="d-flex flex-column align-items-center">
-                    <h2 className="mb-5">Create Project for User</h2>
+                    <h2 className="mb-5">Create Project for Account</h2>
                     <div className="col-md-2"></div>
                     <div className="col-md-8">
                         <form onSubmit={handleSubmit(handleSubmitProject)}>

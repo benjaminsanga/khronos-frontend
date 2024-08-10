@@ -1,9 +1,9 @@
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 import apiCalls from '../services/api'
 
-export const useCreateUser = () => {
+export const useCreateAccount = () => {
     const queryClient = useQueryClient()
-    return useMutation((arg) => apiCalls.createUser(arg), {
+    return useMutation((arg) => apiCalls.createAccount(arg), {
         onSuccess: (data) => {
             queryClient.invalidateQueries(['CreateAccount'])
             return data
@@ -44,11 +44,11 @@ export const useGetStatesAndLgas = () => {
     )
 }
 
-export const useVerifyUser = () => {
+export const useVerifyAccount = () => {
     const queryClient = useQueryClient()
     return useMutation((arg) => apiCalls.verifyAccount(arg), {
         onSuccess: (data) => {
-            queryClient.invalidateQueries(['VerifyUser'])
+            queryClient.invalidateQueries(['VerifyAccount'])
             return data
         }
     })
@@ -64,10 +64,10 @@ export const useForgotPassword = () => {
     })
 }
 
-export const useGetUser = (id) => {
+export const useGetAccount = (id) => {
     return useQuery(
-        ['GetUser'],
-        () => apiCalls.getUser(id),
+        ['GetAccount'],
+        () => apiCalls.getAccount(id),
         {
             keepPreviousData: true,
             staleTime: Infinity
@@ -75,9 +75,9 @@ export const useGetUser = (id) => {
     )
 }
 
-export const useGetUserProjects = (id) => {
+export const useGetAccountProjects = (id) => {
     return useQuery(
-        ['GetUserProjects'],
+        ['GetAccountProjects'],
         () => apiCalls.getAllProjects(id),
         {
             keepPreviousData: true,

@@ -1,10 +1,10 @@
 import * as Yup from 'yup'
 
-export const CreateUserSchema = Yup.object().shape({
-    account_name: Yup.string().required('User Name is required'),
-    account_address: Yup.string().required('User Address is required'),
-    account_lga: Yup.string().required('User LGA is required'),
-    account_state: Yup.string().required('User State is required'),
+export const CreateAccountSchema = Yup.object().shape({
+    account_name: Yup.string().required('Account Name is required'),
+    account_address: Yup.string().required('Account Address is required'),
+    account_lga: Yup.string().required('Account LGA is required'),
+    account_state: Yup.string().required('Account State is required'),
     account_admin_gender: Yup.string().required('Gender is required'),
     account_password: Yup.string()
         .required('Password is required')

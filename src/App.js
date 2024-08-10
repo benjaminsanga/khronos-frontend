@@ -14,7 +14,7 @@ import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/Terms';
 import ProjectDashboard from './pages/ProjectDashboard';
-import UserDashboard from './pages/AccountDashboard';
+import AccountDashboard from './pages/AccountDashboard';
 import Projects from './pages/Projects';
 import Join from './pages/Join';
 import Accounts from './pages/Accounts';
@@ -66,7 +66,7 @@ const App = () => {
 
                 <Route path="/project/dashboard/:id" element={<ProjectDashboard/>}/>
 
-                <Route path="/account/dashboard/:id" element={<UserDashboard/>}/>
+                <Route path="/account/dashboard/:id" element={<AccountDashboard/>}/>
 
                 <Route path="/projects" element={<Projects/>}/>
 

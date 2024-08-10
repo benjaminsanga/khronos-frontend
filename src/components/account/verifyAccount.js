@@ -1,19 +1,19 @@
 import EmailIcon from '../../assets/icons/email.svg';
 import AccountVerified from "./accountVerified";
-import {useVerifyUser} from "../../hooks/customHooks";
+import {useVerifyAccount} from "../../hooks/customHooks";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
-import {VerifyUserSchema} from "../../form-schema/verifyUserSchema";
+import {VerifyAccountSchema} from "../../form-schema/verifyAccountSchema";
 import {InvalidFormField} from "../Errors/invalidFormField";
 
-const VerifyUser = () => {
+const VerifyAccount = () => {
 
     const {
         register,
         handleSubmit,
         formState: {errors}
     } = useForm({
-        resolver: yupResolver(VerifyUserSchema)
+        resolver: yupResolver(VerifyAccountSchema)
     })
 
     const {
@@ -21,7 +21,7 @@ const VerifyUser = () => {
         isSuccess,
         isError,
         error
-    } = useVerifyUser()
+    } = useVerifyAccount()
 
     const handleVerify = (data) => {
         mutate(data)
@@ -60,4 +60,4 @@ const VerifyUser = () => {
     );
 }
 
-export default VerifyUser;
+export default VerifyAccount;

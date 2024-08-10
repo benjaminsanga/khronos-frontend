@@ -2,7 +2,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import AccountDashboardPage from "../components/dashboard/accountDashboard";
 
-const UserDashboard = () => {
+const AccountDashboard = () => {
     return (
         <>
             <Navbar />
@@ -12,4 +12,4 @@ const UserDashboard = () => {
     );
 };
 
-export default UserDashboard;
+export default AccountDashboard;
