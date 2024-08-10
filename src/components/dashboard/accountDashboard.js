@@ -27,9 +27,10 @@ const AccountDashboardPage = () => {
 
     useEffect(() => {
         setAccountInfo(accountData?.data)
-        setProjects(projectsData?.data?.result)
+        setProjects(projectsData?.data)
     }, [accountData, projectsData]);
 
+    
     return (
         <>
             {(accountLoading || projectsLoading) && <Loading />}
@@ -40,10 +41,10 @@ const AccountDashboardPage = () => {
                     <h5>Location</h5>
                     <p>{`${toFirstLetterUpperCase(accountInfo?.account_address)}, ${accountInfo?.account_lga}, ${accountInfo?.account_state} `}</p>
                     <h5>Created</h5>
-                    <p>{accountInfo?.createdAt?.slice(0, 10)}</p>
+                    <p>{accountInfo?.created_at?.slice(0, 10)}</p>
                 </div>
                 <div className="col-md-6">
-                    <h5>Creator</h5>
+                    <h5>Account Admin</h5>
                     <p>{`${toFirstLetterUpperCase(accountInfo?.account_admin_firstname)} ${toFirstLetterUpperCase(accountInfo?.account_admin_lastname)} `}</p>
                     <h5>Phone</h5>
                     <p>{accountInfo?.account_admin_phone}</p>
@@ -54,7 +55,7 @@ const AccountDashboardPage = () => {
             <div className="row payments">
                 <h2>Projects</h2>
                 <div>
-                    {(Array.isArray(projects) && projects?.length > 0) ? <p>No Projects, yet!</p> :
+                    {projects?.length === 0 ? <p>No Projects, yet!</p> :
                     <table className="table table-striped table-hover">
                         <thead>
                             <tr>

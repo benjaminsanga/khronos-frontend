@@ -11523,14 +11523,14 @@ p.loader-p {
     width: 70%;
   }
 }
-#users {
+#accounts {
   margin-top: 3rem;
   color: #312440;
 }
-#users h2 {
+#accounts h2 {
   color: #7befb2;
 }
-#users .user {
+#accounts .account {
   display: flex;
   flex-direction: column;
   border: 1px solid lightgray;
@@ -11539,13 +11539,13 @@ p.loader-p {
   transition: 0.15s;
   height: 200px;
 }
-#users .user span {
+#accounts .account span {
   display: block;
 }
-#users .user a {
+#accounts .account a {
   text-decoration: none;
 }
-#users .user:hover {
+#accounts .account:hover {
   transform: scale(1.1);
 }
 
@@ -12113,16 +12113,16 @@ p.loader-p {
   min-height: 100vh;
   padding: 2.5rem 0px;
 }
-#dashboard .user-info {
+#dashboard .account-info {
   padding-bottom: 2.5rem;
 }
-#dashboard .user-info div {
+#dashboard .account-info div {
   padding-top: 1.5rem;
 }
-#dashboard .user-info h2 {
+#dashboard .account-info h2 {
   padding: 0 0 1rem;
 }
-#dashboard .user-info h2 span {
+#dashboard .account-info h2 span {
   color: #7befb2;
 }
 #dashboard .project-stats {
@@ -12146,7 +12146,7 @@ p.loader-p {
   }
 }
 @media only screen and (max-width: 600px) {
-  #dashboard .user-info .col-md-6 {
+  #dashboard .account-info .col-md-6 {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;

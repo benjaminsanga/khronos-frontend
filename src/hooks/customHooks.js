@@ -78,7 +78,7 @@ export const useGetAccount = (id) => {
 export const useGetAccountProjects = (id) => {
     return useQuery(
         ['GetAccountProjects'],
-        () => apiCalls.getAllProjects(id),
+        () => apiCalls.getAccountProjects(id),
         {
             keepPreviousData: true,
             staleTime: Infinity

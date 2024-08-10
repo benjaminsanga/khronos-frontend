@@ -3,10 +3,10 @@ import {Link} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import VerifyAccount from "./verifyAccount";
-import {CreateAccountSchema} from "../../form-schema/createAccountSchema";
 import {useCreateAccount, useGetStatesAndLgas} from "../../hooks/customHooks";
 import Loading from "../../utils/loading";
 import {InvalidFormField} from "../Errors/invalidFormField";
+import { CreateAccountSchema } from "../../form-schema/createAccountSchema";
 
 const CreateAccountForm = () => {
     const [states, setStates] = useState({});
@@ -57,10 +57,8 @@ const CreateAccountForm = () => {
     return (
         <>
             <div id="create-account" className='container'>
-                {isCreateAccountError && <h5>{error?.message}</h5>}
-                {isCreateAccountSuccess && <VerifyAccount/>}
-
-                {isStatesSuccess &&
+                {isCreateAccountSuccess ? <VerifyAccount/> :
+                isStatesSuccess &&
                     <div className="d-flex flex-column align-items-center">
                         <h2 className="mb-5">Register Account</h2>
                         <div className="col-md-2"></div>
@@ -284,6 +282,7 @@ const CreateAccountForm = () => {
                                     >I verify that the information provided are true</label>
                                 </div>
                                 <div className="mb-3">
+                                    {isCreateAccountError && <p className="text-danger">{error?.response?.data?.message}</p>}
                                     <button
                                         type="submit"
                                         className="btn btn-primary fw-lighter btn-lg"

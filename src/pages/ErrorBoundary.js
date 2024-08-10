@@ -19,7 +19,7 @@ class ErrorBoundary extends Component {
     render() {
         if (this.state.hasError) {
             return (
-                <div>
+                <div style={{margin: '0 auto'}}>
                     <h1>Oops! Something went wrong.</h1>
                     <button onClick={() => window.location.reload()}>Reload</button>
                 </div>

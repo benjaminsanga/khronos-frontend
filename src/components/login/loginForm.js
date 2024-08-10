@@ -33,14 +33,14 @@ const LoginForm = () => {
     } = useLogin()
 
     const navigate = useNavigate();
-
+    
     useEffect(() => {
 
         if (isSuccess) {
             clearErrors()
             // set context values
             const account = {
-                accountId: accountData?.data?.account?.accountId
+                account: accountData?.data?.accountInfo
             };
             dispatch(login(account));
         }
@@ -63,7 +63,7 @@ const LoginForm = () => {
 
     return (
         <>
-            {(isSuccess && accountData) && navigate(`/account/dashboard/${accountData?.data?.account?.accountId}`, {replace: true})}
+            {(isSuccess && accountData) && navigate(`/account/dashboard/${accountData?.data?.accountInfo?._id}`, {replace: true})}
             { forgotPassword ? <ForgotPassword /> :
             <div id="login" className='container'>
 
@@ -108,9 +108,6 @@ const LoginForm = () => {
                                 >
                                     {isLoading && <i className="fa fa-spinner fa-spin"></i>} Log In
                                 </button>
-                                {isError && <p className="text-center text-danger">
-                                    {accountError?.response?.data?.message}
-                                </p>}
                             </div>
                         </form>
                         <div className="d-flex flex-column justify-content-between align-items-center">
