@@ -72,7 +72,7 @@ const AccountDashboardPage = () => {
                                                 project_code,
                                                 project_name,
                                                 project_purpose,
-                                                project_target,
+                                                project_target_amount,
                                                 contribution_end_date
                                             }, index) => {
                                 return (
@@ -84,7 +84,7 @@ const AccountDashboardPage = () => {
                                             </Link>
                                         </td>
                                         <td>{project_purpose}</td>
-                                        <td>{project_target}</td>
+                                        <td>{project_target_amount}</td>
                                         <td>{project_code}</td>
                                         <td>{contribution_end_date}</td>
                                     </tr>

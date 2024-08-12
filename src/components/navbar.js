@@ -8,7 +8,7 @@ const Navbar = () => {
     let location = useLocation();
     const navigate = useNavigate();
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
-    // const account = useSelector((state) => state.auth.account);
+    const account = useSelector((state) => state.auth.account)
     const dispatch = useDispatch();
 
     // set path of location
@@ -36,16 +36,25 @@ const Navbar = () => {
                 </Link>
 
                 <div className="nav">
+                { isAuthenticated ?
                     <div className="nav-item">
-                        <Link to="/about" className="nav-link">
-                            About
+                        <Link to={`/account/dashboard/${account?.account?._id}`} className="nav-link">
+                            Dashboard
                         </Link>
-                    </div>
-                    <div className="nav-item">
-                        <Link to="/create-account" className="nav-link">
-                            Register
-                        </Link>
-                    </div>
+                    </div> : 
+                    <>
+                        <div className="nav-item">
+                            <Link to="/about" className="nav-link">
+                                About
+                            </Link>
+                        </div>
+                        <div className="nav-item">
+                            <Link to="/create-account" className="nav-link">
+                                Register
+                            </Link>
+                        </div>
+                    </>
+                    }                    
                     <div className="nav-item">
                         <Link to="/join" className="nav-link">
                             Deposit

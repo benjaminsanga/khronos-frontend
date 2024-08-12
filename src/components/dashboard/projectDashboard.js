@@ -48,7 +48,7 @@ const ProjectDashboardPage = () => {
                 <div className="row text-center project-stats">
                     <div className="col-md-3">
                         <p>Target</p>
-                        <h2>{projectInfo?.project_target}</h2>
+                        <h2>{projectInfo?.project_target_amount}</h2>
                     </div>
                     <div className="col-md-3">
                         <p>Raised</p>
