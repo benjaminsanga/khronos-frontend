@@ -86,7 +86,7 @@ const AccountDashboardPage = () => {
                                         <td>{project_purpose}</td>
                                         <td>{project_target_amount}</td>
                                         <td>{project_code}</td>
-                                        <td>{contribution_end_date}</td>
+                                        <td>{contribution_end_date?.slice(0, 10)}</td>
                                     </tr>
                                 );
                             })}

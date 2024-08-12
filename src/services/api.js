@@ -52,7 +52,7 @@ const createProject = async (data) => {
 }
 
 const getProject = async (code) => {
-    return await apiWorker.get(`project/${code}`)
+    return await apiWorker.get(`project/dashboard/${code}`)
 }
 
 const projectDeposit = async (data) => {
