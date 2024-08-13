@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from "../../utils/loading";
 import {useForm} from "react-hook-form";
@@ -13,9 +13,7 @@ const DepositForm = () => {
     // set project 
     const { code } = useParams();
     const [errorMessage, setErrorMessage] = useState("");
-    
-    // consumer_id
-    // consumer_mac
+    const navigate = useNavigate()
 
     const [projectInfo, setProjectInfo] = useState({});
 
@@ -56,8 +54,7 @@ const DepositForm = () => {
 
     useEffect(() => {
         if (depositIsSuccess) {
-            console.log(depositData, 'depositData')
-            window.location.href = depositData?.data?.link;
+            window.location.replace(depositData?.data?.data?.link);
         }
         if (depositIsError) {
             console.log(depositError, 'error')
@@ -66,7 +63,7 @@ const DepositForm = () => {
     }, [depositIsSuccess, depositIsError, depositData, error, depositError])
 
     const handleDepositSubmit = (data) => {
-        data['project_id'] = code;
+        data['project_id'] = projectInfo?.id;
         data['transaction_id'] = `${projectInfo?.project_code}%${data?.phone}`
         depositMutate(data)
     }
@@ -77,7 +74,7 @@ const DepositForm = () => {
             {isLoading && <Loading />}
             {isSuccess && <div id="deposit" className='container'>
                 <div className="d-flex flex-column align-items-center">
-                    <h2 className="mb-2">Deposit for &nbsp;
+                    <h2 className="mb-2">Deposit for{' '}
                         <span className="text-secondary">
                             { toFirstLetterUpperCase(projectInfo?.project_name)}
                         </span>
@@ -146,7 +143,6 @@ const DepositForm = () => {
                             </div>
                             <div>
                                 <em className="text-warning">
-                                    Please note:<br/>
                                     * This transaction is non-refundable.<br/>
                                     * Your data will be stored for reference.<br/>
                                 </em>
