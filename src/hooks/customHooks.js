@@ -96,15 +96,15 @@ export const useCreateProject = () => {
     })
 }
 
-export const useGetProject = () => {
-    const queryClient = useQueryClient()
-    return useMutation((arg) => apiCalls.getProject(arg), {
-        onSuccess: (data) => {
-            queryClient.invalidateQueries(['GetProject'])
-            return data
-        }
-    })
-}
+// export const useGetProject = () => {
+//     const queryClient = useQueryClient()
+//     return useMutation((arg) => apiCalls.getProject(arg), {
+//         onSuccess: (data) => {
+//             queryClient.invalidateQueries(['GetProject'])
+//             return data
+//         }
+//     })
+// }
 
 export const useGetProjectById = (id) => {
     return useQuery(
@@ -120,7 +120,7 @@ export const useGetProjectById = (id) => {
 export const useGetProjectByCode = (code) => {
     return useQuery(
         ['GetProjectByCode'],
-        () => apiCalls.getProject(code),
+        () => apiCalls.getProjectByCode(code),
         {
             keepPreviousData: true,
             staleTime: Infinity

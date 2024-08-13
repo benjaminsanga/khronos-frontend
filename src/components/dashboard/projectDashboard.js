@@ -41,7 +41,7 @@ const ProjectDashboardPage = () => {
                     </div>
                     <div className="col-md-6">
                         <p>Project Code<br/><strong>{projectInfo?.project_code}</strong></p>
-                        <p>Link<br/><code>{`https://khronos.herokuapp.com/deposit/${projectInfo?.project_code}`}</code></p>
+                        <p>Deposit Link<br/><code>{`https://khronos.herokuapp.com/deposit/${projectInfo?.project_code}`}</code></p>
                     </div>
                 </div>
                 <div className="row text-center project-stats">
@@ -65,8 +65,8 @@ const ProjectDashboardPage = () => {
                 <div className="row payments">
                     <h2>Deposits</h2>
                     <div>
-                        {deposits?.length === 0 ? <p>No deposits, yet.</p> : 
-                        <table className="table table-striped table-hover">
+                        {deposits?.length === 0 && <p>No deposits, yet.</p>} 
+                        {deposits?.length > 0 && <table className="table table-striped table-hover">
                             <thead>
                                 <tr>
                                 <th scope="col">#</th>

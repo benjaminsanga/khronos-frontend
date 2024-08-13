@@ -69,6 +69,7 @@ const AccountDashboardPage = () => {
                         </thead>
                         <tbody>
                             {projects?.map(({
+                                                id,
                                                 project_code,
                                                 project_name,
                                                 project_purpose,
@@ -79,7 +80,7 @@ const AccountDashboardPage = () => {
                                     <tr key={index}>
                                         <th scope="row">{index+1}</th>
                                         <td>
-                                            <Link to={`/project/dashboard/${project_code}`}>
+                                            <Link to={`/project/dashboard/${id}`}>
                                                 {project_name}
                                             </Link>
                                         </td>

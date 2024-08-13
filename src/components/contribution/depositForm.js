@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from "../../utils/loading";
 import {useForm} from "react-hook-form";
@@ -57,18 +57,17 @@ const DepositForm = () => {
     useEffect(() => {
         if (depositIsSuccess) {
             console.log(depositData, 'depositData')
-            // window.location.href = depositData?.data?.data?.link;
+            window.location.href = depositData?.data?.link;
         }
         if (depositIsError) {
             console.log(depositError, 'error')
-            setErrorMessage(`Error: ${depositError?.response?.data?.message}`);
+            setErrorMessage(`Error: ${depositError?.message}`);
         }
     }, [depositIsSuccess, depositIsError, depositData, error, depositError])
 
     const handleDepositSubmit = (data) => {
         data['project_id'] = code;
-        data['project_title'] = projectInfo?.project_name
-        console.log(data, 'form data')
+        data['transaction_id'] = `${projectInfo?.project_code}%${data?.phone}`
         depositMutate(data)
     }
 
