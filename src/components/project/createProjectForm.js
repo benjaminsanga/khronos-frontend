@@ -40,7 +40,7 @@ const CreateProjectForm = () => {
         if (isError) {
             setErrorMessage(`Error: ${error?.message}`);
         }
-    }, [data, error, isError, isSuccess]);
+    }, [data, error, isError, isSuccess, navigate]);
 
     const handleSubmitProject = (data) => {
         // add fields without form field checks

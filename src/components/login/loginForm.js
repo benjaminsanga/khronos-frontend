@@ -52,7 +52,7 @@ const LoginForm = () => {
                 setError('password', accountError?.response?.data, {shouldFocus: true})
             }
         }
-    }, [accountData, accountError])
+    }, [accountData, accountError, clearErrors, dispatch, isError, isSuccess, setError])
 
     // const [loginSuccess, setLoginSuccess] = useState(false);
     const [forgotPassword, setForgotPassword] = useState(false);

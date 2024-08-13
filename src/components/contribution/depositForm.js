@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from "../../utils/loading";
 import {useForm} from "react-hook-form";
@@ -13,7 +13,6 @@ const DepositForm = () => {
     // set project 
     const { code } = useParams();
     const [errorMessage, setErrorMessage] = useState("");
-    const navigate = useNavigate()
 
     const [projectInfo, setProjectInfo] = useState({});
 
