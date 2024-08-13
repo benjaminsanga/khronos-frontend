@@ -1,9 +1,10 @@
-// authSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
+const persistedAccount = localStorage.getItem('khronos::account');
+
 const initialState = {
-    isAuthenticated: false,
-    account: null,
+    isAuthenticated: !!persistedAccount,
+    account: persistedAccount ? JSON.parse(persistedAccount) : null,
 };
 
 const authSlice = createSlice({
@@ -12,7 +13,7 @@ const authSlice = createSlice({
     reducers: {
         login: (state, action) => {
             state.isAuthenticated = true;
-            state.account = action.payload.accountId;
+            state.account = action.payload;
             localStorage.setItem('khronos::account', JSON.stringify(action.payload));
         },
         logout: (state) => {

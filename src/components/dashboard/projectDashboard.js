@@ -7,6 +7,8 @@ import {useGetProjectById, useGetProjectDeposits} from "../../hooks/customHooks"
 const ProjectDashboardPage = () => {
 
     const { id } = useParams();
+    const [projectInfo, setProjectInfo] = useState({});
+    const [deposits, setDeposits] = useState([]);
 
     const {
         isLoading: projectLoading,
@@ -20,12 +22,8 @@ const ProjectDashboardPage = () => {
         data: depositData
     } = useGetProjectDeposits(id)
 
-    const [projectInfo, setProjectInfo] = useState({});
-    const [deposits, setDeposits] = useState([]);
-
     useEffect(() => {
-        // set states values in hook array
-        setProjectInfo(projectData?.data?.result);
+        setProjectInfo(projectData?.data);
         setDeposits(depositData?.data);
     }, [depositData?.data, projectData?.data]);
 
@@ -36,37 +34,39 @@ const ProjectDashboardPage = () => {
                 <div className="row account-info">
                     <h2 className="text-center"><span>{toFirstLetterUpperCase(projectInfo?.account_name)} </span>Project Dashboard</h2>
                     <div className="col-md-6">
-                        <h3>{toFirstLetterUpperCase(projectInfo?.project_name)}</h3>
-                        <span>Code: <strong>{projectInfo?.project_code}</strong></span><br/>
-                        <span>Share: <code>{`https://khronos.herokuapp.com/deposit/${projectInfo?.project_code}`}</code></span>
+                        <p className="p-0 m-0">Title</p>
+                        <p className="p-0"><strong>{toFirstLetterUpperCase(projectInfo?.project_name)}</strong></p>
+                        <p className="p-0 m-0">Address</p>
+                        <p className="p-0"><strong>{projectInfo?.account_address}</strong></p>
                     </div>
-                    <div className="col-md-6 text-end">
-                        <p>Status: <span className="text-success">Open</span></p>
-                        <p>Created: {projectInfo?.createdAt?.slice(0, 10)}</p>
+                    <div className="col-md-6">
+                        <p>Project Code<br/><strong>{projectInfo?.project_code}</strong></p>
+                        <p>Deposit Link<br/><code>{`https://khronos.herokuapp.com/deposit/${projectInfo?.project_code}`}</code></p>
                     </div>
                 </div>
                 <div className="row text-center project-stats">
                     <div className="col-md-3">
                         <p>Target</p>
-                        <h2>{projectInfo?.project_target}</h2>
+                        <h2>{projectInfo?.project_target_amount}</h2>
                     </div>
                     <div className="col-md-3">
                         <p>Raised</p>
-                        <h2>N/A</h2>
+                        <h2>{projectData?.total_amount || 0}</h2>
                     </div>
                     <div className="col-md-3">
                         <p>Progress</p>
-                        <h2>N/A</h2>
+                        <h2>{((projectInfo?.total_amount / projectInfo?.project_target_amount) / 100) || 0}%</h2>
                     </div>
                     <div className="col-md-3">
                         <p>Difference</p>
-                        <h2>N/A</h2>
+                        <h2>{(projectInfo?.project_target_amount - projectInfo?.total_amount) || 0}</h2>
                     </div>
                 </div>
                 <div className="row payments">
                     <h2>Deposits</h2>
                     <div>
-                        <table className="table table-striped table-hover">
+                        {deposits?.length === 0 && <p>No deposits, yet.</p>} 
+                        {deposits?.length > 0 && <table className="table table-striped table-hover">
                             <thead>
                                 <tr>
                                 <th scope="col">#</th>
@@ -79,7 +79,7 @@ const ProjectDashboardPage = () => {
                             </thead>
                             <tbody>
                                 {
-                                    deposits?.length > 0 && deposits?.map(({
+                                    deposits?.map(({
                                                         name,
                                                         amount,
                                                         phone,
@@ -99,7 +99,7 @@ const ProjectDashboardPage = () => {
                                     })
                                 }
                             </tbody>
-                        </table>
+                        </table>}
                     </div>
                 </div>
                 <div className="row">

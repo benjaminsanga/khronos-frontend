@@ -36,8 +36,8 @@ const ProjectsComponent = () => {
                                         {toFirstLetterUpperCase(project.project_name)}
                                     </h3>
                                     {/*<span>By: Farin Gada</span>*/}
-                                    <span>Target: {project.project_target}</span>
-                                    {/*<span>Progress {project.project_target}</span>*/}
+                                    <span>Target: {project.project_target_amount}</span>
+                                    {/*<span>Progress {project.project_target_amount}</span>*/}
                                 </Link>
                             </div>
                         </div>

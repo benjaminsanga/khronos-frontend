@@ -12,9 +12,7 @@ const CreateProjectForm = () => {
 
     const navigate = useNavigate();
     const account = useSelector((state) => state.auth.account);
-
-    const [projectCode, setProjectCode] = useState("");
-    const [report, setReport] = useState("");
+    const [reportInterval, setReport] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
     const {
@@ -33,31 +31,28 @@ const CreateProjectForm = () => {
         data,
         mutate
     } = useCreateProject()
-
+        
     useEffect(() => {
-        if (isSuccess) {
-            setProjectCode(`/project/dashboard/${data?.data?.projectCode}`);
+        if (isSuccess && data?.data?.message === 'success') {
+            const projectURL = `/project/dashboard/${data?.data?.project_code}`;
+            navigate(projectURL);
         }
         if (isError) {
-            setErrorMessage(`Error: ${error?.response?.data?.message}`);
+            setErrorMessage(`Error: ${error?.message}`);
         }
-    }, [data, error, isError, isSuccess])
-
-    let projectURL = '';
-    let accountId = account?.info?._id;
+    }, [data, error, isError, isSuccess]);
 
     const handleSubmitProject = (data) => {
         // add fields without form field checks
-        data['account_id'] = accountId;
-        data['report'] = report;
-        data['email'] = account?.info?.account_admin_email;
+        data['account_id'] = account?.account?._id;
+        data['report_interval'] = reportInterval;
+        data['email'] = account?.account?.account_admin_email;
 
         mutate(data)
     }
 
     return (
         <>
-            {(isSuccess && !!projectCode) && navigate(`${projectURL}`)}
             <div id="create-project" className='container'>
                 <div className="d-flex flex-column align-items-center">
                     <h2 className="mb-5">Create Project for Account</h2>
@@ -114,19 +109,19 @@ const CreateProjectForm = () => {
                                 </div>
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="project_target" className="form-label">Target</label>
+                                <label htmlFor="project_target_amount" className="form-label">Target</label>
                                 {/* <span>Don't know how much? Try our <Link to="/get-quotation">Calculator</Link> to find out.</span> */}
                                 <input
                                     type="number"
-                                    name="project_target"
+                                    name="project_target_amount"
                                     placeholder=""
                                     className="form-control"
-                                    id="project_target"
+                                    id="project_target_amount"
                                     aria-describedby="projectTargetHelp"
-                                    {...register('project_target')}
-                                    aria-invalid={!!errors.project_target ? 'true' : 'false'}
+                                    {...register('project_target_amount')}
+                                    aria-invalid={!!errors.project_target_amount ? 'true' : 'false'}
                                 />
-                                {!!errors.project_target && <InvalidFormField message={errors.project_target?.message} />}
+                                {!!errors.project_target_amount && <InvalidFormField message={errors.project_target_amount?.message} />}
                                 <div id="projectTargetHelp" className="form-text">How much will the project cost?</div>
                             </div>
                             <div className="row">
@@ -140,8 +135,8 @@ const CreateProjectForm = () => {
                                         aria-invalid={!!errors.recurring_payout ? 'true' : 'false'}
                                     >
                                         <option defaultValue disabled value="">Select</option>
-                                        <option value="no">No</option>
-                                        <option value="yes">Yes</option>
+                                        <option value={false}>No</option>
+                                        <option value={true}>Yes</option>
                                     </select>
                                     {!!errors.recurring_payout && <InvalidFormField message={errors.recurring_payout?.message} />}
                                 </div>
@@ -152,7 +147,7 @@ const CreateProjectForm = () => {
                                             <input
                                                 className="form-check-input"
                                                 type="radio"
-                                                name="report"
+                                                name="report_interval"
                                                 id="daily_report"
                                                 onClick={() => setReport("daily")}
                                             />
@@ -162,7 +157,7 @@ const CreateProjectForm = () => {
                                             <input
                                                 className="form-check-input"
                                                 type="radio"
-                                                name="report"
+                                                name="report_interval"
                                                 id="weekly_report"
                                                 onClick={() => setReport("weekly")}
                                             />
@@ -172,7 +167,7 @@ const CreateProjectForm = () => {
                                             <input
                                                 className="form-check-input"
                                                 type="radio"
-                                                name="report"
+                                                name="report_interval"
                                                 id="monthly_report"
                                                 onClick={() => setReport("monthly")}
                                             />

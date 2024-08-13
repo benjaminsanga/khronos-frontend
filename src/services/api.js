@@ -51,8 +51,12 @@ const createProject = async (data) => {
     return await apiWorker.post(`project`, data)
 }
 
-const getProject = async (code) => {
-    return await apiWorker.get(`project/${code}`)
+const getProjectById = async (id) => {
+    return await apiWorker.get(`project/dashboard/${id}`)
+}
+
+const getProjectByCode = async (code) => {
+    return await apiWorker.get(`project/code/${code}`)
 }
 
 const projectDeposit = async (data) => {
@@ -85,7 +89,8 @@ const apiCalls = {
     getAccount,
     getAccountProjects,
     createProject,
-    getProject,
+    getProjectById,
+    getProjectByCode,
     projectDeposit,
     getFlutterwavePaymentInfo,
     getProjectDeposits,

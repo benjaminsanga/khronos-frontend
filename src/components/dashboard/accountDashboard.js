@@ -69,24 +69,25 @@ const AccountDashboardPage = () => {
                         </thead>
                         <tbody>
                             {projects?.map(({
+                                                id,
                                                 project_code,
                                                 project_name,
                                                 project_purpose,
-                                                project_target,
+                                                project_target_amount,
                                                 contribution_end_date
                                             }, index) => {
                                 return (
                                     <tr key={index}>
                                         <th scope="row">{index+1}</th>
                                         <td>
-                                            <Link to={`/project/dashboard/${project_code}`}>
+                                            <Link to={`/project/dashboard/${id}`}>
                                                 {project_name}
                                             </Link>
                                         </td>
                                         <td>{project_purpose}</td>
-                                        <td>{project_target}</td>
+                                        <td>{project_target_amount}</td>
                                         <td>{project_code}</td>
-                                        <td>{contribution_end_date}</td>
+                                        <td>{contribution_end_date?.slice(0, 10)}</td>
                                     </tr>
                                 );
                             })}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from "../../utils/loading";
 import {useForm} from "react-hook-form";
@@ -13,9 +13,7 @@ const DepositForm = () => {
     // set project 
     const { code } = useParams();
     const [errorMessage, setErrorMessage] = useState("");
-    
-    // consumer_id
-    // consumer_mac
+    const navigate = useNavigate()
 
     const [projectInfo, setProjectInfo] = useState({});
 
@@ -46,29 +44,27 @@ const DepositForm = () => {
 
     useEffect(() => {
         if (isSuccess) {
-            setProjectInfo(data?.data?.result);
+            setProjectInfo(data?.data);
         }
         if (isError) {
             console.log(error, 'error')
-            setErrorMessage(error?.response?.data?.message);
+            setErrorMessage(error?.message);
         }
     }, [data?.data, error, isError, isSuccess]);
 
     useEffect(() => {
         if (depositIsSuccess) {
-            console.log(depositData, 'depositData')
-            window.location.href = depositData?.data?.data?.link;
+            window.location.replace(depositData?.data?.data?.link);
         }
         if (depositIsError) {
             console.log(depositError, 'error')
-            setErrorMessage(`Error: ${depositError?.response?.data?.message}`);
+            setErrorMessage(`Error: ${depositError?.message}`);
         }
     }, [depositIsSuccess, depositIsError, depositData, error, depositError])
 
     const handleDepositSubmit = (data) => {
-        console.log(data, 'form data')
-        data['project_Id'] = code;
-        data['project_title'] = projectInfo?.project_name
+        data['project_id'] = projectInfo?.id;
+        data['transaction_id'] = `${projectInfo?.project_code}%${data?.phone}`
         depositMutate(data)
     }
 
@@ -78,12 +74,12 @@ const DepositForm = () => {
             {isLoading && <Loading />}
             {isSuccess && <div id="deposit" className='container'>
                 <div className="d-flex flex-column align-items-center">
-                    <h2 className="mb-2">Deposit for &nbsp;
+                    <h2 className="mb-2">Deposit for{' '}
                         <span className="text-secondary">
                             { toFirstLetterUpperCase(projectInfo?.project_name)}
                         </span>
                     </h2>
-                    <span className="mb-5">Purpose of project: {toFirstLetterUpperCase(projectInfo?.project_purpose)}</span>
+                    <span className="mb-5">Description: {toFirstLetterUpperCase(projectInfo?.project_purpose)}</span>
                     {depositIsLoading && <h4 className="text-center text-secondary p-3">Initializing...</h4>}
                     <div className="col-md-2"></div>
                     <div className="col-md-8">
@@ -147,7 +143,6 @@ const DepositForm = () => {
                             </div>
                             <div>
                                 <em className="text-warning">
-                                    Please note:<br/>
                                     * This transaction is non-refundable.<br/>
                                     * Your data will be stored for reference.<br/>
                                 </em>
@@ -159,9 +154,9 @@ const DepositForm = () => {
                             </div>
                             <p className="text-center text-danger" id="payment-error">{errorMessage}</p>
                         </form>
-                        <div>
+                        {/* <div>
                             <p><Link to="/create-account">Register</Link></p>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="col-md-2"></div>
                 </div>

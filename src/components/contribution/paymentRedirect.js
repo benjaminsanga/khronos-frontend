@@ -13,11 +13,13 @@ const useQuery = () => {
 const PaymentRedirect = () => {
 
     const query = useQuery();
-    const status = query.get("status"), tx_ref = query.get("tx_ref"), transaction_id = query.get("transaction_id");
+    const status = query.get("status")
+    const tx_ref = query.get("tx_ref")
+    const transaction_id = query.get("transaction_id");
 
     const {
         isSuccess,
-        // data,
+        data,
         // isError,
         // error,
         isLoading
@@ -30,7 +32,7 @@ const PaymentRedirect = () => {
                 <Loading />
                 <p className="text-center text-primary">Just a moment.</p>
             </>}
-            {isSuccess && <div className="row">
+            {isSuccess && data?.data?.message === 'success' && <div className="row w-100">
                 <div className="col-md-3"></div>
                 <div className="col-md-6">
                     <div className="d-flex flex-column align-items-center justify-content-center text-center success">
