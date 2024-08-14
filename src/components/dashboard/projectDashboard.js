@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { toFirstLetterUpperCase } from "../../utils/utilities";
+import { formatDateTime, getFloatPrecision, toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from '../../utils/loading';
 import {useGetProjectById, useGetProjectDeposits} from "../../hooks/customHooks";
 
@@ -19,17 +19,22 @@ const ProjectDashboardPage = () => {
     const {
         isLoading: depositLoading,
         isSuccess: depositSuccess,
-        data: depositData
+        data: depositData,
+        isError: isDepostError,
+        error: depositError
     } = useGetProjectDeposits(id)
 
     useEffect(() => {
         setProjectInfo(projectData?.data);
         setDeposits(depositData?.data);
-    }, [depositData?.data, projectData?.data]);
+    }, [depositData?.data, projectData?.data, isDepostError, depositError]);
 
     return (
         <>
-            {(depositLoading || projectLoading) && <Loading />}
+            {(depositLoading || projectLoading) && <>
+                <Loading />
+                {isDepostError && <p>{depositError?.message}</p>}
+            </>}
             {(depositSuccess && projectSuccess) && <div id="dashboard" className="container">
                 <div className="row account-info">
                     <h2 className="text-center"><span>{toFirstLetterUpperCase(projectInfo?.account_name)} </span>Project Dashboard</h2>
@@ -51,11 +56,11 @@ const ProjectDashboardPage = () => {
                     </div>
                     <div className="col-md-3">
                         <p>Raised</p>
-                        <h2>{projectData?.total_amount || 0}</h2>
+                        <h2>{projectInfo?.total_amount || 0}</h2>
                     </div>
                     <div className="col-md-3">
                         <p>Progress</p>
-                        <h2>{((projectInfo?.total_amount / projectInfo?.project_target_amount) / 100) || 0}%</h2>
+                        <h2>{getFloatPrecision((projectInfo?.total_amount / projectInfo?.project_target_amount) * 100) || 0}%</h2>
                     </div>
                     <div className="col-md-3">
                         <p>Difference</p>
@@ -74,7 +79,7 @@ const ProjectDashboardPage = () => {
                                 <th scope="col">Amount</th>
                                 <th scope="col">Phone</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Time</th>
+                                <th scope="col">Date/Time</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -84,7 +89,7 @@ const ProjectDashboardPage = () => {
                                                         amount,
                                                         phone,
                                                         email,
-                                                       createdAt
+                                                        updated_at
                                                    }, index) => {
                                         return (
                                             <tr key={index}>
@@ -93,7 +98,7 @@ const ProjectDashboardPage = () => {
                                                 <td>{amount}</td>
                                                 <td>{phone}</td>
                                                 <td>{email}</td>
-                                                <td>{createdAt}</td>
+                                                <td>{formatDateTime(updated_at)}</td>
                                             </tr>
                                         );
                                     })

@@ -109,7 +109,7 @@ export const useCreateProject = () => {
 export const useGetProjectById = (id) => {
     return useQuery(
         ['GetProjectById'],
-        () => apiCalls.getProject(id),
+        () => apiCalls.getProjectById(id),
         {
             keepPreviousData: true,
             staleTime: Infinity
