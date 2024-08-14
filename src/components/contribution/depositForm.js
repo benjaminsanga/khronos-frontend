@@ -63,7 +63,6 @@ const DepositForm = () => {
 
     const handleDepositSubmit = (data) => {
         data['project_id'] = projectInfo?.id;
-        data['transaction_id'] = `${projectInfo?.project_code}%${data?.phone}`
         depositMutate(data)
     }
 

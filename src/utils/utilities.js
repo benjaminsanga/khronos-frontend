@@ -78,6 +78,36 @@ const validatePassword = (password) => {
     return !!password.match(regex);
 }
 
+const formatDateTime = (isoString) => {
+    if (!isoString) {
+        return '--';
+    }
+
+    const date = new Date(isoString);
+
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+    const year = date.getFullYear();
+
+    const hours = date.getHours();
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const formattedHours = hours % 12 || 12; // Convert to 12-hour format
+    const period = hours < 12 ? 'AM' : 'PM';
+
+    const formattedDate = `${day}/${month}/${year}`;
+    const formattedTime = `${formattedHours}:${minutes} ${period}`;
+
+    return `${formattedDate} ${formattedTime}`;
+}
+
+const getFloatPrecision = (number) => {
+    if (!number) {
+        return 0.00
+    }
+
+    return parseFloat(number).toPrecision(2)
+}
+
 export {
     validateForm,
     toFirstLetterUpperCase,
@@ -85,5 +115,7 @@ export {
     validateEmail,
     validatePhone,
     getFullDate,
-    validatePassword
+    validatePassword,
+    formatDateTime,
+    getFloatPrecision
 }
