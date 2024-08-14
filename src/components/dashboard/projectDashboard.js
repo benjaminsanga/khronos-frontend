@@ -3,12 +3,14 @@ import { Link, useParams } from "react-router-dom";
 import { formatDateTime, getFloatPrecision, toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from '../../utils/loading';
 import {useGetProjectById, useGetProjectDeposits} from "../../hooks/customHooks";
+import { useSelector } from "react-redux";
 
 const ProjectDashboardPage = () => {
 
     const { id } = useParams();
     const [projectInfo, setProjectInfo] = useState({});
     const [deposits, setDeposits] = useState([]);
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
 
     const {
         isLoading: projectLoading,
@@ -95,7 +97,7 @@ const ProjectDashboardPage = () => {
                                             <tr key={index}>
                                                 <th scope="row">{index+1}</th>
                                                 <td>{name}</td>
-                                                <td>{amount}</td>
+                                                <td>{isAuthenticated ? amount : '*****'}</td>
                                                 <td>{phone}</td>
                                                 <td>{email}</td>
                                                 <td>{formatDateTime(updated_at)}</td>
