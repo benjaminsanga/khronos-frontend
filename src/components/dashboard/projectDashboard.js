@@ -120,7 +120,7 @@ const ProjectDashboardPage = () => {
                                 {isDepositLoading && <i className="fa fa-spinner fa-spin"></i>}
                             </div>                            
                             <div className="d-flex flex-row">
-                                <h6 className="ms-3 mt-2">Limit</h6>
+                                <h6 className="ms-3 mt-2">Per Page</h6>
                                 <select 
                                     className="ms-1 px-3 py-1 border-primary" style={{borderWidth: '2px'}}
                                     onChange={(e) => setLimit(e?.target?.value)}
