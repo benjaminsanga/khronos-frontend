@@ -67,8 +67,8 @@ const getFlutterwavePaymentInfo = async (tx_ref, transaction_id) => {
     return await apiWorker.get(`flutterwave/confirm/?tx_ref=${tx_ref}&tx_id=${transaction_id}`)
 }
 
-const getProjectDeposits = async (id) => {
-    return await apiWorker.get(`/deposits/${id}`)
+const getProjectDeposits = async (id, page, limit) => {
+    return await apiWorker.get(`/deposits/${id}?page=${page}&limit=${limit}`)
 }
 
 const getAllProjects = async () => {

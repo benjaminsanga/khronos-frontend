@@ -6,11 +6,12 @@ import {useGetProjectById, useGetProjectDeposits} from "../../hooks/customHooks"
 import { useSelector } from "react-redux";
 
 const ProjectDashboardPage = () => {
-
     const { id } = useParams();
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
     const [projectInfo, setProjectInfo] = useState({});
     const [deposits, setDeposits] = useState([]);
-    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
+    const [page, setPage] = useState(1)
+    const [limit, setLimit] = useState(5)
 
     const {
         isLoading: projectLoading,
@@ -19,25 +20,30 @@ const ProjectDashboardPage = () => {
     } = useGetProjectById(id)
     
     const {
-        isLoading: depositLoading,
-        isSuccess: depositSuccess,
+        isLoading: isDepositLoading,
+        isSuccess: isDepositSuccess,
         data: depositData,
         isError: isDepostError,
-        error: depositError
-    } = useGetProjectDeposits(id)
+        error: depositError,
+        refetch
+    } = useGetProjectDeposits(id, page, limit)
 
     useEffect(() => {
         setProjectInfo(projectData?.data);
         setDeposits(depositData?.data);
     }, [depositData?.data, projectData?.data, isDepostError, depositError]);
 
+    useEffect(() => {
+      refetch()
+    }, [page, limit, refetch])
+
     return (
         <>
-            {(depositLoading || projectLoading) && <>
+            {(isDepositLoading || projectLoading) && <>
                 <Loading />
                 {isDepostError && <p>{depositError?.message}</p>}
             </>}
-            {(depositSuccess && projectSuccess) && <div id="dashboard" className="container">
+            {(isDepositSuccess && projectSuccess) && <div id="dashboard" className="container">
                 <div className="row account-info">
                     <h2 className="text-center"><span>{toFirstLetterUpperCase(projectInfo?.account_name)} </span>Project Dashboard</h2>
                     <div className="col-md-6">
@@ -107,12 +113,30 @@ const ProjectDashboardPage = () => {
                                 }
                             </tbody>
                         </table>}
+                        <div className="d-flex flex-row justify-content-between align-items-center my-5">
+                            <div>
+                                <button className={`btn btn-secondary text-primary ${page === 1 && 'disabled'}`} onClick={() => setPage(page - 1)}>Previous</button>
+                                <button className={`btn btn-primary text-white ms-3`} onClick={() => setPage(page + 1)}>Next</button>
+                                {isDepositLoading && <i className="fa fa-spinner fa-spin"></i>}
+                            </div>                            
+                            <div className="d-flex flex-row">
+                                <h6 className="ms-3 mt-2">Limit</h6>
+                                <select 
+                                    className="ms-1 px-3 py-1 border-primary" style={{borderWidth: '2px'}}
+                                    onChange={(e) => setLimit(e?.target?.value)}
+                                >
+                                    <option value={5}>5</option>
+                                    <option value={10}>10</option>
+                                    <option value={20}>20</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-4"></div>
                     <div className="col-md-4">
-                        <p>Want to contribute to account's project?</p>
+                        <p>Want to contribute to this project?</p>
                         <Link to={`/deposit/${id}`}>
                             <button className="btn btn-primary fw-lighter btn-lg w-100">Deposit</button>
                         </Link>

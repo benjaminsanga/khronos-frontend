@@ -149,10 +149,10 @@ export const useGetFlutterwavePaymentInfo = (tx_ref, transaction_id) => {
     )
 }
 
-export const useGetProjectDeposits = (id) => {
+export const useGetProjectDeposits = (id, page, limit) => {
     return useQuery(
         ['GetProjectDeposits'],
-        () => apiCalls.getProjectDeposits(id),
+        () => apiCalls.getProjectDeposits(id, page, limit),
         {
             keepPreviousData: true,
             staleTime: Infinity
