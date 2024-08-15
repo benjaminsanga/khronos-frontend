@@ -37,47 +37,31 @@ const App = () => {
     return (
         <Router>
             <Routes>
-
                 <Route path="/create-account" element={<CreateAccount/>}/>
-
                 {!isAuthenticated && <Route path="/create-project" element={<LoginFirstPage/>}/>}
-
                 {isAuthenticated && <Route path="/create-project" element={<CreateProject/>}/>}
-
                 <Route path="/get-quotation" element={<GetQuotation/>}/>
-
                 <Route path="/deposit/:code" element={<Deposit/>}/>
-
                 <Route path="/join" element={<Join/>}/>
-
                 <Route path="/login" element={<Login/>}/>
-
                 <Route path="/account/reset-password/:hash" element={<ResetPasswordPage/>}/>
-
                 <Route path="/about" element={<About/>}/>
-
                 <Route path="/faq" element={<FAQ/>}/>
-
                 <Route path="/contact" element={<Contact/>}/>
-
                 <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
-
                 <Route path="/terms-and-conditions" element={<TermsConditions/>}/>
-
+                {!isAuthenticated && <Route path="/project/dashboard/:id" element={<LoginFirstPage/>}/>}
                 <Route path="/project/dashboard/:id" element={<ProjectDashboard/>}/>
-
+                {!isAuthenticated && <Route path="/account/dashboard/:id" element={<LoginFirstPage/>}/>}
                 <Route path="/account/dashboard/:id" element={<AccountDashboard/>}/>
-
+                {!isAuthenticated && <Route path="/projects" element={<LoginFirstPage/>}/>}
                 <Route path="/projects" element={<Projects/>}/>
-
+                {!isAuthenticated && <Route path="/accounts" element={<LoginFirstPage/>}/>}
                 <Route path="/accounts" element={<Accounts/>}/>
-
+                {!isAuthenticated && <Route path="/flutterwave/confirm" element={<LoginFirstPage/>}/>}
                 <Route path="/flutterwave/confirm" element={<PaymentRedirectPage/>}/>
-
                 <Route path='/intro' element={<LandingPage/>}/>
-
                 <Route path="/" element={<Home/>}/>
-
                 <Route path='*' element={<FourOhFour/>}/>
             </Routes>
         </Router>
