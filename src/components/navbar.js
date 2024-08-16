@@ -20,7 +20,6 @@ const Navbar = () => {
             borderBottom: "none",
             boxShadow: "none",
         },
-        navbar_container: {padding: '0 115px'}
     }
 
     useEffect(() => {
@@ -29,7 +28,7 @@ const Navbar = () => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light navbar-custom" style={path === "/" ? styles.navbar : {}} >
-            <div className="container-fluid d-flex justify-content-between" style={styles.navbar_container}>
+            <div className="container-fluid d-flex justify-content-between">
                 
                 <Link className="navbar-brand" to="/">
                     Khronos<strong className="text-secondary">.</strong> 

@@ -10879,8 +10879,8 @@ p.loader-p {
   border-bottom: 1px solid #dfdfdf;
   box-shadow: 0 4px 4px -2px #dfdfdf;
 }
-.navbar .container {
-  padding: 0 10vmin;
+.navbar .container-fluid {
+  padding: 0 115px;
 }
 .navbar img {
   width: 42px;
@@ -10930,7 +10930,7 @@ p.loader-p {
     height: 70px;
     padding: 0 10px;
   }
-  .navbar .container {
+  .navbar .container-fluid {
     padding: 0;
   }
   .navbar img {
@@ -10947,6 +10947,9 @@ p.loader-p {
 @media only screen and (max-width: 600px) {
   .navbar {
     height: 10vh;
+  }
+  .navbar .container-fluid {
+    padding: 0;
   }
   .navbar img {
     width: 44px;
@@ -10967,6 +10970,9 @@ p.loader-p {
     height: 60px;
     width: 100%;
     padding: 0 10px;
+  }
+  .navbar .container-fluid {
+    padding: 0;
   }
   .navbar .navbar-brand {
     font-size: 0.9rem;
@@ -11220,7 +11226,7 @@ p.loader-p {
 #operation .left {
   background-color: #312440;
   margin-bottom: 50px;
-  padding: 115px 115px;
+  padding: 65px;
   color: #fff;
 }
 #operation .left h2 {
@@ -11240,7 +11246,7 @@ p.loader-p {
 #operation .right {
   background-color: #7befb2;
   margin-top: 50px;
-  padding: 10vh 15vh;
+  padding: 20px 40px;
   color: #312440;
 }
 #operation .right div {
@@ -11253,7 +11259,6 @@ p.loader-p {
   background-color: #312440;
   color: #fff;
   padding: 20px;
-  width: 40vh;
   margin: auto;
   margin-bottom: 0;
 }
@@ -11284,7 +11289,7 @@ p.loader-p {
   #operation .left {
     width: 100%;
     margin-bottom: 0;
-    padding: 5rem 2rem;
+    padding: 20px;
   }
   #operation .left p {
     font-size: 1.2rem;
@@ -11296,7 +11301,7 @@ p.loader-p {
   #operation .right {
     width: 100%;
     margin-top: 0;
-    padding: 5rem 2rem;
+    padding: 0;
   }
   #operation .right p {
     font-size: 1.2rem;
@@ -11317,7 +11322,7 @@ p.loader-p {
   }
   #operation .right {
     margin-top: 0;
-    padding: 40px 20px;
+    padding: 20px;
   }
 }
 #statistics {

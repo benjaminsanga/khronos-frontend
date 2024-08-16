@@ -11,7 +11,7 @@ const styles = {
 const Operation = () => {
     return (
         <div id="operation" className="d-flex flex-row">
-            <div className="col-md-6 text-center left">
+            <div className="col-md-6 d-flex flex-column justify-content-center align-items-center left">
                 <h2>Ready to reshape your world?</h2>
                 <p style={styles.light_text}>
                     Follow these 3 simple steps to <i><strong className='text-secondary'>Transform Your World</strong></i>, and unlock the power of your community.
