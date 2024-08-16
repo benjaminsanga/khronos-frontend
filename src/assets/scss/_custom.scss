@@ -13,6 +13,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  font-size: 1.25rem;
+  font-weight: lighter;
+} 
+
 @media only screen and (max-width: 400px) {
   #root {
       min-width: 110%;

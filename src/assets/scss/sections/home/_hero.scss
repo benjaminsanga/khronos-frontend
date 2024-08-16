@@ -3,8 +3,8 @@
 
 
 #hero {
-    height: 88vh;
-    padding: 20vh 20vmin;
+    min-height: 88vh;
+    padding: 0 115px;
     // @include gradient;
     background-color: $primary;
     color: #fff;
@@ -27,7 +27,7 @@
 
         .action-btns {
             padding-top: 20px;
-            width: 55vh;
+            // width: 55vh;
 
             button {
                 margin-right: 20px;
@@ -57,8 +57,8 @@
     }
 
     .carousel {
-        width: 80vh;
-        padding-left: 5vh;
+        width: 450px;
+        padding-left: 20px;
     }
 }
 

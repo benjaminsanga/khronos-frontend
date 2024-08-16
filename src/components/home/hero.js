@@ -5,7 +5,7 @@ import Slider3 from "../../assets/images/construction.svg";
 
 const Hero = () => {
     return (
-        <div id="hero" className="container-fluid bg-image">
+        <div id="hero" className="container-fluid d-flex flex-row justify-content-start align-items-center bg-image">
             <div className="row">
                 <div className="col-md-5 welcome-text">
                     <p>Let's build together</p>

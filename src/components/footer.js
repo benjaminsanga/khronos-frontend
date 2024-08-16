@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import TwitterIcon from "../assets/icons/twitter.svg";
-import FacebookIcon from "../assets/icons/facebook.svg";
-import InstagramIcon from "../assets/icons/instagram.svg";
+// import FacebookIcon from "../assets/icons/facebook.svg";
+// import InstagramIcon from "../assets/icons/instagram.svg";
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../context/authSlice";
 
@@ -16,8 +16,8 @@ const Footer = () => {
             <div className="row justify-content-between align-items-center" id="footer-top">
                 <div className="col-md-12">
                     <a href="https://www.twitter.com/khronos" target="_blank" rel="noreferrer"><img src={TwitterIcon} alt="Twitter" className="icon" /></a>
-                    <a href="https://www.facebook.com/khronos" target="_blank" rel="noreferrer"><img src={FacebookIcon} alt="Facebook" className="icon" /></a>
-                    <a href="https://www.instagram.com/khronos" target="_blank" rel="noreferrer"><img src={InstagramIcon} alt="Instagram" className="icon" /></a>
+                    {/* <a href="https://www.facebook.com/khronos" target="_blank" rel="noreferrer"><img src={FacebookIcon} alt="Facebook" className="icon" /></a>
+                    <a href="https://www.instagram.com/khronos" target="_blank" rel="noreferrer"><img src={InstagramIcon} alt="Instagram" className="icon" /></a> */}
                     <span><i>@thisiskhronos</i></span>
                 </div>
                 {/* <div className="col-md-9 pt-3">

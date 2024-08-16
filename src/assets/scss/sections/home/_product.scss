@@ -2,17 +2,17 @@
 @use '../../components/mixins' as *;
 
 #product {
-    height: 100vh;
-    background-color: $secondary;
-    padding: 7vh inherit;
+    height: fit-content;
+    background-color: #7befb2;
+    padding: 65px 115px;
     margin-bottom: 0vh;
 
-    .row:first-child {
-        padding-right: 5vh;
-    }
+    // .row:first-child {
+    //     padding-right: 5vh;
+    // }
 
     p {
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: lighter;
     } 
 

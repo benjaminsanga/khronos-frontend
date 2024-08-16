@@ -4,7 +4,7 @@
 #operation {
     height: max-content;
     padding: 0;    
-    margin: 5rem 0;
+    margin-bottom: 5rem 0;
 
     & > div {
         display: inline-block;
@@ -15,7 +15,7 @@
     .left {
         background-color: $primary;
         margin-bottom: 50px;
-        padding: 25vh 25vh;
+        padding: 115px 115px;
         color: #fff;
 
         h2 {

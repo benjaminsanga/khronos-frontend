@@ -62,7 +62,7 @@ const AboutPage = () => {
                     </div>
                 </div>
             </section>
-            <section className="row" style={{margin: '7.5rem 0'}}>
+            <section className="row">
                 <div className="col-md-6 mt-5">
                     <img src={Image4} alt="Welcome" />
                 </div>

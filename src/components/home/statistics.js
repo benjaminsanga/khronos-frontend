@@ -25,8 +25,8 @@ const Statistics = () => {
             {isSuccess && <div id="statistics" className="container">
                 <div className="row">
                     <div className="col-md-3 left">
-                        <h2>Our numbers</h2>
-                        <p>The progress made through the effort of the team.</p>
+                        <h2>Our Milestones</h2>
+                        <p>Empowering progress, one innovation at a time.</p>
                     </div>
                     <div className="col-md-9 text-center right">
                         <div className="row">

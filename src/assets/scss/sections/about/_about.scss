@@ -7,9 +7,9 @@
     color: $primary;
 
     section {
-        height: 70vh;
-        margin: 10vh 0;
-        padding: 20vh 20vmin;
+        height: fit-content;
+        margin: 0;
+        padding: 65px 115px;
         
         h1 {
             padding-top: 2rem;
@@ -144,7 +144,7 @@
             .how-we-do-it {
     
                 .col-md-4 div {
-                    height: 25vh;
+                    height: 115px;
                     margin: 10px auto;
                 }
             }
@@ -174,7 +174,7 @@
             .how-we-do-it {
     
                 .col-md-4 div {
-                    height: 27vh;
+                    height: 115px;
                     margin: 10px auto;
                 }
             }

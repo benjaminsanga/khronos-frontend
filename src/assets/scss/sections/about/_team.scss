@@ -2,9 +2,8 @@
 @use '../../components/mixins' as *;
 
 #team {
-    height: 60vh;
-    width: 70%;
-    margin: 10vh auto;
+    height: fit-content;
+    color: #312440;
     color: $primary;
 
     .team-member {

@@ -1,7 +1,7 @@
 const CallUs = () => {
     return (
         <div id="call-us" className="container">
-            <div className="row">
+            <div className="row d-flex flew-row justify-content-between align-items-center h-100">
                 <div className="col-md-7">
                     <h2><i>khronos</i></h2>
                     <p>Empowering Communities, One Wallet at a Time.</p>

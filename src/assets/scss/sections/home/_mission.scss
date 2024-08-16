@@ -2,9 +2,9 @@
 @use '../../components/mixins' as *;
 
 #mission {
-    height: 150vh;
-    margin-top: 10vh;
-    padding: 10vh 20vmin;
+    height: fit-content;
+    margin-top: 75px;
+    padding: 10vh 115px;
 
     h3 {
         color: $primary;
@@ -16,11 +16,11 @@
     }
 
     #sections {
-        height: 50vh;
-        margin-bottom: 10vh;
+        height: fit-content;
+        margin-bottom: 35px;
 
         h4 {
-            margin-top: 5vh;
+            margin-top: 20px;
         }
 
         .section {
@@ -29,8 +29,8 @@
             div {
                 width: 60%;
                 height: 60%;
-                padding: 5vh;
-                margin: 1.5vh auto;
+                padding: 20px;
+                margin: 10px auto;
 
                 img {
                     width: 50%;
@@ -54,7 +54,7 @@
         margin: 0;
 
         .down-arrows {
-            padding: 2vh 0;
+            padding: 15px 0;
         }
 
         #sections {
@@ -91,10 +91,10 @@
 @media only screen and (max-width: 600px) {
     #mission {
         min-height: 200%;
-        margin: 5vh 0 180% 0;
+        margin: 20px 0 180% 0;
 
         .down-arrows {
-            padding: 5vh 0;
+            padding: 20px 0;
         }
 
         #sections {
