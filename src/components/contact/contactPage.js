@@ -40,7 +40,7 @@ const ContactPage = () => {
     }
 
     return (
-        <div id="contact" className="container-fluid">
+        <div id="contact" className="container-fluid pt-0">
             <section className="row">
                 <div className="col-md-6 p-0">
                     <p>React Out</p>
