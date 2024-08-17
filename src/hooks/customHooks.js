@@ -181,3 +181,13 @@ export const useGetAllAccounts = () => {
         }
     )
 }
+
+export const useSendMessage = () => {
+    const queryClient = useQueryClient()
+    return useMutation((arg) => apiCalls.login(arg), {
+        onSuccess: (data) => {
+            queryClient.invalidateQueries(['SendMessage'])
+            return data
+        }
+    })
+}

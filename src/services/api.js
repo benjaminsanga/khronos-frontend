@@ -79,6 +79,10 @@ const getAllAccounts = async () => {
     return await apiWorker.get('/account')
 }
 
+const sendMessage = async (data) => {
+    return await apiWorker.post(`/send-message`, data)
+}
+
 const apiCalls = {
     createAccount,
     login,
@@ -95,7 +99,8 @@ const apiCalls = {
     getFlutterwavePaymentInfo,
     getProjectDeposits,
     getAllProjects,
-    getAllAccounts
+    getAllAccounts,
+    sendMessage
 }
 
 export default apiCalls

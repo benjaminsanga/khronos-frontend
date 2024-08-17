@@ -11909,11 +11909,13 @@ p.loader-p {
 }
 #contact {
   min-height: 100vh;
-  margin-top: 10vh;
+  margin: 0;
+  margin-top: 25px;
+  padding: 65px 115px;
   color: #312440;
 }
 #contact section {
-  margin: 5vh 0 7vh;
+  margin: 10px 0 15px;
 }
 #contact section h1 {
   padding-top: 2rem;
@@ -11954,6 +11956,27 @@ p.loader-p {
 #contact section ul li a:hover {
   color: #312440;
 }
+#contact section .icon {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  padding: 10px 13px;
+  border: 1px solid transparent;
+}
+#contact form {
+  margin: 30px 20px;
+  padding: 40px 20px;
+  background-color: #7befb2;
+  border-radius: 20px;
+  box-shadow: 0px 2px 8px 2px rgba(123, 239, 178, 0.5);
+}
+#contact form div {
+  padding: 20px 30px 10px;
+}
+#contact form div input, #contact form div textarea {
+  border: 1px solid #7befb2;
+  padding: 7px 10px;
+}
 
 @media only screen and (max-width: 900px) {
   #contact {
@@ -11985,8 +12008,7 @@ p.loader-p {
 }
 @media only screen and (max-width: 600px) {
   #contact {
-    min-height: 80vh;
-    margin-top: 5vh;
+    padding: 10px;
   }
   #contact section h1 {
     padding-top: 1rem;
@@ -12003,9 +12025,20 @@ p.loader-p {
     padding: 0 12px;
   }
   #contact section ul li .icon {
-    width: 32px;
+    width: 44px;
     height: auto;
     margin-right: 10px;
+  }
+  #contact form {
+    margin: 0;
+    padding: 20px 5px;
+  }
+  #contact form div {
+    padding: 20px 30px 10px;
+  }
+  #contact form div input, #contact form div textarea {
+    border: 1px solid #7befb2;
+    padding: 7px 10px;
   }
 }
 #privacy-policy {
