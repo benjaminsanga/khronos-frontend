@@ -184,7 +184,7 @@ export const useGetAllAccounts = () => {
 
 export const useSendMessage = () => {
     const queryClient = useQueryClient()
-    return useMutation((arg) => apiCalls.login(arg), {
+    return useMutation((arg) => apiCalls.userSendMessage(arg), {
         onSuccess: (data) => {
             queryClient.invalidateQueries(['SendMessage'])
             return data

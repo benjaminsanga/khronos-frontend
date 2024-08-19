@@ -79,8 +79,8 @@ const getAllAccounts = async () => {
     return await apiWorker.get('/account')
 }
 
-const sendMessage = async (data) => {
-    return await apiWorker.post(`/send-message`, data)
+const userSendMessage = async (data) => {
+    return await apiWorker.post(`/user-send-message`, data)
 }
 
 const apiCalls = {
@@ -100,7 +100,7 @@ const apiCalls = {
     getProjectDeposits,
     getAllProjects,
     getAllAccounts,
-    sendMessage
+    userSendMessage
 }
 
 export default apiCalls

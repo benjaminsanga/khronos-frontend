@@ -128,7 +128,7 @@ const ContactPage = () => {
                             {!!errors.message && <InvalidFormField message={errors.message?.message} />}
                         </div>
                         <div>
-                            <label>{feedback}</label>
+                            <label className='fs-6 text-danger'>{feedback}</label>
                             <button
                                 type="submit"
                                 className="btn btn-primary fw-lighter btn-lg w-100"
