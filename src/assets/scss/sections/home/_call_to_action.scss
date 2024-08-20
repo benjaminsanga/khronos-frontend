@@ -1,13 +1,15 @@
 @use '../../custom' as *;
 @use '../../components/mixins' as *;
 
-#call-us {
-    height: 200px;
-    width: 80%;
-    margin: 20px 115px;
-    padding: 20px;
-    background-color: $primary;
-    border-bottom: 5px solid $secondary;
+#call-to-action {
+    height: max-content;
+    margin: 65px 0;
+    padding: 0 115px;
+    
+    & > div {
+        background-color: $primary;
+        border-bottom: 5px solid $secondary;
+    }
 
     h2 {
         font-weight: lighter;
@@ -21,7 +23,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-    #call-us {
+    #call-to-action {
         height: fit-content;
         margin: 0 auto;
         padding: 40px 20px;
@@ -34,7 +36,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    #call-us {
+    #call-to-action {
         margin: 0 auto;
         padding: 40px 20px;
 

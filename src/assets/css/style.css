@@ -11401,39 +11401,40 @@ p.loader-p {
     font-weight: lighter;
   }
 }
-#call-us {
-  height: 200px;
-  width: 80%;
-  margin: 20px 115px;
-  padding: 20px;
+#call-to-action {
+  height: max-content;
+  margin: 65px 0;
+  padding: 0 115px;
+}
+#call-to-action > div {
   background-color: #312440;
   border-bottom: 5px solid #7befb2;
 }
-#call-us h2 {
+#call-to-action h2 {
   font-weight: lighter;
   color: #fff;
 }
-#call-us p {
+#call-to-action p {
   color: #7befb2;
 }
 
 @media only screen and (max-width: 900px) {
-  #call-us {
+  #call-to-action {
     height: fit-content;
     margin: 0 auto;
     padding: 40px 20px;
   }
-  #call-us h2 {
+  #call-to-action h2 {
     text-align: left !important;
     font-size: 1.2rem;
   }
 }
 @media only screen and (max-width: 600px) {
-  #call-us {
+  #call-to-action {
     margin: 0 auto;
     padding: 40px 20px;
   }
-  #call-us h2 {
+  #call-to-action h2 {
     text-align: left !important;
   }
 }

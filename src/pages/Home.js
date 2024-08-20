@@ -4,7 +4,7 @@ import Product from "../components/home/product";
 import Mission from "../components/home/mission";
 import Operation from "../components/home/operation";
 import Statistics from "../components/home/statistics";
-import CallUs from "../components/home/callUs";
+import CallUs from "../components/home/call-to-action";
 import Feedback from "../components/home/feedback";
 import Footer from "../components/footer";
 

@@ -22,7 +22,7 @@ const Statistics = () => {
 
     return (
         <>
-            {isSuccess && <div id="statistics" className="container">
+            {isSuccess && <div id="statistics" className="container-fluid">
                 <div className="row">
                     <div className="col-md-3 left">
                         <h2>Our Milestones</h2>
