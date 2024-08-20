@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import LoginForm from "./loginForm";
 import {useForm} from "react-hook-form";
@@ -27,12 +27,14 @@ const ForgotPassword = () => {
     const [goToLogin, setGoToLogin] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
 
+    useEffect(() => {
+        if (isError) {
+            setErrorMessage(error?.response?.data?.message)
+        }
+    }, [isError, error])
+
     const handleForgotPassword = (data) => {
         mutate(data)
-
-        if (isError) {
-            setErrorMessage(error.message)
-        }
     }
 
     return (
@@ -47,7 +49,6 @@ const ForgotPassword = () => {
                         <div id="login" className='container'>
                             <div className="d-flex flex-column align-items-center">
                                 <h2 className="mb-5 text-center">Reset Password</h2>
-                                {isError && <p className="text-warning"></p>}
                                 <div className="col-md-3"></div>
                                 <div className="col-md-6">
                                     <form onSubmit={handleSubmit(handleForgotPassword)}>
@@ -74,7 +75,7 @@ const ForgotPassword = () => {
                                                 className="btn btn-primary fw-lighter btn-lg"
                                             >Proceed
                                             </button>
-                                            <p className="text-center text-danger"
+                                            <p className="text-center text-danger fs-6"
                                                id="submission-error">{errorMessage}</p>
                                         </div>
                                     </form>

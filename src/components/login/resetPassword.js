@@ -90,11 +90,11 @@ const ResetPassword = () => {
         
         { goToLogin ? 
         
-        <div className="d-flex flex-column justify-content-center align-items-center mt-5 pt-3">
+        <div className="d-flex flex-column justify-content-center align-items-center my-5 pt-3">
             <img src={ HappyIcon } alt="success" />
             <p>Your password has been reset successfully!</p>
             <Link to="/login">
-                <button className="btn btn-lg btn-primary fw-lighter">Go To Login Page</button>
+                <button className="btn btn-sm btn-primary fw-lighter px-3 py-2">Go To Login Page</button>
             </Link>
         </div>
 
