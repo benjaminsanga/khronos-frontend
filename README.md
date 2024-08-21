@@ -12,6 +12,7 @@ The interface for users to interact with Khronos. A product that provides a secu
 7. [Testing](#testing)
 8. [Deployment](#deployment)
 9. [Contributing](#contributing)
+9. [Author](#author)
 10. [License](#license)
 
 ---
