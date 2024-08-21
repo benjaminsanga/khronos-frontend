@@ -52,7 +52,7 @@ const FindProjectForm = () => {
         {isSuccess && !!data?.data ?
         <div className='container pt-5'>
             <div className="row d-flex flex-column justify-content-center align-items-center">
-                <div className="d-flex flex-row justify-content-start align-items-start w-auto mt-5 pt-5">
+                <div className="d-flex flex-row justify-content-start align-items-start w-auto my-5 py-3">
                     {/*<img src={CheckBox} alt="found" style={{width: '200px'}} />*/}
                     <div>
                         <p className="m-0 fw-lighter">Project Name</p>

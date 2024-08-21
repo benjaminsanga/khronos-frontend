@@ -23,7 +23,7 @@ const Statistics = () => {
     return (
         <>
             {isSuccess && <div id="statistics" className="container-fluid">
-                <div className="row">
+                <div className="row d-flex flex-row justify-content-between align-items-center">
                     <div className="col-md-3 left">
                         <h2>Our Milestones</h2>
                         <p>Empowering progress, one innovation at a time.</p>
