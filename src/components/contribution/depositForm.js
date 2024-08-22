@@ -70,15 +70,15 @@ const DepositForm = () => {
         <>
             {/* <PaymentSuccessful projectCode={projectInfo?.project_code} /> */}
             {isLoading && <Loading />}
-            {isSuccess && <div id="deposit" className='container'>
+            {isSuccess && <div id="deposit" className='container-fluid'>
                 <div className="d-flex flex-column align-items-center">
-                    <h2 className="mb-2">Deposit for{' '}
+                    <h4>Deposit Form</h4>
+                    <h2 className="mb-5">
                         <span className="text-secondary">
                             { toFirstLetterUpperCase(projectInfo?.project_name)}
                         </span>
                     </h2>
-                    <span className="mb-5">Description: {toFirstLetterUpperCase(projectInfo?.project_purpose)}</span>
-                    {depositIsLoading && <h4 className="text-center text-secondary p-3">Initializing...</h4>}
+                    {/* <span className="mb-5">{projectInfo?.project_purpose}</span> */}
                     <div className="col-md-2"></div>
                     <div className="col-md-8">
                         <form onSubmit={handleSubmit(handleDepositSubmit)}>
@@ -128,7 +128,7 @@ const DepositForm = () => {
                                 <div className="col-md-6 mb-3">
                                     <label htmlFor="amount" className="form-label">Amount</label>
                                     <input
-                                        type="number"
+                                        type="text"
                                         name="amount"
                                         placeholder=""
                                         className="form-control"
@@ -148,7 +148,10 @@ const DepositForm = () => {
                                 <button
                                     type="submit"
                                     className="btn btn-primary fw-lighter btn-lg"
-                                >Continue</button>
+                                    disabled={depositIsLoading}
+                                >{depositIsLoading ? 'Initializing...' : 'Continue'}</button>
+                                <br/>
+                                <span className="fw-lighter">You will be redirected to complete payment.</span>
                             </div>
                             <p className="text-center text-danger" id="payment-error">{errorMessage}</p>
                         </form>

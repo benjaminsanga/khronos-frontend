@@ -58,7 +58,6 @@ const App = () => {
                 <Route path="/projects" element={<Projects/>}/>
                 {!isAuthenticated && <Route path="/accounts" element={<LoginFirstPage/>}/>}
                 <Route path="/accounts" element={<Accounts/>}/>
-                {!isAuthenticated && <Route path="/flutterwave/confirm" element={<LoginFirstPage/>}/>}
                 <Route path="/flutterwave/confirm" element={<PaymentRedirectPage/>}/>
                 <Route path='/intro' element={<LandingPage/>}/>
                 <Route path="/" element={<Home/>}/>

@@ -2,8 +2,9 @@
 @use '../../custom' as *;
 
 #deposit {
-    margin-top: 3rem;
     color: $primary;
+    margin: 65px 0;
+    padding: 0 115px;
 
     textarea {
         resize: none;

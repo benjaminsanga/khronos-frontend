@@ -40,7 +40,9 @@ const FindProjectForm = () => {
     }, [data?.data, error, isError, isSuccess])
 
     useEffect(() => {
-        refetch()
+        if (code) {
+            refetch()
+        }
     }, [code, refetch])
     
     const handleFormSubmit = (data) => {
