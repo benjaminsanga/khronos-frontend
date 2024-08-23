@@ -34,7 +34,7 @@ const AccountDashboardPage = () => {
     return (
         <>
             {(accountLoading || projectsLoading) && <Loading />}
-            {(accountSuccess && projectsSuccess) && <div id="dashboard" className="container">
+            {(accountSuccess && projectsSuccess) && <div id="dashboard" className="container-fluid">
             <div className="row account-info">
                 <div className="col-md-6">
                     <h2>{toFirstLetterUpperCase(accountInfo?.account_name)}</h2>
@@ -56,23 +56,23 @@ const AccountDashboardPage = () => {
                 <h2>Projects</h2>
                 <div>
                     {projects?.length === 0 ? <p>No Projects, yet!</p> :
-                    <table className="table table-striped table-hover">
+                    <table className="table table-striped table-hover w-100">
                         <thead>
                             <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Purpose</th>
+                            {/* <th scope="col">Purpose</th> */}
                             <th scope="col">Target</th>
-                            <th scope="col">Code</th>
+                            {/* <th scope="col">Code</th> */}
                             <th scope="col">End Date</th>
                             </tr>
                         </thead>
                         <tbody>
                             {projects?.map(({
                                                 id,
-                                                project_code,
+                                                // project_code,
                                                 project_name,
-                                                project_purpose,
+                                                // project_purpose,
                                                 project_target_amount,
                                                 contribution_end_date
                                             }, index) => {
@@ -84,9 +84,9 @@ const AccountDashboardPage = () => {
                                                 {project_name}
                                             </Link>
                                         </td>
-                                        <td>{project_purpose}</td>
+                                        {/* <td>{project_purpose}</td> */}
                                         <td>{project_target_amount}</td>
-                                        <td>{project_code}</td>
+                                        {/* <td>{project_code}</td> */}
                                         <td>{contribution_end_date?.slice(0, 10)}</td>
                                     </tr>
                                 );

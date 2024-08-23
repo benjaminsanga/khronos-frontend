@@ -43,9 +43,9 @@ const ProjectDashboardPage = () => {
                 <Loading />
                 {isDepostError && <p>{depositError?.message}</p>}
             </>}
-            {(isDepositSuccess && projectSuccess) && <div id="dashboard" className="container">
+            {(isDepositSuccess && projectSuccess) && <div id="dashboard" className="container-fluid">
                 <div className="row account-info">
-                    <h2 className="text-center"><span>{toFirstLetterUpperCase(projectInfo?.account_name)} </span>Project Dashboard</h2>
+                    <h2><span>{toFirstLetterUpperCase(projectInfo?.account_name)} </span>Project Dashboard</h2>
                     <div className="col-md-6">
                         <p className="p-0 m-0">Title</p>
                         <p className="p-0"><strong>{toFirstLetterUpperCase(projectInfo?.project_name)}</strong></p>
@@ -86,7 +86,7 @@ const ProjectDashboardPage = () => {
                                 <th scope="col">Name</th>
                                 <th scope="col">Amount</th>
                                 <th scope="col">Phone</th>
-                                <th scope="col">Email</th>
+                                {/* <th scope="col">Email</th> */}
                                 <th scope="col">Date/Time</th>
                                 </tr>
                             </thead>
@@ -96,7 +96,7 @@ const ProjectDashboardPage = () => {
                                                         name,
                                                         amount,
                                                         phone,
-                                                        email,
+                                                        // email,
                                                         updated_at
                                                    }, index) => {
                                         return (
@@ -105,7 +105,7 @@ const ProjectDashboardPage = () => {
                                                 <td>{name}</td>
                                                 <td>{isAuthenticated ? amount : '*****'}</td>
                                                 <td>{phone}</td>
-                                                <td>{email}</td>
+                                                {/* <td>{email}</td> */}
                                                 <td>{formatDateTime(updated_at)}</td>
                                             </tr>
                                         );

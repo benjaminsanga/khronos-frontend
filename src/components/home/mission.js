@@ -14,9 +14,9 @@ const Mission = () => {
                 <div className="col-md-2"></div>
                 <div className="col-md-8 text-center">
                     <h3 className="text-center"><i>Our Mission</i></h3>
-                    <h4 style={{fontWeight: 'lighter'}}>
+                    <p style={{fontWeight: 'lighter'}}>
                         To build bridges over the chasm of financial and infrastructural challenges. By creating a seamless, secure digital ecosystem, empowering communities to unlock their full potential. 
-                    </h4>
+                    </p>
                 </div>
                 <div className="col-md-2"></div>
             </div>

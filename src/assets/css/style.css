@@ -11130,9 +11130,9 @@ p.loader-p {
   }
 }
 #mission {
-  height: fit-content;
-  margin-top: 75px;
-  padding: 10vh 115px;
+  height: max-content;
+  margin: 65px 0;
+  padding: 0 115px;
 }
 #mission h3 {
   color: #312440;
@@ -11144,7 +11144,7 @@ p.loader-p {
   height: fit-content;
   margin-bottom: 35px;
 }
-#mission #sections h4 {
+#mission #sections p {
   margin-top: 20px;
 }
 #mission #sections .section div {
@@ -11165,13 +11165,14 @@ p.loader-p {
 
 @media only screen and (max-width: 900px) {
   #mission {
-    height: 90%;
-    margin: 0;
+    height: max-content;
+    margin: 65px 0;
+    padding: 0 10px;
   }
   #mission .down-arrows {
     padding: 15px 0;
   }
-  #mission #sections h4 {
+  #mission #sections p {
     margin-top: 0;
   }
   #mission #sections .section div {
@@ -11192,13 +11193,14 @@ p.loader-p {
 }
 @media only screen and (max-width: 600px) {
   #mission {
-    min-height: 200%;
-    margin: 20px 0 180% 0;
+    height: max-content;
+    margin: 65px 0;
+    padding: 0 10px;
   }
   #mission .down-arrows {
     padding: 20px 0;
   }
-  #mission #sections h4 {
+  #mission #sections p {
     margin-top: 0;
   }
   #mission #sections .section div {
@@ -11206,11 +11208,6 @@ p.loader-p {
     height: fit-content;
     padding: 10;
     margin: 0;
-  }
-}
-@media only screen and (max-width: 400px) {
-  #mission {
-    margin-bottom: 190%;
   }
 }
 #operation {
@@ -11291,6 +11288,9 @@ p.loader-p {
     margin-bottom: 0;
     padding: 20px;
   }
+  #operation .left h2, #operation .left p {
+    text-align: center !important;
+  }
   #operation .left p {
     font-size: 1.2rem;
   }
@@ -11314,7 +11314,7 @@ p.loader-p {
   }
   #operation .left {
     margin-bottom: 0;
-    padding: 20px;
+    padding: 50px 20px;
   }
   #operation .left img {
     width: 72px;
@@ -11632,14 +11632,14 @@ p.loader-p {
 }
 
 #about {
-  min-height: 100vh;
-  margin-top: 10vh;
-  color: #312440;
+  height: max-content;
+  margin: 65px 0;
+  padding: 0 115px;
 }
 #about section {
   height: fit-content;
   margin: 0;
-  padding: 65px 115px;
+  padding: 65px 0;
 }
 #about section h1 {
   padding-top: 2rem;
@@ -11669,14 +11669,7 @@ p.loader-p {
 
 @media only screen and (max-width: 900px) {
   #about {
-    min-height: 100vh;
-    margin-top: 0px;
-    color: #312440;
-  }
-  #about section {
-    height: 60%;
-    margin: 60px 40px;
-    padding-top: 20px;
+    padding: 0 10px;
   }
   #about section h1 {
     padding-top: 2rem;
@@ -11689,35 +11682,33 @@ p.loader-p {
     font-size: 1rem;
   }
   #about section img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-  }
-  #about section:nth-child(2) {
-    text-align: right;
+    width: 100%;
   }
   #about section .how-we-do-it .col-md-4 div {
-    height: 40vh;
+    height: fit-content;
     border: 5px solid #7befb2;
     border-radius: 10px;
     padding: 1rem 20px;
   }
   #about .hwdi {
-    height: 50%;
+    height: fit-content;
   }
 }
 @media only screen and (max-width: 600px) {
   #about {
-    min-height: 100vh;
-    margin-top: 0px;
+    padding: 0 10px;
     color: #312440;
   }
   #about section {
-    height: 70%;
-    margin: 40px 20px;
-    padding-top: 5%;
-    text-align: center;
+    height: fit-content;
+    margin: 70px 0 !important;
+    padding: 10px;
+  }
+  #about section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   #about section h1 {
     padding-top: 2rem;
@@ -11735,15 +11726,15 @@ p.loader-p {
     margin-right: auto;
     width: 80%;
   }
-  #about section:nth-child(2) {
-    text-align: right;
-  }
   #about section .how-we-do-it .col-md-4 div {
-    height: 115px;
+    height: fit-content;
     margin: 10px auto;
   }
   #about .hwdi {
-    height: 100vh;
+    height: fit-content;
+  }
+  #about .hwdi h2 {
+    font-size: 2.5rem;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -11780,9 +11771,8 @@ p.loader-p {
   position: relative;
   transition: 0.25s;
 }
-#team .team-member img:hover {
-  width: 26px;
-  height: relative;
+#team .team-member a {
+  text-decoration: none;
 }
 #team .active div {
   background-color: #7befb2;
@@ -11797,25 +11787,15 @@ p.loader-p {
 
 @media only screen and (max-width: 900px) {
   #team {
-    height: 50%;
-    margin: 5vh auto;
+    margin: 10px auto;
   }
   #team .team-member div {
     margin: 10px;
     padding: 40px 20px 20px;
     background-color: rgb(243, 243, 243);
   }
-  #team .team-member img {
-    width: 64px;
-    height: auto;
-    position: relative;
-    bottom: -40px;
-  }
-  #team .team-member h5 {
-    font-size: 1rem;
-  }
-  #team .team-member h6 {
-    font-size: 10px;
+  #team .team-member a {
+    text-decoration: none;
   }
   #team .active div {
     background-color: #7befb2;
@@ -11824,20 +11804,13 @@ p.loader-p {
 }
 @media only screen and (max-width: 600px) {
   #team {
-    height: 90vh;
-    margin: 5vh auto 10vh;
+    margin: 10px auto 20px;
     color: #312440;
   }
   #team .team-member div {
     margin: 10px;
     padding: 40px 20px 20px;
     background-color: rgb(243, 243, 243);
-  }
-  #team .team-member img {
-    width: 32px;
-    height: auto;
-    position: relative;
-    bottom: 2px;
   }
   #team .active div {
     background-color: #7befb2;
@@ -12150,8 +12123,9 @@ p.loader-p {
   }
 }
 #dashboard {
-  min-height: 100vh;
-  padding: 2.5rem 0px;
+  height: max-content;
+  margin: 65px 0;
+  padding: 0 115px;
 }
 #dashboard .account-info {
   padding-bottom: 2.5rem;
@@ -12159,10 +12133,7 @@ p.loader-p {
 #dashboard .account-info div {
   padding-top: 1.5rem;
 }
-#dashboard .account-info h2 {
-  padding: 0 0 1rem;
-}
-#dashboard .account-info h2 span {
+#dashboard .account-info h2 > span {
   color: #7befb2;
 }
 #dashboard .project-stats {
@@ -12181,16 +12152,16 @@ p.loader-p {
 }
 
 @media only screen and (max-width: 900px) {
+  #dashboard {
+    padding: 0 15px;
+  }
   #dashboard .project-stats div {
     width: 50%;
   }
 }
 @media only screen and (max-width: 600px) {
-  #dashboard .account-info .col-md-6 {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
+  #dashboard {
+    padding: 0 10px;
   }
 }
 #join {

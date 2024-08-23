@@ -2,14 +2,14 @@
 @use '../../components/mixins' as *;
 
 #about {
-    min-height: 100vh;
-    margin-top: 10vh;
-    color: $primary;
+    height: max-content;
+    margin: 65px 0;
+    padding: 0 115px;
 
     section {
         height: fit-content;
         margin: 0;
-        padding: 65px 115px;
+        padding: 65px 0;
         
         h1 {
             padding-top: 2rem;
@@ -54,14 +54,9 @@
 
 @media only screen and (max-width: 900px) {
     #about {
-        min-height: 100vh;
-        margin-top: 0px;
-        color: $primary;
+        padding: 0 10px;
     
         section {
-            height: 60%;
-            margin: 60px 40px;
-            padding-top: 20px;
             
             h1 {
                 padding-top: 2rem;
@@ -75,22 +70,15 @@
             p {
                 font-size: 1rem;
             }
-
+            
             img {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 80%;
-            }
-    
-            &:nth-child(2) {
-                text-align: right;
+                width: 100%;
             }
             
             .how-we-do-it {
     
                 .col-md-4 div {
-                    height: 40vh;
+                    height: fit-content;
                     border: 5px solid $secondary;
                     border-radius: 10px;
                     padding: 1rem 20px;
@@ -100,22 +88,27 @@
         }
 
         .hwdi {
-            height: 50%;
+            height: fit-content;
         }
     }
 }
 
 @media only screen and (max-width: 600px) {
     #about {
-        min-height: 100vh;
-        margin-top: 0px;
+        padding: 0 10px;
         color: $primary;
     
         section {
-            height: 70%;
-            margin: 40px 20px;
-            padding-top: 5%;
-            text-align: center;
+            height: fit-content;
+            margin: 70px 0 !important;
+            padding: 10px;
+            
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
             
             h1 {
                 padding-top: 2rem;
@@ -136,15 +129,11 @@
                 margin-right: auto;
                 width: 80%;
             }
-    
-            &:nth-child(2) {
-                text-align: right;
-            }
             
             .how-we-do-it {
     
                 .col-md-4 div {
-                    height: 115px;
+                    height: fit-content;
                     margin: 10px auto;
                 }
             }
@@ -152,7 +141,11 @@
         }
 
         .hwdi {
-            height: 100vh;
+            height: fit-content;
+            
+            h2 {
+                font-size: 2.5rem;
+            }
         }
     }
 }

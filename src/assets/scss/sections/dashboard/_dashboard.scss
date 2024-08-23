@@ -1,8 +1,9 @@
 @use '../../custom' as *;
 
 #dashboard {
-    min-height: 100vh;
-    padding: 2.5rem 0px;
+    height: max-content;
+    margin: 65px 0;
+    padding: 0 115px;
 
     .account-info {
         padding-bottom: 2.5rem;
@@ -11,12 +12,8 @@
             padding-top: 1.5rem;
         }
 
-        h2 {
-            padding: 0 0 1rem;
-
-            span {
-                color: $secondary;
-            }
+        h2 > span {
+            color: $secondary;
         }
     }
     
@@ -41,6 +38,7 @@
 
 @media only screen and (max-width: 900px) {
     #dashboard {
+        padding: 0 15px;
         
         .project-stats {
             div {
@@ -52,13 +50,15 @@
 
 @media only screen and (max-width: 600px) {
     #dashboard {
-        .account-info {
-            .col-md-6 {
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: center !important;
-                align-items: center !important;
-            }
-        }
+        padding: 0 10px;
+
+        // .account-info {
+        //     .col-md-6 {
+        //         display: flex !important;
+        //         flex-direction: column !important;
+        //         justify-content: center !important;
+        //         align-items: center !important;
+        //     }
+        // }
     }
 }

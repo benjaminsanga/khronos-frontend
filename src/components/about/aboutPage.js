@@ -10,10 +10,10 @@ import Image4 from '../../assets/images/target.svg';
 const AboutPage = () => {
     return (
         <div id="about" className="container-fluid">
-            <section className="row m-0">
-                <div className="col-md-6 d-flex flex-column justify-content-center align-items-start">
+            <section className="row m-0 w-100">
+                <div className="col-md-6">
                     <h1>Khronos.</h1>
-                    <p>...more than a digital wallet; it's a catalyst for change.</p>
+                    <p>More than a digital wallet; it's a catalyst for change.</p>
                 </div>
                 <div className="col-md-6">
                     <img src={Image1} alt="Welcome" />
@@ -50,13 +50,13 @@ const AboutPage = () => {
                     </div>
                     <div className="col-md-4">
                         <div>
-                            <h5><strong>Step 2: <br/>Connect the Dots</strong></h5>
+                            <h5>Step 2: <br/>Connect the Dots</h5>
                             <p>Link your wallet to your community's projects. Watch as contributions flow seamlessly, creating ripples of positive change.</p>
                         </div>
                     </div>
                     <div className="col-md-4">
                         <div>
-                            <h5><strong>Step 3: <br/>Watch Your World Grow</strong></h5>
+                            <h5>Step 3: <br/>Watch Your World Grow</h5>
                             <p>Witness the magic unfold as your community thrives. Khronos is more than a wallet; it's a launchpad for endless possibilities.</p>
                         </div>
                     </div>
