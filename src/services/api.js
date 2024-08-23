@@ -63,8 +63,8 @@ const projectDeposit = async (data) => {
     return await apiWorker.post('deposit', data)
 }
 
-const getFlutterwavePaymentInfo = async (tx_ref, transaction_id) => {
-    return await apiWorker.get(`flutterwave/confirm/?tx_ref=${tx_ref}&tx_id=${transaction_id}`)
+const confirmFlutterwavePayment = async (status, tx_ref, transaction_id) => {
+    return await apiWorker.get(`flutterwave/confirm/?status=${status}&tx_ref=${tx_ref}&tx_id=${transaction_id}`)
 }
 
 const getProjectDeposits = async (id, page, limit) => {
@@ -96,7 +96,7 @@ const apiCalls = {
     getProjectById,
     getProjectByCode,
     projectDeposit,
-    getFlutterwavePaymentInfo,
+    confirmFlutterwavePayment,
     getProjectDeposits,
     getAllProjects,
     getAllAccounts,

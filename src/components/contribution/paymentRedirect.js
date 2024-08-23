@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import HappyFaceIcon from "../../assets/images/happy_face.svg";
 import Loading from "../../utils/loading";
-import { useGetFlutterwavePaymentInfo } from "../../hooks/customHooks";
+import { useGetConfirmFlutterwavePayment } from "../../hooks/customHooks";
 
 const useQuery = () => {
   const { search } = useLocation();
@@ -19,10 +19,10 @@ const PaymentRedirect = () => {
   const {
     isSuccess,
     data,
-    // isError,
-    // error,
+    isError,
+    error,
     isLoading,
-  } = useGetFlutterwavePaymentInfo(tx_ref, transaction_id);
+  } = useGetConfirmFlutterwavePayment(status, tx_ref, transaction_id);
 
   return (
     <>
@@ -66,6 +66,7 @@ const PaymentRedirect = () => {
                 Your transaction was cancelled.
               </p>
             )}
+            {isError && <p>{error?.response?.data?.message}</p>}
           </div>
         </div>
         <div className="col-md-3"></div>
