@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { formatDateTime, getFloatPrecision, toFirstLetterUpperCase } from "../../utils/utilities";
+import { formatDateTime, getMonetaryNumber, isRaisedMoreThanHalf, toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from '../../utils/loading';
 import {useGetProjectById, useGetProjectDeposits} from "../../hooks/customHooks";
 import { useSelector } from "react-redux";
@@ -44,10 +44,13 @@ const ProjectDashboardPage = () => {
                 {isDepostError && <p>{depositError?.message}</p>}
             </>}
             {(isDepositSuccess && projectSuccess) && <div id="dashboard" className="container-fluid">
-                <div className="row account-info">
-                    <h2><span>{toFirstLetterUpperCase(projectInfo?.account_name)} </span>Project Dashboard</h2>
+                <div className="bottom-line">
+                    <p className="mb-0">Project Dashboard</p>
+                    <h4>{toFirstLetterUpperCase(projectInfo?.account_name)}</h4>
+                </div>
+                <div className="row account-info mt-5">
                     <div className="col-md-6">
-                        <p className="p-0 m-0">Title</p>
+                        <p className="p-0 m-0 bo">Title</p>
                         <p className="p-0"><strong>{toFirstLetterUpperCase(projectInfo?.project_name)}</strong></p>
                         <p className="p-0 m-0">Address</p>
                         <p className="p-0"><strong>{projectInfo?.account_address}</strong></p>
@@ -57,22 +60,28 @@ const ProjectDashboardPage = () => {
                         <p>Deposit Link<br/><code>{`https://khronos.herokuapp.com/deposit/${projectInfo?.project_code}`}</code></p>
                     </div>
                 </div>
-                <div className="row text-center project-stats">
-                    <div className="col-md-3">
-                        <p>Target</p>
-                        <h2>{projectInfo?.project_target_amount}</h2>
-                    </div>
-                    <div className="col-md-3">
-                        <p>Raised</p>
-                        <h2>{projectInfo?.total_amount || 0}</h2>
-                    </div>
-                    <div className="col-md-3">
-                        <p>Progress</p>
-                        <h2>{getFloatPrecision((projectInfo?.total_amount / projectInfo?.project_target_amount) * 100) || 0}%</h2>
-                    </div>
-                    <div className="col-md-3">
-                        <p>Difference</p>
-                        <h2>{(projectInfo?.project_target_amount - projectInfo?.total_amount) || 0}</h2>
+                <div className="row account-info mt-1">
+                    <div className="row g-3">
+                        <div className="col-4">
+                            <div className="dashboard-item p-3">
+                                <p className="p-0 m-0 mb-2">Target</p>
+                                <h4 className="m-0">{projectInfo?.project_target_amount}</h4>
+                            </div>
+                        </div>
+                        <div className="col-4">
+                            <div className="dashboard-item p-3">
+                                <p className="p-0 m-0 mb-2">Raised</p>
+                                <h4 className={`m-0 ${isRaisedMoreThanHalf(projectInfo?.project_target_amount, projectInfo?.total_amount) ? 'text-success' : 'text-danger'}`}>
+                                    {getMonetaryNumber(projectInfo?.total_amount) || 0} ({getMonetaryNumber((projectInfo?.total_amount / projectInfo?.project_target_amount) * 100) || 0}%)
+                                </h4>
+                            </div>
+                        </div>
+                        <div className="col-4">
+                            <div className="dashboard-item p-3">
+                                <p className="p-0 m-0 mb-2">Difference</p>
+                                <h4 className="m-0">{getMonetaryNumber(projectInfo?.project_target_amount - projectInfo?.total_amount) || 0}</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="row payments">

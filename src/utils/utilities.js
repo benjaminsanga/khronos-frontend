@@ -52,11 +52,6 @@ const toFirstLetterUpperCase = (text) => {
     return text.slice(0,1).toUpperCase()+text.slice(1).toLowerCase()
 }
 
-// const generateProjectCode = () => {
-//     let raw_project_code = Math.random().toString(36).slice(2);
-//     return raw_project_code.slice(0, 3) + "-" + raw_project_code.slice(3, 7) + "-" + raw_project_code.slice(7);
-// }
-
 const getFullDate = () => {
     const date = new Date()
     return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
@@ -100,22 +95,26 @@ const formatDateTime = (isoString) => {
     return `${formattedDate} ${formattedTime}`;
 }
 
-const getFloatPrecision = (number) => {
+const getMonetaryNumber = (number) => {
     if (!number) {
         return 0.00
     }
 
-    return parseFloat(number).toPrecision(2)
+    return parseFloat(number).toFixed(2)
+}
+
+const isRaisedMoreThanHalf = (target, amount_raised) => {
+    return parseInt(target / 2) > parseInt(target - amount_raised)
 }
 
 export {
     validateForm,
     toFirstLetterUpperCase,
-    // generateProjectCode,
+    isRaisedMoreThanHalf,
     validateEmail,
     validatePhone,
     getFullDate,
     validatePassword,
     formatDateTime,
-    getFloatPrecision
+    getMonetaryNumber
 }

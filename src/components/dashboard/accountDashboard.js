@@ -82,7 +82,7 @@ const AccountDashboardPage = () => {
             </div>
           </div>
           <div className="row payments">
-            <h5 className="pb-3 bottom-line">Projects</h5>
+            <h5 className="mx-3 p-0 pb-3 bottom-line">Projects</h5>
             <div>
               {projects?.length === 0 ? (
                 <p>No Projects, yet!</p>
