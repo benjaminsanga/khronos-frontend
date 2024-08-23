@@ -50,14 +50,13 @@ const DepositForm = () => {
             setErrorMessage(error?.message);
         }
     }, [data?.data, error, isError, isSuccess]);
-
+    
     useEffect(() => {
-        if (depositIsSuccess) {
-            window.location.replace(depositData?.data?.data?.link);
+        if (depositIsSuccess && depositData?.data?.link) {
+            window.location.replace(depositData?.data?.link);
         }
         if (depositIsError) {
-            console.log(depositError, 'error')
-            setErrorMessage(`Error: ${depositError?.message}`);
+            setErrorMessage(`Error: ${depositError?.response?.data?.message}`);
         }
     }, [depositIsSuccess, depositIsError, depositData, error, depositError])
 

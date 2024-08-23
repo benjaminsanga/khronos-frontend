@@ -1,15 +1,15 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import JoinForm from "../components/login/findProjectForm";
+import DepositForm from "../components/login/findProjectForm";
 
-const Join = () => {
+const ProjectDeposit = () => {
     return (
         <>
             <Navbar />
-            <JoinForm />
+            <DepositForm />
             <Footer />
         </>
     );
 };
 
-export default Join;
+export default ProjectDeposit;

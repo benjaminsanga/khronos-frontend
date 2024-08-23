@@ -12,7 +12,7 @@ const Hero = () => {
                     <h1>Empowering Communities, One Wallet at a Time</h1>
                     <div className="action-btns">
                         <Link to="/create-account"><button className="get-started">Get Started</button></Link>
-                        <Link to="/join"><button className="get-quote">Deposit</button></Link>
+                        <Link to="/deposit"><button className="get-quote">Deposit</button></Link>
                     </div>
                 </div>
                 <div className="col-md-7">

@@ -87,8 +87,8 @@ const ProjectDashboardPage = () => {
                 <div className="row payments">
                     <h2>Deposits</h2>
                     <div>
-                        {deposits?.length === 0 && <p>No deposits, yet.</p>} 
-                        {deposits?.length > 0 && <table className="table table-striped table-hover">
+                        {deposits?.length === 0 ? <p>No deposits, yet.</p> :
+                        <table className="table table-striped table-hover">
                             <thead>
                                 <tr>
                                 <th scope="col">#</th>
@@ -122,7 +122,7 @@ const ProjectDashboardPage = () => {
                                 }
                             </tbody>
                         </table>}
-                        <div className="d-flex flex-row justify-content-between align-items-center my-5">
+                        {deposits?.length > 0 && <div className="d-flex flex-row justify-content-between align-items-center my-5">
                             <div>
                                 <button className={`btn btn-secondary text-primary ${page === 1 && 'disabled'}`} onClick={() => setPage(page - 1)}>Previous</button>
                                 <button className={`btn btn-primary text-white ms-3`} onClick={() => setPage(page + 1)}>Next</button>
@@ -139,7 +139,7 @@ const ProjectDashboardPage = () => {
                                     <option value={20}>20</option>
                                 </select>
                             </div>
-                        </div>
+                        </div>}
                     </div>
                 </div>
                 <div className="row">

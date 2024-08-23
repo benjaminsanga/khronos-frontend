@@ -55,7 +55,7 @@ const Navbar = () => {
                     </>
                     }                    
                     <div className="nav-item">
-                        <Link to="/join" className="nav-link">
+                        <Link to="/deposit" className="nav-link">
                             Deposit
                         </Link>
                     </div>

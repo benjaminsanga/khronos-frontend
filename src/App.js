@@ -16,7 +16,6 @@ import TermsConditions from './pages/Terms';
 import ProjectDashboard from './pages/ProjectDashboard';
 import AccountDashboard from './pages/AccountDashboard';
 import Projects from './pages/Projects';
-import Join from './pages/Join';
 import Accounts from './pages/Accounts';
 import FourOhFour from './pages/FourOhFour';
 import PaymentRedirectPage from './pages/PaymentRedirectPage';
@@ -27,6 +26,7 @@ import {QueryClientProvider, QueryClient} from "@tanstack/react-query";
 import {Provider, useSelector} from "react-redux";
 import store from "./context/store";
 import ErrorBoundary from './pages/ErrorBoundary';
+import ProjectDeposit from './pages/ProjectDeposit';
 
 const queryClient = new QueryClient()
 
@@ -42,7 +42,7 @@ const App = () => {
                 {isAuthenticated && <Route path="/create-project" element={<CreateProject/>}/>}
                 <Route path="/get-quotation" element={<GetQuotation/>}/>
                 <Route path="/deposit/:code" element={<Deposit/>}/>
-                <Route path="/join" element={<Join/>}/>
+                <Route path="/deposit" element={<ProjectDeposit/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/account/reset-password/:hash" element={<ResetPasswordPage/>}/>
                 <Route path="/about" element={<About/>}/>

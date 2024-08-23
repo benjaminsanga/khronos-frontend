@@ -26,7 +26,8 @@ const FindProjectForm = () => {
         error,
         data,
         refetch,
-        isSuccess
+        isSuccess,
+        isFetching
     } = useGetProjectByCode(code)
 
     useEffect(() => {
@@ -100,9 +101,9 @@ const FindProjectForm = () => {
                                 <button
                                     type="submit"
                                     className="btn btn-primary fw-lighter btn-lg"
-                                    disabled={isLoading}
+                                    disabled={isLoading || isFetching}
                                 >
-                                    {isLoading && <i className="fa fa-spinner fa-spin"></i>} Proceed
+                                    {(isLoading || isFetching) && <i className="fa fa-spinner fa-spin"></i>} Proceed
                                 </button>
                                 <p className="text-center text-danger" id="submission-error">{errorMessage}</p>
                             </div>
