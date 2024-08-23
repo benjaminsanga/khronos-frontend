@@ -36,7 +36,7 @@ const Loading = () => {
                     />
                 </circle>
             </svg>
-            <p className="text-center text-primary">Just a moment...</p>
+            {/* <p className="text-center text-primary">Just a moment...</p> */}
         </div>
     );
 };

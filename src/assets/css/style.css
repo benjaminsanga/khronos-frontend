@@ -12127,11 +12127,21 @@ p.loader-p {
   margin: 65px 0;
   padding: 0 115px;
 }
+#dashboard .bottom-line {
+  border-bottom: 2px solid #312440;
+}
+#dashboard .dashboard-item {
+  box-shadow: 0px 0px 5px 3px rgba(243, 243, 243, 0.7);
+  border-radius: 10px;
+}
+#dashboard .dashboard-item p {
+  font-size: 14px;
+}
+#dashboard .dashboard-item h6 {
+  font-weight: 400;
+}
 #dashboard .account-info {
   padding-bottom: 2.5rem;
-}
-#dashboard .account-info div {
-  padding-top: 1.5rem;
 }
 #dashboard .account-info h2 > span {
   color: #7befb2;
@@ -12162,6 +12172,13 @@ p.loader-p {
 @media only screen and (max-width: 600px) {
   #dashboard {
     padding: 0 10px;
+  }
+  #dashboard .account-info .row {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  #dashboard .account-info .row div {
+    width: 100% !important;
   }
 }
 #join {

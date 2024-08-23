@@ -4,7 +4,6 @@ import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import VerifyAccount from "./verifyAccount";
 import {useCreateAccount, useGetStatesAndLgas} from "../../hooks/customHooks";
-import Loading from "../../utils/loading";
 import {InvalidFormField} from "../Errors/invalidFormField";
 import { CreateAccountSchema } from "../../form-schema/createAccountSchema";
 
@@ -36,10 +35,6 @@ const CreateAccountForm = () => {
     useEffect(() => {
         setStates(statesData?.data)
     }, [statesData])
-
-    if (isStatesLoading) {
-        return <Loading/>
-    }
 
     const handleStateSelectionChange = (e) => {
         const selectedState = e.target.value;
@@ -84,7 +79,7 @@ const CreateAccountForm = () => {
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="account_state" className="form-label">State</label>
-                                        <select 
+                                        {isStatesLoading ? <i className="fa fa-spinner fa-spin"></i> : <select 
                                             className="form-select" 
                                             id="account_state" 
                                             name="account_state"
@@ -100,12 +95,12 @@ const CreateAccountForm = () => {
                                                                        key={index}>{state}</option>
                                                     })
                                             }
-                                        </select>
+                                        </select>}
                                         {!!errors.account_state && <InvalidFormField message={errors.account_state?.message} />}
                                     </div>
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="account_lga" className="form-label">LGA</label>
-                                        <select 
+                                        {isStatesLoading ? <i className="fa fa-spinner fa-spin"></i> : <select 
                                             className="form-select" 
                                             id="account_lga" 
                                             name="account_lga"
@@ -119,7 +114,7 @@ const CreateAccountForm = () => {
                                                     return <option value={lga} key={index}>{lga}</option>
                                                 })
                                             }
-                                        </select>
+                                        </select>}
                                         {!!errors.account_lga && <InvalidFormField message={errors.account_lga?.message} />}
                                     </div>
                                 </div>
