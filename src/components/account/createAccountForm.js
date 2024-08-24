@@ -216,14 +216,16 @@ const CreateAccountForm = () => {
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="account_password" className="form-label">Password
-                                            <i style={{fontSize: '12px'}}> (Minimum of 8 characters)</i></label>
-                                        <input type="password"
-                                               name="account_password"
-                                               placeholder=""
-                                               className="form-control"
-                                               id="account_password"
-                                               {...register('account_password')}
-                                               aria-invalid={!!errors.account_password ? 'true' : 'false'}
+                                        <br/><i style={{fontSize: '12px'}}> (Minimum of 8 characters, one uppercase, one number and one special case character)</i>
+                                        </label>
+                                        <input 
+                                            type="password"
+                                            name="account_password"
+                                            placeholder=""
+                                            className="form-control"
+                                            id="account_password"
+                                            {...register('account_password')}
+                                            aria-invalid={!!errors.account_password ? 'true' : 'false'}
                                         />
                                         {!!errors.account_password && <InvalidFormField message={errors.account_password?.message} />}
                                     </div>

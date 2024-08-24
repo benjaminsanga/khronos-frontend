@@ -191,3 +191,13 @@ export const useSendMessage = () => {
         }
     })
 }
+
+export const useResetPassword = () => {
+    const queryClient = useQueryClient()
+    return useMutation((arg) => apiCalls.resetPassword(arg), {
+        onSuccess: (data) => {
+            queryClient.invalidateQueries(['ResetPassword'])
+            return data
+        }
+    })
+}

@@ -83,6 +83,10 @@ const userSendMessage = async (data) => {
     return await apiWorker.post(`/user-send-message`, data)
 }
 
+const resetPassword = async (data) => {
+    return await apiWorker.post(`/account/reset-password`, data)
+}
+
 const apiCalls = {
     createAccount,
     login,
@@ -100,7 +104,8 @@ const apiCalls = {
     getProjectDeposits,
     getAllProjects,
     getAllAccounts,
-    userSendMessage
+    userSendMessage,
+    resetPassword
 }
 
 export default apiCalls
