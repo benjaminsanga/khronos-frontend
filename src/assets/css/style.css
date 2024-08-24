@@ -11631,6 +11631,18 @@ p.loader-p {
   margin-bottom: 1.5rem;
 }
 
+@media only screen and (max-width: 600px) {
+  #login {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #login .col-md-6 {
+    width: 100%;
+    padding: 0;
+  }
+}
 #about {
   height: max-content;
   margin: 65px 0;
@@ -12189,7 +12201,7 @@ p.loader-p {
   margin-top: 1.5rem;
 }
 #join form input {
-  font-size: 2rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 #join .btn {
@@ -12197,6 +12209,14 @@ p.loader-p {
   margin-bottom: 1.5rem;
 }
 
+@media only screen and (max-width: 600px) {
+  #join {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 #intro {
   padding: 0;
 }

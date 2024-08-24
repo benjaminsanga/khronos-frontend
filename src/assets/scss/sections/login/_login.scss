@@ -14,3 +14,17 @@
         margin-bottom: 1.5rem;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    #login {
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .col-md-6 {
+            width: 100%;
+            padding: 0;
+        }
+    }
+}

@@ -9,7 +9,7 @@
         margin-top: 1.5rem;
 
         input {
-            font-size: 2rem;
+            font-size: 1.2rem;
             text-align: center;
         }
     }
@@ -17,5 +17,14 @@
     .btn {
         width: 100%;
         margin-bottom: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #join {
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
