@@ -11607,6 +11607,17 @@ p.loader-p {
   margin-bottom: 1.5rem;
 }
 
+@media only screen and (max-width: 900px) {
+  #deposit {
+    padding: 100px 20px;
+    min-height: 70vh;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #deposit {
+    padding: 10px;
+  }
+}
 #get-quotation {
   margin-top: 3rem;
   color: #312440;
@@ -12498,7 +12509,10 @@ p.loader-p {
 
 @media only screen and (max-width: 900px) {
   #footer {
-    margin-top: 10vh;
+    margin-top: 20px;
+  }
+  #footer-top {
+    padding: 10px;
   }
   #footer-top ul {
     padding-left: 0px;
@@ -12507,13 +12521,16 @@ p.loader-p {
     width: 18px;
     height: auto;
   }
+  #footer-bottom {
+    padding: 10px;
+  }
   #footer-bottom ul {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 600px) {
   #footer {
-    margin-top: 10vh;
+    margin-top: 20px;
   }
   #footer-top div {
     text-align: center !important;
@@ -12524,9 +12541,6 @@ p.loader-p {
   #footer-top .icons img {
     width: 18px;
     height: auto;
-  }
-  #footer-bottom p {
-    text-align: center;
   }
   #footer-bottom ul {
     padding: 0px;

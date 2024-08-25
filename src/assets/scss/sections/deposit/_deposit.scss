@@ -15,5 +15,17 @@
         margin-bottom: 1.5rem;
     }
 
+}
+    
+@media only screen and (max-width: 900px) {
+    #deposit {
+        padding: 100px 20px;
+        min-height: 70vh;
+    }
+}
 
+@media only screen and (max-width: 600px) {
+    #deposit {
+        padding: 10px;
+    }
 }

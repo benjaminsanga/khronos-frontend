@@ -54,20 +54,20 @@ const FindProjectForm = () => {
         <>
         {isSuccess && !!data?.data ?
         <div className='container pt-5'>
-            <div className="row d-flex flex-column justify-content-center align-items-center">
-                <div className="d-flex flex-row justify-content-start align-items-start w-auto my-5 py-3">
-                    {/*<img src={CheckBox} alt="found" style={{width: '200px'}} />*/}
-                    <div>
+            <div className="row d-flex flex-column justify-content-center align-items-center w-100">
+                <div className="d-flex flex-row justify-content-start align-items-start w-100 my-5 py-3">
+                    <div className="my-5 py-5 w-100">
+                        <h5>Confirm Project Details</h5><hr/>
                         <p className="m-0 fw-lighter">Project Name</p>
                         <h2 className="mb-3">{project?.project_name}</h2>
                         <p className="m-0 fw-lighter">Account Name</p>
                         <h2 className="mb-2">{project?.account_name}</h2>
-                        <div className="d-flex flex-row justify-content-between mt-4">
+                        <div className="d-flex flex-row justify-content-between my-5 w-100">
                             <Link to={`/deposit/${project?.project_code}`}>
                                 <button className="btn btn-md btn-primary fw-lighter">Proceed to Payment</button>
                             </Link>
                             <button 
-                                className="btn btn-md btn-secondary fw-lighter"
+                                className="btn btn-md btn-secondary fw-lighter ms-3"
                                 onClick={() => window.location.reload()}
                             >Back</button>
                         </div>
