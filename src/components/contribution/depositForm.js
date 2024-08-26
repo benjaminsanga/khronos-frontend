@@ -31,7 +31,6 @@ const DepositForm = () => {
         isError,
         error
     } = useGetProjectByCode(code)
-console.log(data, 'data');
 
     const {
         isLoading: depositIsLoading,
