@@ -36,7 +36,7 @@ const FindProjectForm = () => {
         }
         if (isError) {
             console.log(error, 'error')
-            setErrorMessage(error?.message);
+            setErrorMessage(error?.response?.data?.message);
         }
     }, [data?.data, error, isError, isSuccess])
 
@@ -83,6 +83,7 @@ const FindProjectForm = () => {
                     {/* <p className="text-center">Let's identify the recipient</p> */}
                     <div className="col-md-3"></div>
                     <div className="col-md-6">
+                        <p className="text-center text-danger" id="submission-error">{errorMessage}</p>
                         <form onSubmit={handleSubmit(handleFormSubmit)}>
                             <div className="mb-3 text-center">
                                 <label htmlFor="project_code" className="form-label">Enter Code</label>
@@ -105,7 +106,6 @@ const FindProjectForm = () => {
                                 >
                                     {(isLoading || isFetching) && <i className="fa fa-spinner fa-spin"></i>} Proceed
                                 </button>
-                                <p className="text-center text-danger" id="submission-error">{errorMessage}</p>
                             </div>
                         </form>
                         <div>
