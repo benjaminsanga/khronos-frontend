@@ -107,6 +107,16 @@ const isRaisedMoreThanHalf = (target, amount_raised) => {
     return parseInt(target / 2) > parseInt(target - amount_raised)
 }
 
+const isPastDate = (dateString) => {
+    const inputDate = new Date(dateString);
+    const today = new Date();
+  
+    // Set the time of today's date to midnight to compare only the date part
+    today.setHours(0, 0, 0, 0);
+  
+    return inputDate < today;
+  };
+
 export {
     validateForm,
     toFirstLetterUpperCase,
@@ -116,5 +126,6 @@ export {
     getFullDate,
     validatePassword,
     formatDateTime,
-    getMonetaryNumber
+    getMonetaryNumber,
+    isPastDate
 }

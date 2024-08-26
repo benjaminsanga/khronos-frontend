@@ -54,6 +54,8 @@ const ProjectDashboardPage = () => {
                         <p className="p-0"><strong>{toFirstLetterUpperCase(projectInfo?.project_name)}</strong></p>
                         <p className="p-0 m-0">Address</p>
                         <p className="p-0"><strong>{projectInfo?.account_address}</strong></p>
+                        <p className="p-0 m-0">End Date</p>
+                        <p className="p-0"><strong>{projectInfo?.contribution_end_date?.substr(0, 10)}</strong></p>
                     </div>
                     <div className="col-md-6">
                         <p>Project Code<br/><strong>{projectInfo?.project_code}</strong></p>
@@ -146,7 +148,7 @@ const ProjectDashboardPage = () => {
                     <div className="col-md-4"></div>
                     <div className="col-md-4">
                         <p>Want to contribute to this project?</p>
-                        <Link to={`/deposit/${id}`}>
+                        <Link to={`/deposit/${projectInfo?.project_code}`}>
                             <button className="btn btn-primary fw-lighter btn-lg w-100">Deposit</button>
                         </Link>
                     </div>

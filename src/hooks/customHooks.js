@@ -111,7 +111,7 @@ export const useGetProjectById = (id) => {
         ['GetProjectById'],
         () => apiCalls.getProjectById(id),
         {
-            keepPreviousData: true,
+            keepPreviousData: false,
             staleTime: Infinity
         }
     )

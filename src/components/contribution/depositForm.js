@@ -31,6 +31,7 @@ const DepositForm = () => {
         isError,
         error
     } = useGetProjectByCode(code)
+console.log(data, 'data');
 
     const {
         isLoading: depositIsLoading,
@@ -46,8 +47,7 @@ const DepositForm = () => {
             setProjectInfo(data?.data);
         }
         if (isError) {
-            console.log(error, 'error')
-            setErrorMessage(error?.message);
+            setErrorMessage(error?.response?.data.message);
         }
     }, [data?.data, error, isError, isSuccess]);
     
@@ -159,6 +159,14 @@ const DepositForm = () => {
                         </div> */}
                     </div>
                     <div className="col-md-2"></div>
+                </div>
+            </div>}
+            {isError && <div id="deposit" className='container-fluid my-5 py-5'>
+                <div className="my-5 py-5 text-center">
+                    <p className="text-center text-danger my-5" id="payment-error">{errorMessage}</p>
+                    <button className="btn btn-sm btn-primary w-25" onClick={() => {
+                        window.history.back()
+                    }}>Back</button>
                 </div>
             </div>}
         </>
