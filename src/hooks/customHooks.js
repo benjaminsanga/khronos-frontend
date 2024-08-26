@@ -112,7 +112,9 @@ export const useGetProjectById = (id) => {
         () => apiCalls.getProjectById(id),
         {
             keepPreviousData: false,
-            staleTime: Infinity
+            staleTime: 0,
+            refetchOnWindowFocus: true,
+            refetchOnReconnect: true,
         }
     )
 }
@@ -122,8 +124,10 @@ export const useGetProjectByCode = (code) => {
         ['GetProjectByCode'],
         () => apiCalls.getProjectByCode(code),
         {
-            keepPreviousData: true,
-            staleTime: Infinity
+            keepPreviousData: false,
+            staleTime: 0,
+            refetchOnWindowFocus: true,
+            refetchOnReconnect: true,
         }
     )
 }
