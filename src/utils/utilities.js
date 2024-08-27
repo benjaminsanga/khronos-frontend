@@ -16,7 +16,7 @@ export const isLocalHost = () => getEnvironment() === 'localhost'
 export const getApiEndpoint = () => {
 
     if (getEnvironment() === 'production') {
-        return 'https://khronos-backend.onrender.com/'
+        return 'https://khronos-backend.onrender.com'
     }
 
     return 'http://localhost:8000/'
