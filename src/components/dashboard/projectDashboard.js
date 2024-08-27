@@ -57,9 +57,23 @@ const ProjectDashboardPage = () => {
                 {isDepostError && <p>{depositError?.message}</p>}
             </>}
             {(isDepositSuccess && projectSuccess) && <div id="dashboard" className="container-fluid">
-                <div className="bottom-line">
-                    <p className="mb-0">Project Dashboard</p>
-                    <h4>{toFirstLetterUpperCase(projectInfo?.account_name)}</h4>
+                <p className="mb-0">Project Dashboard</p>
+                <div className="row pb-2 bottom-line">
+                    <div className="col-md-8">
+                        <h4>{toFirstLetterUpperCase(projectInfo?.account_name)}</h4>
+                    </div>
+                    <div className="col-md-4">
+                        <button 
+                            className="btn btn-sm btn-secondary text-primary px-3 py-1"
+                            onClick={() => handleShareLink(
+                                toFirstLetterUpperCase(projectInfo?.project_name),
+                                projectInfo?.project_purpose,
+                                `${host}/project/dashboard/${projectInfo?.id}`
+                            )}
+                        >
+                            <i className="fa fa-share me-1"></i> Share Project Link
+                        </button>
+                    </div>
                 </div>
                 <div className="row account-info mt-5">
                     <div className="col-md-6">
@@ -73,16 +87,18 @@ const ProjectDashboardPage = () => {
                     <div className="col-md-6">
                         <p>Project Code<br/><strong>{projectInfo?.project_code}</strong></p>
                         <p>Deposit Link<br/><code>{`${host}/deposit/${projectInfo?.project_code}`}</code></p>
-                        <button 
-                            className="btn btn-sm btn-primary text-white px-3 py-1"
-                            onClick={() => handleShareLink(
-                                toFirstLetterUpperCase(projectInfo?.project_name),
-                                projectInfo?.project_purpose,
-                                `${host}/deposit/${projectInfo?.project_code}`
-                            )}
-                        >
-                            <i className="fa fa-share me-1"></i> Share
-                        </button><br/>
+                        <div className="d-flex flex-row justify-content-between">
+                            <button 
+                                className="btn btn-sm btn-primary text-white px-3 py-1"
+                                onClick={() => handleShareLink(
+                                    toFirstLetterUpperCase(projectInfo?.project_name),
+                                    projectInfo?.project_purpose,
+                                    `${host}/deposit/${projectInfo?.project_code}`
+                                )}
+                            >
+                                <i className="fa fa-share me-1"></i> Share Deposit Link
+                            </button>
+                        </div>
                         <span className="text-warning">{shareError}</span>
                     </div>
                 </div>
