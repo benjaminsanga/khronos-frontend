@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { formatDateTime, getMonetaryNumber, isRaisedMoreThanHalf, toFirstLetterUpperCase } from "../../utils/utilities";
+import { formatDateTime, getHost, getMonetaryNumber, isRaisedMoreThanHalf, toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from '../../utils/loading';
 import {useGetProjectById, useGetProjectDeposits} from "../../hooks/customHooks";
 import { useSelector } from "react-redux";
@@ -12,6 +12,8 @@ const ProjectDashboardPage = () => {
     const [deposits, setDeposits] = useState([]);
     const [page, setPage] = useState(1)
     const [limit, setLimit] = useState(5)
+    const [shareError, setShareError] = useState('')
+    const host = getHost()
 
     const {
         isLoading: projectLoading,
@@ -37,6 +39,17 @@ const ProjectDashboardPage = () => {
       refetch()
     }, [page, limit, refetch])
 
+    const handleShareLink = (title, text, url) => {
+        const data = { title, text, url }
+
+        if (navigator.canShare && navigator.canShare(data)) {
+            navigator.share(data)
+        } else {
+            // not supported
+            setShareError('This browser does not support sharing.')
+        }
+    }
+
     return (
         <>
             {(isDepositLoading || projectLoading) && <>
@@ -59,7 +72,18 @@ const ProjectDashboardPage = () => {
                     </div>
                     <div className="col-md-6">
                         <p>Project Code<br/><strong>{projectInfo?.project_code}</strong></p>
-                        <p>Deposit Link<br/><code>{`https://khronos.herokuapp.com/deposit/${projectInfo?.project_code}`}</code></p>
+                        <p>Deposit Link<br/><code>{`${host}/deposit/${projectInfo?.project_code}`}</code></p>
+                        <button 
+                            className="btn btn-sm btn-primary text-white px-3 py-1"
+                            onClick={() => handleShareLink(
+                                toFirstLetterUpperCase(projectInfo?.project_name),
+                                projectInfo?.project_purpose,
+                                `${host}/deposit/${projectInfo?.project_code}`
+                            )}
+                        >
+                            <i className="fa fa-share me-1"></i> Share
+                        </button><br/>
+                        <span className="text-warning">{shareError}</span>
                     </div>
                 </div>
                 <div className="row account-info mt-1">

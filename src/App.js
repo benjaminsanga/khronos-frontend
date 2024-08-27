@@ -50,7 +50,7 @@ const App = () => {
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
                 <Route path="/terms-and-conditions" element={<TermsConditions/>}/>
-                {!isAuthenticated && <Route path="/project/dashboard/:id" element={<LoginFirstPage/>}/>}
+                {/* {!isAuthenticated && <Route path="/project/dashboard/:id" element={<LoginFirstPage/>}/>} */}
                 <Route path="/project/dashboard/:id" element={<ProjectDashboard/>}/>
                 {!isAuthenticated && <Route path="/account/dashboard/:id" element={<LoginFirstPage/>}/>}
                 <Route path="/account/dashboard/:id" element={<AccountDashboard/>}/>

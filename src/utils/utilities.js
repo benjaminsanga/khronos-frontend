@@ -3,7 +3,7 @@ export const getEnvironment = () => {
 
     let env = undefined
     if (hostName.includes('khronos')) {
-        env = 'prod'
+        env = 'production'
     } else if (hostName.includes('localhost')) {
         env = 'localhost'
     }
@@ -13,16 +13,23 @@ export const getEnvironment = () => {
 
 export const isLocalHost = () => getEnvironment() === 'localhost'
 
-export const isProd = () => getEnvironment() === 'prod'
-
 export const getApiEndpoint = () => {
 
-    if (isProd()) {
-        return 'https://khronos-backend.onrender.com'
+    if (getEnvironment() === 'production') {
+        return 'https://khronos-backend.onrender.com/'
     }
 
     return 'http://localhost:8000/'
 
+}
+
+const getHost = () => {
+    if (getEnvironment() === 'localhost') {
+        return 'http://localhost:3000'
+    } else if (getEnvironment() === 'production') {
+        return 'https://khronos-frontend.vercel.app'
+    }
+    
 }
 
 const validateForm = (data) => {
@@ -127,5 +134,6 @@ export {
     validatePassword,
     formatDateTime,
     getMonetaryNumber,
-    isPastDate
+    isPastDate,
+    getHost
 }
