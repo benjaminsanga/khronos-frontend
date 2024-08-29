@@ -18,6 +18,11 @@ p {
   font-weight: lighter;
 } 
 
+.small-text {
+  font-size: 0.875em;
+  margin-bottom: 5px;
+}
+
 @media only screen and (max-width: 400px) {
   #root {
       min-width: 110%;

@@ -13,8 +13,8 @@ const DepositForm = () => {
     // set project 
     const { code } = useParams();
     const [errorMessage, setErrorMessage] = useState("");
-
     const [projectInfo, setProjectInfo] = useState({});
+console.log(projectInfo, 'projectInfo');
 
     const {
         handleSubmit,
@@ -70,13 +70,12 @@ const DepositForm = () => {
             {isLoading && <Loading />}
             {isSuccess && <div id="deposit" className='container-fluid'>
                 <div className="d-flex flex-column align-items-center">
-                    <h4>Deposit Form</h4>
-                    <h2 className="mb-5">
+                    <h4>
                         <span className="text-secondary">
                             { toFirstLetterUpperCase(projectInfo?.project_name)}
-                        </span>
-                    </h2>
-                    {/* <span className="mb-5">{projectInfo?.project_purpose}</span> */}
+                        </span> Deposit Form
+                    </h4>
+                    <p className="mb-5">{projectInfo?.project_purpose}</p>
                     <div className="col-md-2"></div>
                     <div className="col-md-8">
                         <form onSubmit={handleSubmit(handleDepositSubmit)}>
@@ -138,24 +137,29 @@ const DepositForm = () => {
                                 </div>
                             </div>
                             <div>
-                                <em className="text-warning">
-                                    * This transaction is non-refundable.<br/>
-                                    * Your data will be stored for reference.<br/>
-                                </em>
-                                <br/>
+                                <p className="text-danger small-text">
+                                    <em>* This project was created by <strong>{projectInfo?.account_admin_firstname} {projectInfo?.account_admin_lastname}</strong> ({projectInfo?.account_admin_phone}).</em>
+                                </p>
+                                <p className="text-danger small-text">
+                                    <em>* The project owner has the privilege to withdraw.</em>
+                                </p>
+                                <p className="text-warning small-text">
+                                    <em>* This transaction is non-refundable.</em>
+                                </p>
+                                <p className="text-warning small-text">
+                                    <em>* Your data will be stored for reference.</em>
+                                </p>
+                            </div>
+                            <div>
                                 <button
                                     type="submit"
                                     className="btn btn-primary fw-lighter btn-lg"
                                     disabled={depositIsLoading}
                                 >{depositIsLoading ? 'Initializing...' : 'Continue'}</button>
-                                <br/>
-                                <span className="fw-lighter">You will be redirected to complete payment.</span>
+                                <p className="fw-lighter small-text">You will be redirected to complete payment.</p>
                             </div>
                             <p className="text-center text-danger" id="payment-error">{errorMessage}</p>
                         </form>
-                        {/* <div>
-                            <p><Link to="/create-account">Register</Link></p>
-                        </div> */}
                     </div>
                     <div className="col-md-2"></div>
                 </div>
