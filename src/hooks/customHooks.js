@@ -119,6 +119,16 @@ export const useGetProjectById = (id) => {
     )
 }
 
+export const useFindProjectByCode = () => {
+    const queryClient = useQueryClient()
+    return useMutation((arg) => apiCalls.findProjectByCode(arg), {
+        onSuccess: (data) => {
+            queryClient.invalidateQueries(['GetProjectByCode'])
+            return data
+        }
+    })
+}
+
 export const useGetProjectByCode = (code) => {
     return useQuery(
         ['GetProjectByCode'],

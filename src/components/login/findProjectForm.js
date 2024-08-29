@@ -4,13 +4,13 @@ import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {FindProjectSchema} from "../../form-schema/findProjectSchema";
 import {InvalidFormField} from "../Errors/invalidFormField";
-import {useGetProjectByCode} from "../../hooks/customHooks";
+import {useFindProjectByCode} from "../../hooks/customHooks";
 
 const FindProjectForm = () => {
 
     const [project, setProject] = useState({});
     const [errorMessage, setErrorMessage] = useState("");
-    const [code, setCode] = useState(null)
+    // const [code, setCode] = useState(null)
 
     const {
         handleSubmit,
@@ -25,10 +25,10 @@ const FindProjectForm = () => {
         isError,
         error,
         data,
-        refetch,
         isSuccess,
-        isFetching
-    } = useGetProjectByCode(code)
+        isFetching,
+        mutate
+    } = useFindProjectByCode()
 
     useEffect(() => {
         if (isSuccess) {
@@ -39,15 +39,9 @@ const FindProjectForm = () => {
             setErrorMessage(error?.response?.data?.message);
         }
     }, [data?.data, error, isError, isSuccess])
-
-    useEffect(() => {
-        if (code) {
-            refetch()
-        }
-    }, [code, refetch])
     
     const handleFormSubmit = (data) => {
-        setCode(data?.project_code)
+        mutate(data)
     }
 
     return (
