@@ -11060,6 +11060,10 @@ p.loader-p {
   #hero {
     padding: 10vh 5vh;
     background: #312440;
+    min-height: 70vh;
+  }
+  #hero .row .col-md-7 {
+    display: none;
   }
   #hero .carousel {
     width: 100%;
@@ -12210,8 +12214,10 @@ p.loader-p {
   }
 }
 #join {
-  margin-top: 3rem;
   color: #312440;
+  height: max-content;
+  margin: 65px 0;
+  padding: 0 115px;
 }
 #join form {
   margin-top: 1.5rem;

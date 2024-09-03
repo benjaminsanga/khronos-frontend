@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {FindProjectSchema} from "../../form-schema/findProjectSchema";
@@ -10,7 +10,7 @@ const FindProjectForm = () => {
 
     const [project, setProject] = useState({});
     const [errorMessage, setErrorMessage] = useState("");
-    // const [code, setCode] = useState(null)
+    const navigate = useNavigate()
 
     const {
         handleSubmit,
@@ -27,7 +27,8 @@ const FindProjectForm = () => {
         data,
         isSuccess,
         isFetching,
-        mutate
+        mutate,
+        reset
     } = useFindProjectByCode()
 
     useEffect(() => {
@@ -47,22 +48,25 @@ const FindProjectForm = () => {
     return (
         <>
         {isSuccess && !!data?.data ?
-        <div className='container pt-5'>
-            <div className="row d-flex flex-column justify-content-center align-items-center w-100">
-                <div className="d-flex flex-row justify-content-start align-items-start w-100 my-5 py-3">
-                    <div className="my-5 py-5 w-100">
+        <div id="join" className='container-fluid pt-5'>
+            <div className="row d-flex flex-column justify-content-center align-items-center">
+                <div className="d-flex flex-row justify-content-start align-items-start">
+                    <div className="w-100">
                         <h5>Confirm Project Details</h5><hr/>
                         <p className="m-0 fw-lighter">Project Name</p>
                         <h2 className="mb-3">{project?.project_name}</h2>
                         <p className="m-0 fw-lighter">Account Name</p>
                         <h2 className="mb-2">{project?.account_name}</h2>
-                        <div className="d-flex flex-row justify-content-between my-5 w-100">
-                            <Link to={`/deposit/${project?.project_code}`}>
-                                <button className="btn btn-md btn-primary fw-lighter">Proceed to Payment</button>
-                            </Link>
+                        <div className="d-flex flex-row justify-content-between my-5">
+                            <button 
+                                className="btn btn-md btn-primary fw-lighter"
+                                onClick={() => navigate(`/deposit/${project?.project_code}`)}
+                            >Proceed to Payment</button>
                             <button 
                                 className="btn btn-md btn-secondary fw-lighter ms-3"
-                                onClick={() => window.location.reload()}
+                                onClick={() => {
+                                    reset()
+                                }}
                             >Back</button>
                         </div>
                     </div>
@@ -70,7 +74,7 @@ const FindProjectForm = () => {
             </div>
         </div>        
         : 
-        <div id="join" className='container'>
+        <div id="join" className='container-fluid'>
             <div className="d-flex flex-column align-items-center">     
                 <div className="row">
                     <h2 className="mb-5 text-center">Find Project By Code</h2>

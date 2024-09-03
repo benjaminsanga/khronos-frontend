@@ -79,6 +79,13 @@
     #hero {
         padding: 10vh 5vh;
         background: $primary;
+        min-height: 70vh;
+
+        .row {
+            .col-md-7 {
+                display: none;
+            }
+        }
     
         .carousel {
             width: 100%;
