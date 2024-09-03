@@ -53,7 +53,6 @@ const CreateAccountForm = () => {
         <>
             <div id="create-account" className='container'>
                 {isCreateAccountSuccess ? <VerifyAccount/> :
-                isStatesSuccess &&
                     <div className="d-flex flex-column align-items-center">
                         <h2 className="mb-5">Register Account</h2>
                         <div className="col-md-2"></div>
@@ -79,7 +78,8 @@ const CreateAccountForm = () => {
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="account_state" className="form-label">State</label>
-                                        {isStatesLoading ? <i className="fa fa-spinner fa-spin"></i> : <select 
+                                        {isStatesLoading ? <div><i className="fa fa-spinner fa-spin"></i></div> : 
+                                            isStatesSuccess && <select 
                                             className="form-select" 
                                             id="account_state" 
                                             name="account_state"
@@ -100,7 +100,8 @@ const CreateAccountForm = () => {
                                     </div>
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="account_lga" className="form-label">LGA</label>
-                                        {isStatesLoading ? <i className="fa fa-spinner fa-spin"></i> : <select 
+                                        {isStatesLoading ? <div><i className="fa fa-spinner fa-spin"></i></div> : 
+                                            isStatesSuccess && <select 
                                             className="form-select" 
                                             id="account_lga" 
                                             name="account_lga"
