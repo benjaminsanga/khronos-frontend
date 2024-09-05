@@ -41,7 +41,7 @@ const VerifyAccount = () => {
                         <span className="pb-1">Enter the code we sent to your email to verify your account.</span>
                         <form onSubmit={handleSubmit(handleVerify)} className="w-100">
                             <input
-                                type='number'
+                                type='text'
                                 id='verification_code'
                                 className='form-control text-center'
                                 {...register('verification_code')}
