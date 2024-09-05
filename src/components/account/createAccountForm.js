@@ -14,7 +14,8 @@ const CreateAccountForm = () => {
     const {
         register,
         handleSubmit,
-        formState: {errors}
+        formState: {errors},
+        watch
     } = useForm({
         resolver: yupResolver(CreateAccountSchema)
     })
@@ -165,7 +166,7 @@ const CreateAccountForm = () => {
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="account_admin_gender" className="form-label">Gender</label>
-                                        <select
+                                        {/* <select
                                             className="form-select"
                                             id="account_admin_gender"
                                             aria-label="form-select example"
@@ -175,7 +176,28 @@ const CreateAccountForm = () => {
                                             <option defaultValue value="">Select</option>
                                             <option value="female">Female</option>
                                             <option value="male">Male</option>
-                                        </select>
+                                        </select> */}
+                                        <div>
+                                            <label class={`border border-primary border-2 px-2 py-1 rounded me-3 ${watch('account_admin_gender') === 'female' ? 'bg-primary text-white' : ''}`}>
+                                                <input
+                                                    type="radio"
+                                                    value="female"
+                                                    {...register('account_admin_gender')}
+                                                    className="d-none"
+                                                />{' '}
+                                                Female
+                                            </label>
+                                            <label class={`border border-primary border-2 px-2 py-1 rounded ${watch('account_admin_gender') === 'male' ? 'bg-primary text-white' : ''}`}>
+                                                <input
+                                                    type="radio"
+                                                    value="male"
+                                                    {...register('account_admin_gender')}
+                                                    className="d-none"
+                                                />{' '}
+                                                Male
+                                            </label>
+                                        </div>
+
                                         {!!errors.account_admin_gender && <InvalidFormField message={errors.account_admin_gender?.message} />}
                                     </div>
                                     <div className="col-md-6 mb-3"></div>
@@ -216,9 +238,7 @@ const CreateAccountForm = () => {
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
-                                        <label htmlFor="account_password" className="form-label">Password
-                                        <br/><i style={{fontSize: '12px'}}> (Minimum of 8 characters, one uppercase, one number and one special case character)</i>
-                                        </label>
+                                        <label htmlFor="account_password" className="form-label">Password</label>
                                         <input 
                                             type="password"
                                             name="account_password"
@@ -228,6 +248,7 @@ const CreateAccountForm = () => {
                                             {...register('account_password')}
                                             aria-invalid={!!errors.account_password ? 'true' : 'false'}
                                         />
+                                        <p className="small-text mb-0"> (Minimum of 8 characters, one uppercase, one number and one special case character)</p>
                                         {!!errors.account_password && <InvalidFormField message={errors.account_password?.message} />}
                                     </div>
                                     <div className="col-md-6 mb-3">

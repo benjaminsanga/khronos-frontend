@@ -26,7 +26,7 @@ export const useGetStatistics = () => {
         ['GetStatistics'],
         () => apiCalls.getStatistics(),
         {
-            keepPreviousData: true,
+            keepPreviousData: false,
             staleTime: Infinity,
             enabled: true
         }
@@ -69,7 +69,7 @@ export const useGetAccount = (id) => {
         ['GetAccount'],
         () => apiCalls.getAccount(id),
         {
-            keepPreviousData: true,
+            keepPreviousData: false,
             staleTime: Infinity
         }
     )
@@ -80,8 +80,8 @@ export const useGetAccountProjects = (id) => {
         ['GetAccountProjects'],
         () => apiCalls.getAccountProjects(id),
         {
-            keepPreviousData: true,
-            staleTime: Infinity
+            keepPreviousData: false,
+            staleTime: 0
         }
     )
 }
@@ -168,8 +168,8 @@ export const useGetProjectDeposits = (id, page, limit) => {
         ['GetProjectDeposits'],
         () => apiCalls.getProjectDeposits(id, page, limit),
         {
-            keepPreviousData: true,
-            staleTime: Infinity
+            keepPreviousData: false,
+            staleTime: 0
         }
     )
 }
