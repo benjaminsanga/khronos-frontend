@@ -155,6 +155,7 @@ const AccountDashboardPage = () => {
       <EditProfileModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        data={accountInfo}
       />
     </>
   );

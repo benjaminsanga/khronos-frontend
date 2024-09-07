@@ -29,6 +29,7 @@ const CreateAccountForm = () => {
     const {
         isSuccess: isCreateAccountSuccess,
         isError: isCreateAccountError,
+        isLoading,
         error,
         mutate
     } = useCreateAccount()
@@ -133,7 +134,7 @@ const CreateAccountForm = () => {
                                     />
                                     {!!errors.account_address && <InvalidFormField message={errors.account_address?.message} />}
                                 </div>
-                                <h5 className="mt-4 mb-3">Account Creator</h5>
+                                <h5 className="mt-4 mb-3">Account Admin</h5>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
                                         <label htmlFor="account_admin_firstname" className="form-label">First
@@ -305,7 +306,7 @@ const CreateAccountForm = () => {
                                     <button
                                         type="submit"
                                         className="btn btn-primary fw-lighter btn-lg"
-                                    >Register Profile</button>
+                                    >{isLoading && <i className="fa fa-spinner fa-spin"></i>} Register Profile</button>
                                 </div>
                             </form>
                             <div>

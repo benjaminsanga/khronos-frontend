@@ -11,6 +11,16 @@ export const useCreateAccount = () => {
     })
 }
 
+export const useEditProfile = () => {
+    const queryClient = useQueryClient()
+    return useMutation((arg) => apiCalls.editProfile(arg), {
+        onSuccess: (data) => {
+            queryClient.invalidateQueries(['EditProfile'])
+            return data
+        }
+    })
+}
+
 export const useLogin = () => {
     const queryClient = useQueryClient()
     return useMutation((arg) => apiCalls.login(arg), {
