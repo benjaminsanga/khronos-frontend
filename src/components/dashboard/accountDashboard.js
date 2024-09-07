@@ -4,6 +4,7 @@ import { toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from "../../utils/loading";
 import { useGetAccountProjects, useGetAccount } from "../../hooks/customHooks";
 import { useSelector } from "react-redux";
+import EditProfileModal from "../modals/editProfileModal";
 
 const AccountDashboardPage = () => {
   // const location = useLocation();
@@ -23,6 +24,7 @@ const AccountDashboardPage = () => {
 
   const [accountInfo, setAccountInfo] = useState({});
   const [projects, setProjects] = useState([]);
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     setAccountInfo(accountData?.data);
@@ -43,7 +45,10 @@ const AccountDashboardPage = () => {
                 accountInfo?.account_admin_lastname
               )} `}
             </h4>
-            <p>{new Date().toDateString()}</p>
+            <div className="d-flex flex-row justify-content-between">
+              <p>{new Date().toDateString()}</p>
+              <button className="btn" onClick={() => setModalShow(true)}>Edit Profile</button>
+            </div>
           </div>
           <div className="row account-info mt-1">
             <div className="row g-3">
@@ -147,6 +152,10 @@ const AccountDashboardPage = () => {
           )}
         </div>
       )}
+      <EditProfileModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </>
   );
 };
