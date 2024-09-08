@@ -19,6 +19,10 @@ const createAccount = async (data) => {
     return await apiWorker.post('account', data)
 }
 
+const editProfile = async ({data, id}) => {
+    return await apiWorker.patch(`account/update/${id}`, data)
+}
+
 const login = async (data) => {
     return await apiWorker.post('account/login', data)
 }
@@ -93,6 +97,7 @@ const resetPassword = async (data) => {
 
 const apiCalls = {
     createAccount,
+    editProfile,
     login,
     getStatistics,
     getStatesAndLgas,

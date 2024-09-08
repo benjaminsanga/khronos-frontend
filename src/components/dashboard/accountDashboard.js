@@ -4,6 +4,7 @@ import { toFirstLetterUpperCase } from "../../utils/utilities";
 import Loading from "../../utils/loading";
 import { useGetAccountProjects, useGetAccount } from "../../hooks/customHooks";
 import { useSelector } from "react-redux";
+import EditProfileModal from "../modals/editProfileModal";
 
 const AccountDashboardPage = () => {
   // const location = useLocation();
@@ -15,14 +16,17 @@ const AccountDashboardPage = () => {
     isSuccess: accountSuccess,
     data: accountData,
   } = useGetAccount(id);
+
   const {
     isLoading: projectsLoading,
     isSuccess: projectsSuccess,
     data: projectsData,
+    refetch
   } = useGetAccountProjects(id);
 
   const [accountInfo, setAccountInfo] = useState({});
   const [projects, setProjects] = useState([]);
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     setAccountInfo(accountData?.data);
@@ -33,7 +37,7 @@ const AccountDashboardPage = () => {
     <>
       {(accountLoading || projectsLoading) && <Loading />}
       {accountSuccess && projectsSuccess && (
-        <div id="dashboard" className="container-fluid">
+        <div id="dashboard" className="container-fluid" onLoad={() => refetch()}>
           <div className="bottom-line">
             <h4>
               Hello,{" "}
@@ -43,14 +47,17 @@ const AccountDashboardPage = () => {
                 accountInfo?.account_admin_lastname
               )} `}
             </h4>
-            <p>{new Date().toDateString()}</p>
+            <div className="d-flex flex-row justify-content-between">
+              <p>{new Date().toDateString()}</p>
+              <button className="btn" onClick={() => setModalShow(true)}>Edit Profile</button>
+            </div>
           </div>
           <div className="row account-info mt-1">
             <div className="row g-3">
                 <div className="col-4">
                     <div className="dashboard-item p-3">
                         <p className="p-0 m-0 mb-2">Account Name</p>
-                        <h6 className="m-0">{toFirstLetterUpperCase(accountInfo?.account_name)}</h6>
+                        <h6 className="m-0">{accountInfo?.account_name}</h6>
                     </div>
                 </div>
                 <div className="col-4">
@@ -147,6 +154,11 @@ const AccountDashboardPage = () => {
           )}
         </div>
       )}
+      <EditProfileModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        data={accountInfo}
+      />
     </>
   );
 };
