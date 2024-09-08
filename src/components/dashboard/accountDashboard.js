@@ -16,10 +16,12 @@ const AccountDashboardPage = () => {
     isSuccess: accountSuccess,
     data: accountData,
   } = useGetAccount(id);
+
   const {
     isLoading: projectsLoading,
     isSuccess: projectsSuccess,
     data: projectsData,
+    refetch
   } = useGetAccountProjects(id);
 
   const [accountInfo, setAccountInfo] = useState({});
@@ -35,7 +37,7 @@ const AccountDashboardPage = () => {
     <>
       {(accountLoading || projectsLoading) && <Loading />}
       {accountSuccess && projectsSuccess && (
-        <div id="dashboard" className="container-fluid">
+        <div id="dashboard" className="container-fluid" onLoad={() => refetch()}>
           <div className="bottom-line">
             <h4>
               Hello,{" "}
@@ -55,7 +57,7 @@ const AccountDashboardPage = () => {
                 <div className="col-4">
                     <div className="dashboard-item p-3">
                         <p className="p-0 m-0 mb-2">Account Name</p>
-                        <h6 className="m-0">{toFirstLetterUpperCase(accountInfo?.account_name)}</h6>
+                        <h6 className="m-0">{accountInfo?.account_name}</h6>
                     </div>
                 </div>
                 <div className="col-4">

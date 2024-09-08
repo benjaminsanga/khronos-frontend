@@ -80,7 +80,9 @@ export const useGetAccount = (id) => {
         () => apiCalls.getAccount(id),
         {
             keepPreviousData: false,
-            staleTime: Infinity
+            staleTime: 0,
+            refetchOnWindowFocus: true,
+            refetchOnReconnect: true,
         }
     )
 }

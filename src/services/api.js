@@ -19,8 +19,8 @@ const createAccount = async (data) => {
     return await apiWorker.post('account', data)
 }
 
-const editProfile = async (data) => {
-    return await apiWorker.patch(`account/update`, data)
+const editProfile = async ({data, id}) => {
+    return await apiWorker.patch(`account/update/${id}`, data)
 }
 
 const login = async (data) => {
