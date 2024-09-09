@@ -1,15 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import TwitterIcon from "../assets/icons/twitter.svg";
 // import FacebookIcon from "../assets/icons/facebook.svg";
 // import InstagramIcon from "../assets/icons/instagram.svg";
-import {useDispatch, useSelector} from "react-redux";
-import {logout} from "../context/authSlice";
+import {useSelector} from "react-redux";
 
 const Footer = () => {
 
-    const navigate = useNavigate();
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
-    const dispatch = useDispatch();
 
     return (
         <div id="footer" className="container-fluid">
@@ -43,15 +40,7 @@ const Footer = () => {
                         <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                         <li><Link to="/terms-and-conditions">Terms &amp; Conditions</Link></li>
                         <li>
-                            { isAuthenticated ? <a href="/" onClick={(e) => {
-                                e.preventDefault();
-
-                                dispatch(logout())
-
-                                navigate(`/`, { replace: true });
-                            }}>Logout</a> :
-                            <Link to='/login'>Login</Link>
-                            }
+                            { !isAuthenticated && <Link to='/login'>Login</Link> }
                         </li>
                         <li><Link to="/about">About</Link></li>
                         {/* <li><Link to="/accounts">Accounts</Link></li> */}
