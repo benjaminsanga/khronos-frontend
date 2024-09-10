@@ -11850,8 +11850,9 @@ p.loader-p {
   }
 }
 #faq {
-  min-height: 100vh;
-  margin-top: 10vh;
+  height: max-content;
+  margin: 65px 0;
+  padding: 0 115px;
   color: #312440;
 }
 #faq section {
@@ -12049,8 +12050,9 @@ p.loader-p {
   }
 }
 #privacy-policy {
-  min-height: 100vh;
-  margin-top: 10vh;
+  height: max-content;
+  margin: 65px 0;
+  padding: 0 115px;
   color: #312440;
 }
 #privacy-policy section {
@@ -12102,8 +12104,9 @@ p.loader-p {
   }
 }
 #terms {
-  min-height: 100vh;
-  margin-top: 10vh;
+  height: max-content;
+  margin: 65px 0;
+  padding: 0 115px;
   color: #312440;
 }
 #terms section {
