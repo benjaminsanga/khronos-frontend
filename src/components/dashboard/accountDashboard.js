@@ -49,7 +49,10 @@ const AccountDashboardPage = () => {
             </h4>
             <div className="d-flex flex-row justify-content-between">
               <p>{new Date().toDateString()}</p>
-              <button className="btn" onClick={() => setModalShow(true)}>Edit Profile</button>
+              <div>
+                <button className="btn">Change Password</button>
+                <button className="btn" onClick={() => setModalShow(true)}>Edit Profile</button>
+              </div>
             </div>
           </div>
           <div className="row account-info mt-1">

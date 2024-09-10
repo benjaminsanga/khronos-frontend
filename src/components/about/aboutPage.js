@@ -11,7 +11,7 @@ const AboutPage = () => {
     return (
         <div id="about" className="container-fluid">
             <section className="row m-0 w-100">
-                <div className="col-md-6">
+                <div className="col-md-6 p-0">
                     <h1>Khronos.</h1>
                     <p>More than a digital wallet; it's a catalyst for change.</p>
                 </div>

@@ -2,8 +2,9 @@
 @use '../../components/mixins' as *;
 
 #privacy-policy {
-    min-height: 100vh;
-    margin-top: 10vh;
+    height: max-content;
+    margin: 65px 0;
+    padding: 0 115px;
     color: $primary;
 
     section {

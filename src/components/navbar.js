@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../context/authSlice";
+import DefaultPic from "../assets/images/default-user-pic.png"
 
 const Navbar = () => {
     // get current location
@@ -59,22 +60,42 @@ const Navbar = () => {
                             Deposit
                         </Link>
                     </div>
-                    <div className="nav-item">
-                        { isAuthenticated ?
-                            <Link to="/" className="nav-link" onClick={(e) => {
-                                e.preventDefault();
-
-                                dispatch(logout())
-
-                                navigate(`/`, { replace: true });
-                            }}>
-                                Logout
-                            </Link> :
+                    <div className="nav-item dropdown">
+                        {isAuthenticated ? (
+                            <>
+                                <a
+                                    href="/#"
+                                    className="nav-link dropdown-toggle"
+                                    id="userDropdown"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    <img src={DefaultPic} alt="User" style={{width: '28px'}} />
+                                </a>
+                                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li>
+                                    <a
+                                        href="/#"
+                                        className="dropdown-item"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            dispatch(logout());
+                                            navigate(`/`, { replace: true });
+                                        }}
+                                    >
+                                        Logout
+                                    </a>
+                                    </li>
+                                </ul>
+                            </>
+                        ) : (
                             <Link to="/login" className="nav-link">
-                                Log In
+                            Log In
                             </Link>
-                        }
+                        )}
                     </div>
+
                 </div>
                 
             </div>
