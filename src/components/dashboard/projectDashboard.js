@@ -63,16 +63,7 @@ const ProjectDashboardPage = () => {
                         <h4>{toFirstLetterUpperCase(projectInfo?.account_name)}</h4>
                     </div>
                     <div className="col-md-4">
-                        <button 
-                            className="btn btn-sm btn-secondary text-primary px-3 py-1"
-                            onClick={() => handleShareLink(
-                                toFirstLetterUpperCase(projectInfo?.project_name),
-                                projectInfo?.project_purpose,
-                                `${host}/project/dashboard/${projectInfo?.id}`
-                            )}
-                        >
-                            <i className="fa fa-share me-1"></i> Share Project Link
-                        </button>
+                        
                     </div>
                 </div>
                 <div className="row account-info mt-5">
@@ -86,8 +77,18 @@ const ProjectDashboardPage = () => {
                     </div>
                     <div className="col-md-6">
                         <p>Project Code<br/><strong>{projectInfo?.project_code}</strong></p>
-                        <p>Deposit Link<br/><code>{`${host}/deposit/${projectInfo?.project_code}`}</code></p>
+                        <p>Deposit Link<br/><code className="small-text">{`${host}/deposit/${projectInfo?.project_code}`}</code></p>
                         <div className="d-flex flex-row justify-content-between">
+                            <button 
+                                className="btn btn-sm btn-secondary text-primary px-3 py-1"
+                                onClick={() => handleShareLink(
+                                    toFirstLetterUpperCase(projectInfo?.project_name),
+                                    projectInfo?.project_purpose,
+                                    `${host}/project/dashboard/${projectInfo?.id}`
+                                )}
+                            >
+                                <i className="fa fa-share me-1"></i> Share Project Link
+                            </button>
                             <button 
                                 className="btn btn-sm btn-primary text-white px-3 py-1"
                                 onClick={() => handleShareLink(
@@ -129,7 +130,7 @@ const ProjectDashboardPage = () => {
                 <div className="row payments">
                     <h2>Deposits</h2>
                     <div>
-                        {deposits?.length === 0 ? <p>No deposits, yet.</p> :
+                        {deposits?.data?.length === 0 ? <p>No deposits, yet.</p> :
                         <table className="table table-striped table-hover">
                             <thead>
                                 <tr>
@@ -143,7 +144,7 @@ const ProjectDashboardPage = () => {
                             </thead>
                             <tbody>
                                 {
-                                    deposits?.map(({
+                                    deposits?.data?.map(({
                                                         name,
                                                         amount,
                                                         phone,
@@ -164,10 +165,17 @@ const ProjectDashboardPage = () => {
                                 }
                             </tbody>
                         </table>}
-                        {deposits?.length > 0 && <div className="d-flex flex-row justify-content-between align-items-center my-5">
+                        {deposits?.totalItems > 0 && <div className="d-flex flex-row justify-content-between align-items-center my-5">
                             <div>
-                                <button className={`btn btn-secondary text-primary ${page === 1 && 'disabled'}`} onClick={() => setPage(page - 1)}>Previous</button>
-                                <button className={`btn btn-primary text-white ms-3`} onClick={() => setPage(page + 1)}>Next</button>
+                                <button 
+                                    className={`btn btn-secondary text-primary ${page === 1 && 'disabled'}`} 
+                                    onClick={() => setPage(page - 1)}
+                                >Previous</button>
+                                <button 
+                                    className={`btn btn-primary text-white ms-3 ${page === deposits?.totalPages && 'disabled'}`} 
+                                    onClick={() => setPage(page + 1)}
+                                >Next</button>
+                                <span className="ms-3">Page: {deposits?.currentPage} / {deposits?.totalPages}</span>
                                 {isDepositLoading && <i className="fa fa-spinner fa-spin"></i>}
                             </div>                            
                             <div className="d-flex flex-row">
