@@ -21,6 +21,18 @@ export const useEditProfile = () => {
     })
 }
 
+
+
+export const useChangePassword = () => {
+    const queryClient = useQueryClient()
+    return useMutation((arg) => apiCalls.changePassword(arg), {
+        onSuccess: (data) => {
+            queryClient.invalidateQueries(['ChangePassword'])
+            return data
+        }
+    })
+}
+
 export const useLogin = () => {
     const queryClient = useQueryClient()
     return useMutation((arg) => apiCalls.login(arg), {

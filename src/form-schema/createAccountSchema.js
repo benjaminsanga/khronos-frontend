@@ -11,7 +11,7 @@ export const CreateAccountSchema = Yup.object().shape({
     account_admin_gender: Yup.string().required('Gender is required'),
     account_password: Yup.string()
         .required('Password is required')
-        .min(3, 'Password must be at 3 char long')
+        .min(8, 'Password must be at 8 char long')
         .matches(
             /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>?]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
             'Password must contain at least 8 characters, one uppercase, one number and one special case character',
