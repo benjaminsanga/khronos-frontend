@@ -90,7 +90,7 @@ const TermsPage = () => {
                         <li>
                             <h5>Contact Us</h5>
                             <p>
-                                For any questions or concerns about these Terms, please contact us at sales@netaccessnigeria.com.
+                                For any questions or concerns about these Terms, please contact us at info@khronosapp.com.
                             </p>
                         </li>
                     </ol>
