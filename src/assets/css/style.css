@@ -12071,6 +12071,9 @@ p.loader-p {
 #privacy-policy section p {
   font-size: 1.2rem;
 }
+#privacy-policy ol > li {
+  margin-bottom: 20px;
+}
 
 @media only screen and (max-width: 900px) {
   #privacy-policy {
@@ -12124,6 +12127,9 @@ p.loader-p {
 }
 #terms section p {
   font-size: 1.2rem;
+}
+#terms ol > li {
+  margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 900px) {

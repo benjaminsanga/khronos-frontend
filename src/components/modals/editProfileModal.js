@@ -8,8 +8,6 @@ import { useEditProfile } from "../../hooks/customHooks";
 import { useEffect } from "react";
 
 function EditProfileModal(props) {
-  console.log(props?.data, "props?.data");
-
   const {
     register,
     handleSubmit,

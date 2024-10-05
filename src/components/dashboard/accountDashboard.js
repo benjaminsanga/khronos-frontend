@@ -5,6 +5,7 @@ import Loading from "../../utils/loading";
 import { useGetAccountProjects, useGetAccount } from "../../hooks/customHooks";
 import { useSelector } from "react-redux";
 import EditProfileModal from "../modals/editProfileModal";
+import ChangePasswordModal from "../modals/changePasswordModal";
 
 const AccountDashboardPage = () => {
   // const location = useLocation();
@@ -26,7 +27,8 @@ const AccountDashboardPage = () => {
 
   const [accountInfo, setAccountInfo] = useState({});
   const [projects, setProjects] = useState([]);
-  const [modalShow, setModalShow] = useState(false);
+  const [editProfileModalShow, setEditProfileModalShow] = useState(false);
+  const [changePasswordModalShow, setChangePasswordModalShow] = useState(false);
 
   useEffect(() => {
     setAccountInfo(accountData?.data);
@@ -50,8 +52,8 @@ const AccountDashboardPage = () => {
             <div className="d-flex flex-row justify-content-between">
               <p>{new Date().toDateString()}</p>
               <div>
-                <button className="btn">Change Password</button>
-                <button className="btn" onClick={() => setModalShow(true)}>Edit Profile</button>
+                <button className="btn" onClick={() => setChangePasswordModalShow(true)}>Change Password</button>
+                <button className="btn" onClick={() => setEditProfileModalShow(true)}>Edit Profile</button>
               </div>
             </div>
           </div>
@@ -158,9 +160,14 @@ const AccountDashboardPage = () => {
         </div>
       )}
       <EditProfileModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
+        show={editProfileModalShow}
+        onHide={() => setEditProfileModalShow(false)}
         data={accountInfo}
+      />
+      <ChangePasswordModal 
+        show={changePasswordModalShow}
+        onHide={() => setChangePasswordModalShow(false)}
+        id={accountInfo?._id}
       />
     </>
   );
