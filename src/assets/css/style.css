@@ -12125,6 +12125,9 @@ p.loader-p {
 #terms section p {
   font-size: 1.2rem;
 }
+#terms ol > li {
+  margin-bottom: 20px;
+}
 
 @media only screen and (max-width: 900px) {
   #terms {
