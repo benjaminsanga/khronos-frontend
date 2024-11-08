@@ -36,7 +36,7 @@
 
 @media only screen and (max-width: 900px) {
     #privacy-policy {
-        margin-top: 5vh;
+        padding: 5vh;
     
         section {
             margin: 2vh 0 3vh;
@@ -59,7 +59,9 @@
 
 @media only screen and (max-width: 600px) {
     #privacy-policy {
-        margin-top: 5vh;
+        height: fit-content;
+        margin-bottom: 0;
+        padding: 0 10px;
     
         section {
             

@@ -36,7 +36,7 @@
 
 @media only screen and (max-width: 900px) {
     #terms {
-        margin-top: 2vh;
+        padding: 5vh;
     
         section {
             margin: 2vh 0 3vh;
@@ -59,7 +59,8 @@
 
 @media only screen and (max-width: 600px) {
     #terms {
-        margin-top: 5vh;
+        margin-bottom: 0;
+        padding: 0 10px;
     
         section {
             
