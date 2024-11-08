@@ -12077,7 +12077,7 @@ p.loader-p {
 
 @media only screen and (max-width: 900px) {
   #privacy-policy {
-    margin-top: 5vh;
+    padding: 5vh;
   }
   #privacy-policy section {
     margin: 2vh 0 3vh;
@@ -12094,7 +12094,9 @@ p.loader-p {
 }
 @media only screen and (max-width: 600px) {
   #privacy-policy {
-    margin-top: 5vh;
+    height: fit-content;
+    margin-bottom: 0;
+    padding: 0 10px;
   }
   #privacy-policy section h1 {
     font-size: 3.5rem;
@@ -12134,7 +12136,7 @@ p.loader-p {
 
 @media only screen and (max-width: 900px) {
   #terms {
-    margin-top: 2vh;
+    padding: 5vh;
   }
   #terms section {
     margin: 2vh 0 3vh;
@@ -12151,7 +12153,8 @@ p.loader-p {
 }
 @media only screen and (max-width: 600px) {
   #terms {
-    margin-top: 5vh;
+    margin-bottom: 0;
+    padding: 0 10px;
   }
   #terms section h1 {
     font-size: 3.5rem;
