@@ -14,7 +14,6 @@ const DepositForm = () => {
     const { code } = useParams();
     const [errorMessage, setErrorMessage] = useState("");
     const [projectInfo, setProjectInfo] = useState({});
-console.log(projectInfo, 'projectInfo');
 
     const {
         handleSubmit,

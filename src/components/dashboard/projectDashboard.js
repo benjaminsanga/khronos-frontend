@@ -78,7 +78,7 @@ const ProjectDashboardPage = () => {
                     <div className="col-md-6">
                         <p>Project Code<br/><strong>{projectInfo?.project_code}</strong></p>
                         <p>Deposit Link<br/><code className="small-text">{`${host}/deposit/${projectInfo?.project_code}`}</code></p>
-                        <div className="d-flex flex-row justify-content-between">
+                        <div className="d-flex flex-row gap-3">
                             <button 
                                 className="btn btn-sm btn-secondary text-primary px-3 py-1"
                                 onClick={() => handleShareLink(
@@ -179,9 +179,9 @@ const ProjectDashboardPage = () => {
                                 {isDepositLoading && <i className="fa fa-spinner fa-spin"></i>}
                             </div>                            
                             <div className="d-flex flex-row">
-                                <h6 className="ms-3 mt-2">Per Page</h6>
+                                <h6 className="mx-3 mt-2">Per Page</h6>
                                 <select 
-                                    className="ms-1 px-3 py-1 border-primary" style={{borderWidth: '2px'}}
+                                    className="ms-1 px-3 py-0 border-primary" style={{borderRadius: '5px'}}
                                     onChange={(e) => setLimit(e?.target?.value)}
                                 >
                                     <option value={5}>5</option>
