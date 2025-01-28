@@ -21,6 +21,7 @@ p {
 .small-text {
   font-size: 0.875em;
   margin-bottom: 5px;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 400px) {

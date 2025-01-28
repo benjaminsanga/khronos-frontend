@@ -32,7 +32,7 @@ const VerifyAccount = () => {
             {isSuccess && <AccountVerified />}
 
             {!isSuccess &&
-            <div className="row" style={{maxWidth: '100%'}}>
+            <div className="row py-5 my-5" style={{maxWidth: '100%'}}>
                 <div className="col-md-3"></div>
                 <div className="col-md-6">
                     <div className="d-flex flex-column align-items-center justify-content-center success">
@@ -49,7 +49,7 @@ const VerifyAccount = () => {
                             />
                             {!!errors.verification_code && <InvalidFormField message={errors.verification_code?.message} />}
                             {isError && <p className="text-center text-danger" id="submission-error">{error?.response?.data?.message}</p>}
-                            <button className="btn btn-lg btn-primary fw-lighter mt-3" type="submit">Verify</button>
+                            <button className="btn btn-lg btn-primary fw-lighter mt-3 w-100" type="submit">Verify</button>
                         </form>
                     </div>
                 </div>

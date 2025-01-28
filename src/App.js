@@ -27,6 +27,7 @@ import {Provider, useSelector} from "react-redux";
 import store from "./context/store";
 import ErrorBoundary from './pages/ErrorBoundary';
 import ProjectDeposit from './pages/ProjectDeposit';
+import AccountVerification from './pages/VerifyAccount';
 
 const queryClient = new QueryClient()
 
@@ -38,6 +39,7 @@ const App = () => {
         <Router>
             <Routes>
                 <Route path="/create-account" element={<CreateAccount/>}/>
+                <Route path="/verify-account" element={<AccountVerification/>}/>
                 {!isAuthenticated && <Route path="/create-project" element={<LoginFirstPage/>}/>}
                 {isAuthenticated && <Route path="/create-project" element={<CreateProject/>}/>}
                 <Route path="/get-quotation" element={<GetQuotation/>}/>

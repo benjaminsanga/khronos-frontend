@@ -140,7 +140,7 @@ const DepositForm = () => {
                                     <em>* This project was created by <strong>{projectInfo?.account_admin_firstname} {projectInfo?.account_admin_lastname}</strong> ({projectInfo?.account_admin_phone}).</em>
                                 </p>
                                 <p className="text-danger small-text">
-                                    <em>* The project owner has the privilege to withdraw.</em>
+                                    <em>* The project owner has the privilege to perform transactions for the group.</em>
                                 </p>
                                 <p className="text-warning small-text">
                                     <em>* This transaction is non-refundable.</em>
