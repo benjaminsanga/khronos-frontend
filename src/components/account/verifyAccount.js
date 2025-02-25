@@ -37,8 +37,8 @@ const VerifyAccount = () => {
                 <div className="col-md-6">
                     <div className="d-flex flex-column align-items-center justify-content-center success">
                         <img src={EmailIcon} alt="Email" />
-                        <h3 className="py-2">Almost there!</h3>
-                        <span className="pb-1">Enter the code we sent to your email to verify your account.</span>
+                        <h3 className="py-2 mb-5">Almost there!</h3>
+                        <span className="pb-3">Enter the code we sent to your email to verify your account.</span>
                         <form onSubmit={handleSubmit(handleVerify)} className="w-100">
                             <input
                                 type='text'

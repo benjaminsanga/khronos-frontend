@@ -78,7 +78,7 @@ const LoginForm = () => {
                                     type="email"
                                     name="email"
                                     placeholder="account@email.com"
-                                    className="form-control"
+                                    className="form-control h1"
                                     id="email"
                                     {...register('email')}
                                     aria-invalid={!!errors.email ? 'true' : 'false'}

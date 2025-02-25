@@ -11875,8 +11875,7 @@ p.loader-p {
 
 @media only screen and (max-width: 900px) {
   #faq {
-    min-height: 65vh;
-    margin-top: 2vh;
+    padding: 5vh;
   }
   #faq section {
     margin: 2vh 0 3vh;
@@ -11897,7 +11896,9 @@ p.loader-p {
 }
 @media only screen and (max-width: 600px) {
   #faq {
-    margin-top: 5vh;
+    height: fit-content;
+    margin-bottom: 0;
+    padding: 0 10px;
   }
   #faq section {
     margin: 5vh 0 7vh;
