@@ -143,11 +143,10 @@ function EditProfileModal(props) {
             {isError && (
               <p className="text-danger">{error?.response?.data?.message}</p>
             )}
-			<div className="d-flex flex-row justify-content-between">
+			<div className="d-flex flex-row justify-content-end gap-3">
 				<div>
-					<Button type="submit" className="btn btn-primary px-4">
-						{isLoading && <i className="fa fa-spinner fa-spin"></i>} Edit
-						Profile
+					<Button type="submit" className="btn btn-primary px-5">
+						{isLoading && <i className="fa fa-spinner fa-spin"></i>} Save
 					</Button>
 				</div>
 				<div>
