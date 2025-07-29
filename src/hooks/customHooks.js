@@ -15,13 +15,11 @@ export const useEditProfile = () => {
     const queryClient = useQueryClient()
     return useMutation((arg) => apiCalls.editProfile(arg), {
         onSuccess: (data) => {
-            queryClient.invalidateQueries(['EditProfile'])
+            queryClient.invalidateQueries(['GetAccount', 'EditProfile'])
             return data
         }
     })
 }
-
-
 
 export const useChangePassword = () => {
     const queryClient = useQueryClient()

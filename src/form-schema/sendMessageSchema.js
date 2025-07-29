@@ -8,6 +8,6 @@ export const SendMessageSchema = Yup.object().shape({
     message: Yup.string()
         .min(20, 'Must be at least 20 characters')
         .max(200, 'Must not be more than 200 characters')
-        .matches(/^[A-Za-z0-9\s]+$/, 'This field should contain only alphanumeric characters')
+        .matches(/^[A-Za-z0-9\s]|[,.?:;"'!@#$%&*()+]+$/, 'This field should contain only alphanumeric characters')
         .required('Message is required')
 })

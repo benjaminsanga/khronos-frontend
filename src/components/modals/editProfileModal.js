@@ -6,6 +6,7 @@ import { EditProfileSchema } from "../../form-schema/editProfileSchema";
 import { InvalidFormField } from "../Errors/invalidFormField";
 import { useEditProfile } from "../../hooks/customHooks";
 import { useEffect } from "react";
+import toast from "react-hot-toast";
 
 function EditProfileModal(props) {
   const {
@@ -17,7 +18,7 @@ function EditProfileModal(props) {
     resolver: yupResolver(EditProfileSchema),
   });
 
-  const { isLoading, isError, error, isSuccess, mutate } = useEditProfile();
+  const { isLoading, isError, error, isSuccess, mutate, reset } = useEditProfile();
 
   useEffect(() => {
     setValue("account_name", props?.data?.account_name);
@@ -29,8 +30,13 @@ function EditProfileModal(props) {
   useEffect(() => {
     if (isSuccess) {
       props.onHide();
+      toast.success('Profile updated succesfully')
+      reset()
     }
-  }, [isSuccess, props]);
+    if (isError) {
+      toast.error('Error updating profile')
+    }
+  }, [isSuccess, props, isError]);
 
   const handleSubmitEdit = (data) => {
     mutate({ data, id: props?.data?._id });
@@ -143,11 +149,10 @@ function EditProfileModal(props) {
             {isError && (
               <p className="text-danger">{error?.response?.data?.message}</p>
             )}
-			<div className="d-flex flex-row justify-content-between">
+			<div className="d-flex flex-row justify-content-end gap-3">
 				<div>
-					<Button type="submit" className="btn btn-primary px-4">
-						{isLoading && <i className="fa fa-spinner fa-spin"></i>} Edit
-						Profile
+					<Button type="submit" className="btn btn-primary px-5">
+						{isLoading && <i className="fa fa-spinner fa-spin"></i>} Save
 					</Button>
 				</div>
 				<div>
