@@ -1,4 +1,4 @@
-import TwitterIcon from "../../assets/icons/twitter.svg";
+import LinkedInIcon from "../../assets/icons/linkedin.svg";
 
 const Team = () => {
   return (
@@ -7,22 +7,22 @@ const Team = () => {
         <h2>People</h2>
         {/* <p>People who make things happen here</p> */}
       </div>
-      <div className="row text-center mb-5 pb-5">
+      <div className="d-flex flex-row justify-content-center mb-5 pb-5">
         <div className="col-md-6 team-member active">
           <div>
             <h3>Benjamin Sanga</h3>
             <p>Engineering</p>
             <a
-              href="https://twitter.com/0xBenjo"
+              href="https://linkedin.com/in/benjamin-sanga"
               target={"_blank"}
               rel="noreferrer"
             >
-              <img src={TwitterIcon} alt="Team member" />
-              <span className="ms-1"><i>@OxBenjo</i></span>
+              <img src={LinkedInIcon} alt="Team member" />
+              <span className="ms-1"><i></i></span>
             </a>
           </div>
         </div>
-        <div className="col-md-6 team-member active">
+        {/* <div className="col-md-6 team-member active">
           <div>
             <h3>Kabeer Muhammad</h3>
             <p>Operations</p>
@@ -35,7 +35,7 @@ const Team = () => {
               <span className="ms-1"><i>@Ibn_Xkanta</i></span>
             </a>
           </div>
-        </div>
+        </div> */}
         {/* <div className="col-md-4 team-member active">
                     <img src={TeamMember1} alt="Team member" />
                     <div>
