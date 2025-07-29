@@ -36,7 +36,7 @@ function EditProfileModal(props) {
     if (isError) {
       toast.error('Error updating profile')
     }
-  }, [isSuccess, props]);
+  }, [isSuccess, props, isError]);
 
   const handleSubmitEdit = (data) => {
     mutate({ data, id: props?.data?._id });

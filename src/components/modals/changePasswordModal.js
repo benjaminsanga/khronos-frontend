@@ -28,7 +28,7 @@ function ChangePasswordModal(props) {
     if (isError) {
       toast.error('Error updating password')
     }
-  }, [isSuccess, props]);
+  }, [isSuccess, props, isError]);
 
   const handleSubmitEdit = (data) => {
     mutate({ data, id: props?.id });
