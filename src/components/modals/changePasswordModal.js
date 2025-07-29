@@ -6,6 +6,7 @@ import { InvalidFormField } from "../Errors/invalidFormField";
 import { useChangePassword } from "../../hooks/customHooks";
 import { useEffect } from "react";
 import { ChangePasswordSchema } from "../../form-schema/changePasswordSchema";
+import toast from "react-hot-toast";
 
 function ChangePasswordModal(props) {
 
@@ -22,6 +23,10 @@ function ChangePasswordModal(props) {
   useEffect(() => {
     if (isSuccess) {
       props.onHide();
+      toast.success('Password updated successfully')
+    }
+    if (isError) {
+      toast.error('Error updating password')
     }
   }, [isSuccess, props]);
 

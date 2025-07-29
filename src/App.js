@@ -27,6 +27,7 @@ import {Provider, useSelector} from "react-redux";
 import store from "./context/store";
 import ErrorBoundary from './pages/ErrorBoundary';
 import ProjectDeposit from './pages/ProjectDeposit';
+import { Toaster } from 'react-hot-toast';
 
 const queryClient = new QueryClient()
 
@@ -71,6 +72,7 @@ const WrappedApp = () => {
     return <Provider store={store}>
         <QueryClientProvider client={queryClient}>
             <ErrorBoundary>
+                <Toaster position='top-center' />
                 <App/>
             </ErrorBoundary>
         </QueryClientProvider>

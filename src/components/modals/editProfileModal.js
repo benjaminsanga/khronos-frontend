@@ -6,6 +6,7 @@ import { EditProfileSchema } from "../../form-schema/editProfileSchema";
 import { InvalidFormField } from "../Errors/invalidFormField";
 import { useEditProfile } from "../../hooks/customHooks";
 import { useEffect } from "react";
+import toast from "react-hot-toast";
 
 function EditProfileModal(props) {
   const {
@@ -17,7 +18,7 @@ function EditProfileModal(props) {
     resolver: yupResolver(EditProfileSchema),
   });
 
-  const { isLoading, isError, error, isSuccess, mutate } = useEditProfile();
+  const { isLoading, isError, error, isSuccess, mutate, reset } = useEditProfile();
 
   useEffect(() => {
     setValue("account_name", props?.data?.account_name);
@@ -29,6 +30,11 @@ function EditProfileModal(props) {
   useEffect(() => {
     if (isSuccess) {
       props.onHide();
+      toast.success('Profile updated succesfully')
+      reset()
+    }
+    if (isError) {
+      toast.error('Error updating profile')
     }
   }, [isSuccess, props]);
 

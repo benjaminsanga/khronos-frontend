@@ -16,13 +16,14 @@ const AccountDashboardPage = () => {
     isLoading: accountLoading,
     isSuccess: accountSuccess,
     data: accountData,
+    refetch: refetchAccountData
   } = useGetAccount(id);
 
   const {
     isLoading: projectsLoading,
     isSuccess: projectsSuccess,
     data: projectsData,
-    refetch
+    refetch: refetchProjectsData
   } = useGetAccountProjects(id);
 
   const [accountInfo, setAccountInfo] = useState({});
@@ -39,7 +40,7 @@ const AccountDashboardPage = () => {
     <>
       {(accountLoading || projectsLoading) && <Loading />}
       {accountSuccess && projectsSuccess && (
-        <div id="dashboard" className="container-fluid" onLoad={() => refetch()}>
+        <div id="dashboard" className="container-fluid" onLoad={() => refetchProjectsData()} onFocus={() => refetchAccountData()}>
           <div className="bottom-line">
             <h4>
               Hello,{" "}
