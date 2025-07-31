@@ -29,6 +29,7 @@ import ErrorBoundary from './pages/ErrorBoundary';
 import ProjectDeposit from './pages/ProjectDeposit';
 import AccountVerification from './pages/VerifyAccount';
 import { Toaster } from 'react-hot-toast';
+import { Analytics } from '@vercel/analytics/react';
 
 const queryClient = new QueryClient()
 
@@ -76,6 +77,7 @@ const WrappedApp = () => {
             <ErrorBoundary>
                 <Toaster position='top-center' />
                 <App/>
+                <Analytics />
             </ErrorBoundary>
         </QueryClientProvider>
     </Provider>
